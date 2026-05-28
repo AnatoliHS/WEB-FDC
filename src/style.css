@@ -53,6 +53,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overflow-x: hidden;
 }
 
 body {
@@ -192,7 +193,7 @@ section {
 }
 
 .nav-logo {
-  height: 38px;
+  height: 48px;
   width: auto;
   transition: var(--transition);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
@@ -320,17 +321,6 @@ section {
     background-image: url('/assets/mops-maid-mobile.jpg');
   }
 }
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: 2;
-}
-
 .hero-overlap {
   position: absolute;
   bottom: 100%;
@@ -537,6 +527,17 @@ section {
   transform: translateY(0);
 }
 
+.reveal-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* 6. Our Mission Section */
 .mission {
   background-color: var(--bg-color);
@@ -685,6 +686,34 @@ section {
   overflow: hidden;
 }
 
+.cta-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  transform: scale(1.3);
+}
+
+.cta-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(35, 31, 32, 0.65); /* Elegant overlay to keep text highly readable */
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cta-banner .container {
+  position: relative;
+  z-index: 3;
+}
+
 .cta-banner::before {
   content: '';
   position: absolute;
@@ -694,6 +723,7 @@ section {
   height: 600px;
   background: radial-gradient(circle, rgba(254, 149, 2, 0.15) 0%, rgba(252, 105, 65, 0) 70%);
   pointer-events: none;
+  z-index: 2; /* Sits on top of video, below text */
 }
 
 .cta-grid {
@@ -899,12 +929,19 @@ section {
   border-radius: var(--radius-md);
   padding: 40px;
   box-shadow: var(--shadow-lg);
+  min-width: 0; /* Prevents grid item from stretching on mobile viewports */
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.cf-turnstile {
+  width: 300px;
+  height: 65px;
+  max-width: 100%;
 }
 
 .form-group {
@@ -1212,6 +1249,31 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cf-turnstile {
+    transform: scale(0.85);
+    transform-origin: left top;
+    width: 255px; /* 300px * 0.85 */
+    height: 56px;  /* 65px * 0.85 ~ 55.25px */
+  }
+}
+
+@media (max-width: 375px) {
+  .contact-form-container {
+    padding: 24px 16px;
+  }
+  .cf-turnstile {
+    transform: scale(0.8);
+    transform-origin: left top;
+    width: 240px; /* 300px * 0.8 */
+    height: 52px;  /* 65px * 0.8 */
   }
 }
 

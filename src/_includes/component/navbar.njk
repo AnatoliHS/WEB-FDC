@@ -122,6 +122,10 @@
       revealObserver.observe(title);
     });
 
+    document.querySelectorAll('.reveal-fade-in').forEach(el => {
+      revealObserver.observe(el);
+    });
+
     document.querySelectorAll('.faq-accordion details').forEach((item, index) => {
       item.style.setProperty('--faq-idx', index);
       revealObserver.observe(item);
