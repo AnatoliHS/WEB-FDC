@@ -9,6 +9,7 @@ const sectionizePlugin = require("./src/_plugins/eleventy-plugin-sectionize");
 module.exports = function(eleventyConfig) {
   // Consolidate all assets into /assets/
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/style.css": "/style.css" });
 
   // Explicitly map root-level files that need to stay at the root for SEO and icons
   eleventyConfig.addPassthroughCopy({

@@ -1,270 +1,235 @@
-<style>
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    transition: all 0.4s ease;
-    background: transparent;
-  }
-
-  .navbar.scrolled {
-    background: rgba(242, 248, 252, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 15px 40px;
-    box-shadow: var(--shadow);
-  }
-
-  .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-family: var(--font-serif);
-    color: var(--primary-color);
-  }
-
-  .nav-portrait {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-    flex-shrink: 0;
-  }
-
-  .nav-portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-  }
-
-  .nav-name-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .nav-name {
-    font-size: 1.35rem;
-    font-weight: 700;
-    line-height: 1.1;
-    transition: all 0.4s ease;
-    color: var(--white); /* Initially white on desktop */
-  }
-
-  .nav-license {
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-top: 2px;
-    opacity: 1;
-    max-height: 20px;
-    transition: all 0.4s ease;
-    font-family: var(--font-sans);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--white); /* Initially white on desktop */
-  }
-
-  /* Scrolled State Transitions */
-  .navbar.scrolled .nav-portrait {
-    width: 0;
-    height: 80px;
-    margin-right: -15px;
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  .navbar.scrolled .nav-license {
-    opacity: 0;
-    max-height: 0;
-    margin-top: 0;
-    overflow: hidden;
-  }
-
-  .navbar.scrolled .nav-name,
-  .navbar.scrolled .nav-links a:not(.btn-primary) {
-    color: var(--primary-color);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-  }
-
-  .nav-links a {
-    font-family: 'Teodor', var(--font-serif);
-    font-weight: 500;
-    color: var(--white); /* Initially white on desktop */
-    font-size: 1.1rem;
-    position: relative;
-    transition: all 0.4s ease;
-  }
-
-  .nav-links a.btn-primary {
-    color: var(--white);
-  }
-
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-  }
-
-  .nav-links a:hover::after {
-    width: 100%;
-  }
-
-  .mobile-toggle {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .mobile-toggle span {
-    width: 25px;
-    height: 2px;
-    background-color: var(--white); /* Initially white */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
-  }
-
-  .navbar.scrolled .mobile-toggle span {
-    background-color: var(--primary-color); /* Navy on scroll */
-  }
-
-  @media (max-width: 768px) {
-    .navbar {
-      padding: 15px 20px;
-    }
-
-    .nav-portrait {
-      width: 60px;
-      height: 60px;
-    }
-
-    .navbar.scrolled .nav-portrait {
-      height: 60px;
-    }
-
-    .nav-name {
-      font-size: 1.15rem;
-      color: var(--white); /* Changed to white as requested */
-    }
-
-    .nav-license {
-      font-size: 0.7rem;
-      color: var(--white); /* Changed to white as requested */
-    }
-    
-    .nav-links a:not(.btn-primary) {
-      color: var(--primary-color); /* Keep navy for the links inside the white drawer */
-    }
-
-    .mobile-toggle span {
-      background-color: var(--white); /* Changed toggle bars to white */
-    }
-
-    .nav-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: var(--white);
-      flex-direction: column;
-      padding: 20px;
-      gap: 20px;
-      transform: translateY(-150%);
-      transition: transform 0.4s ease;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .nav-links.open {
-      transform: translateY(0);
-    }
-
-    .navbar.menu-open {
-      background: var(--white) !important;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .navbar.menu-open .nav-name,
-    .navbar.menu-open .nav-license {
-      color: var(--primary-color) !important;
-    }
-
-    .navbar.menu-open .mobile-toggle span {
-      background-color: var(--primary-color) !important;
-    }
-
-    /* Hamburger to X Animation */
-    .navbar.menu-open .mobile-toggle span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .navbar.menu-open .mobile-toggle span:nth-child(2) {
-      opacity: 0;
-      transform: translateX(-10px);
-    }
-
-    .navbar.menu-open .mobile-toggle span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .mobile-toggle {
-      display: flex;
-      z-index: 1001; /* Stay above dropdown drawer */
-    }
-  }
-</style>
-
 <nav class="navbar" id="navbar">
-  <div class="nav-brand">
-    <div class="nav-portrait">
-      <img src="/assets/carol-ann-bryant.JPG" alt="Carole Ann Bryant">
+  <div class="container">
+    <div class="nav-brand">
+      <a href="#hero" style="display: flex; align-items: center; gap: 12px;">
+        <svg id="Layer_1" class="nav-logo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.7 196.3" alt="Mops Inc. Logo">
+          <defs>
+            <linearGradient id="logo-linear-gradient" x1="413.1" y1="2.7" x2="413.1" y2="193.5"
+              gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#e9284f" />
+              <stop offset=".2" stop-color="#ea314a" />
+              <stop offset=".5" stop-color="#ed4a3e" />
+              <stop offset=".8" stop-color="#f3732b" />
+              <stop offset="1" stop-color="#f68722" />
+            </linearGradient>
+          </defs>
+          <g>
+            <path class="cls-2"
+              d="M4.2,31.9h29.8l13.3,95.1h.4l13.3-95.1h29.8v132.8h-19.7v-100.6h-.4l-15.2,100.6h-17.5l-15.2-100.6h-.4v100.6H4.2V31.9Z" />
+            <path class="cls-2"
+              d="M104.7,133.2V63.4c0-21.3,11.2-33.4,31.7-33.4s31.7,12.1,31.7,33.4v69.8c0,21.3-11.2,33.4-31.7,33.4s-31.7-12.1-31.7-33.4ZM147.2,134.5V62c0-9.5-4.2-13.1-10.8-13.1s-10.8,3.6-10.8,13.1v72.5c0,9.5,4.2,13.1,10.8,13.1s10.8-3.6,10.8-13.1Z" />
+            <path class="cls-2"
+              d="M182.2,31.9h30.7c20.9,0,31.1,11.6,31.1,32.8v13.1c0,21.3-10.2,32.8-31.1,32.8h-9.9v54.1h-20.9V31.9ZM212.9,91.6c6.6,0,10.2-3,10.2-12.5v-15.7c0-9.5-3.6-12.5-10.2-12.5h-9.9v40.8h9.9Z" />
+            <path class="cls-2"
+              d="M252.5,133.2v-7.6h19.7v9.1c0,9.5,4.2,12.9,10.8,12.9s10.8-3.4,10.8-13.3-4.2-18-17.8-30c-17.5-15.4-23.1-26.2-23.1-41.4s10.8-33,31.1-33,30.4,12.1,30.4,33.4v5.5h-19.7v-6.8c0-9.5-3.8-13.1-10.4-13.1s-10.4,3.6-10.4,12.7,4.4,16.7,18,28.7c17.5,15.4,23,26,23,42.5s-11,33.8-31.5,33.8-30.7-12.1-30.7-33.4Z" />
+          </g>
+          <g>
+            <path class="cls-2" d="M350.7,48h15.2v97h-15.2V48Z" />
+            <path class="cls-2" d="M377.3,48h19.1l14.8,58h.3v-58h13.6v97h-15.7l-18.3-70.8h-.3v70.8h-13.6V48Z" />
+            <path class="cls-2"
+              d="M435.5,122.5v-52.1c0-15,7.8-23.8,22.4-23.8s22.4,8.9,22.4,23.8v10.3h-14.4v-11.2c0-6.4-3-9-7.6-9s-7.6,2.6-7.6,9v54.2c0,6.4,3,8.9,7.6,8.9s7.6-2.5,7.6-8.9v-14.8h14.4v13.7c0,15-7.8,23.8-22.4,23.8s-22.4-8.9-22.4-23.8Z" />
+          </g>
+          <path class="cls-1"
+            d="M413.1,193.5c-52.6,0-95.4-42.8-95.4-95.4S360.4,2.7,413.1,2.7s95.4,42.8,95.4,95.4-42.8,95.4-95.4,95.4ZM413.1,12.2c-47.4,0-85.9,38.5-85.9,85.9s38.5,85.9,85.9,85.9,85.9-38.5,85.9-85.9S460.4,12.2,413.1,12.2Z"
+            style="fill: url(#logo-linear-gradient); stroke-width: 0px;" />
+        </svg>
+      </a>
     </div>
-    <div class="nav-name-group">
-      <div class="nav-name">{{ site.name }}</div>
-      <div class="nav-license">Originator Licence #M08001276</div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#mission">Our Mission</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary">Contact</a>
     </div>
-  </div>
 
-  <div class="nav-links" id="nav-links">
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#calculators">Estimators</a>
-    <a href="#reviews">Testimonials</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact" class="btn btn-primary">Get in Touch</a>
-  </div>
-
-  <div class="mobile-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="mobile-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </nav>
 
 <script>
+  // Scroll Reveal Observer
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  let introParagraph;
+  let introLines = [];
+
+  function splitIntoLines() {
+    introParagraph = document.querySelector('.reveal-text');
+    if (!introParagraph) return;
+
+    // Temporarily restore plain text to measure wrapping
+    const text = introParagraph.innerText.replace(/\s+/g, ' ').trim();
+    const words = text.split(' ');
+
+    // Render temp spans
+    introParagraph.innerHTML = words.map(word => `<span class="temp-word">${word}</span>`).join(' ');
+
+    const tempSpans = introParagraph.querySelectorAll('.temp-word');
+    const lines = [];
+    let currentLine = [];
+    let lastOffsetTop = -1;
+
+    tempSpans.forEach(span => {
+      const offsetTop = span.offsetTop;
+      if (lastOffsetTop !== -1 && offsetTop !== lastOffsetTop) {
+        lines.push(currentLine);
+        currentLine = [];
+      }
+      currentLine.push(span.innerText);
+      lastOffsetTop = offsetTop;
+    });
+    if (currentLine.length > 0) {
+      lines.push(currentLine);
+    }
+
+    // Render lines with breaks
+    introParagraph.innerHTML = lines.map(lineWords => {
+      return `<span class="reveal-line">${lineWords.join(' ')}</span>`;
+    }).join('<br>');
+
+    introLines = introParagraph.querySelectorAll('.reveal-line');
+  }
+
+  // Defer execution until DOM is parsed to measure offsets correctly
+  window.addEventListener('DOMContentLoaded', () => {
+    splitIntoLines();
+    window.addEventListener('resize', splitIntoLines);
+
+    document.querySelectorAll('.reveal-text').forEach(text => {
+      revealObserver.observe(text);
+    });
+
+    const revealCta = document.getElementById('reveal-cta');
+    if (revealCta) revealObserver.observe(revealCta);
+
+    document.querySelectorAll('.highlight-image').forEach(img => {
+      revealObserver.observe(img);
+    });
+
+    document.querySelectorAll('.reveal-title').forEach(title => {
+      revealObserver.observe(title);
+    });
+
+    document.querySelectorAll('.faq-accordion details').forEach((item, index) => {
+      item.style.setProperty('--faq-idx', index);
+      revealObserver.observe(item);
+
+      if (item.open) {
+        item.classList.add('is-open');
+      }
+
+      const summary = item.querySelector('summary');
+      if (summary) {
+        summary.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (item.dataset.animating === 'true') return;
+          item.dataset.animating = 'true';
+
+          const isOpen = item.open;
+
+          if (!isOpen) {
+            item.open = true;
+            item.classList.add('is-open');
+
+            const startHeight = summary.offsetHeight;
+            const endHeight = item.scrollHeight;
+
+            item.style.height = `${startHeight}px`;
+            item.style.overflow = 'hidden';
+
+            const anim = item.animate(
+              { height: [`${startHeight}px`, `${endHeight}px`] },
+              { duration: 300, easing: 'cubic-bezier(0.25, 1, 0.5, 1)' }
+            );
+
+            anim.onfinish = () => {
+              item.style.height = '';
+              item.style.overflow = '';
+              item.dataset.animating = 'false';
+            };
+          } else {
+            item.classList.remove('is-open');
+
+            const startHeight = item.offsetHeight;
+            const endHeight = summary.offsetHeight;
+
+            item.style.height = `${startHeight}px`;
+            item.style.overflow = 'hidden';
+
+            const anim = item.animate(
+              { height: [`${startHeight}px`, `${endHeight}px`] },
+              { duration: 300, easing: 'cubic-bezier(0.25, 1, 0.5, 1)' }
+            );
+
+            anim.onfinish = () => {
+              item.open = false;
+              item.style.height = '';
+              item.style.overflow = '';
+              item.dataset.animating = 'false';
+            };
+          }
+        });
+      }
+    });
+  });
+
   window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
+    }
+
+    // Parallax smoke calibration
+    const smoke = document.querySelector('.hero-smoke');
+    if (smoke) {
+      const scrollY = window.scrollY;
+      const heroHeight = window.innerHeight;
+      if (scrollY > 0 && scrollY <= heroHeight) {
+        const progress = Math.min(scrollY / (heroHeight * 0.7), 1); // reach full opacity at 70% scroll
+        const translateY = scrollY * -0.35; // scroll up faster than next section
+        const opacity = 0.35 + progress * 0.6; // from 0.35 to 0.95
+        smoke.style.setProperty('transform', `translateY(${translateY}px)`, 'important');
+        smoke.style.setProperty('opacity', opacity, 'important');
+      } else if (scrollY === 0) {
+        smoke.style.transform = '';
+        smoke.style.opacity = '';
+      }
+    }
+
+    // Text Reveal Logic (Line by Line)
+    if (!introParagraph) {
+      introParagraph = document.querySelector('.reveal-text');
+    }
+    if (introParagraph && introLines.length > 0) {
+      const rect = introParagraph.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const visibility = (windowHeight - rect.top) / windowHeight;
+      const progress = Math.min(Math.max(visibility * 2.0 - 0.1, 0), 1);
+
+      const L = introLines.length;
+      const overlap = 0.25; // 25% overlap between consecutive lines
+      introLines.forEach((line, k) => {
+        const startFraction = (k * (1 - overlap)) / (L - (L - 1) * overlap);
+        const duration = 1 / (L - (L - 1) * overlap);
+        const endFraction = startFraction + duration;
+
+        const lineProgress = Math.min(Math.max((progress - startFraction) / (endFraction - startFraction), 0), 1);
+        line.style.backgroundSize = `${lineProgress * 100}% 100%`;
+      });
     }
   });
 
@@ -275,19 +240,19 @@
     navLinks.classList.toggle('open');
   }
 
-  // Smooth scroll
+  // Smooth scroll and auto-close mobile drawer
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
+
       const navbar = document.getElementById('navbar');
       const navLinks = document.getElementById('nav-links');
-      
+
       navbar.classList.remove('menu-open');
       navLinks.classList.remove('open');
-      
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({

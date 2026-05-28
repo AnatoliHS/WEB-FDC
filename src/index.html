@@ -1,1617 +1,285 @@
 ---
-layout: default.njk
-title: Home
+layout: default
+title: "Mops Inc. | Professional Cleaning & Janitorial Services"
+description: "Vibrant Cleanliness for home, business, and vacation rentals. Mops Inc. is a certified Living Wage
+Employer serving Belleville and the Quinte region."
 ---
 
-<!-- Styles Grouped Together -->
-<style>
-    /* HERO SECTION STYLES */
-    .hero {
-        height: auto;
-        display: block;
-        position: relative;
-        max-width: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    .hero-image-area {
-        height: 100vh;
-        width: 100%;
-        position: relative;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/assets/deal.png');
-        background-size: cover;
-        background-position: center top;
-        background-attachment: scroll;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding-bottom: 30px;
-        /* Nudged down 50px from 80px */
-    }
-
-    .hero-title-bottom {
-        max-width: 1000px;
-        width: 100%;
-        text-align: center;
-        z-index: 2;
-    }
-
-    .hero-title-bottom h1 {
-        color: var(--white) !important;
-        font-size: clamp(3rem, 8vw, 5.5rem);
-        line-height: 1.05;
-        margin: 0;
-        letter-spacing: -0.02em;
-        text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-        opacity: 0;
-        animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        animation-delay: 0.3s;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .hero-title-bottom h1 em {
-        color: var(--white) !important;
-    }
-
-    .hero-content-area {
-        background-color: var(--bg-color);
-        padding: 220px 20px;
-        /* Further expanded for maximum space */
-        position: relative;
-        text-align: center;
-        overflow: hidden;
-        z-index: 1;
-    }
-
-    .hero-watermark-wrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        max-width: 800px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    .hero-content-watermark {
-        width: 100%;
-        margin-bottom: -10px;
-        opacity: 0.12;
-        /* Kept the logo subtle */
-    }
-
-    .hero-watermark-text {
-        font-family: var(--font-sans);
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        white-space: nowrap;
-        color: var(--primary-color);
-        font-weight: 500;
-        opacity: 0.6;
-        /* Restored for light background */
-    }
-
-    .hero-content-inner {
-        position: relative;
-        z-index: 2;
-        /* Sit above watermark */
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-
-    .hero-tagline {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        color: var(--accent-color);
-        margin-bottom: 25px;
-        font-weight: 600;
-        display: block;
-    }
-
-    .hero em {
-        font-family: var(--font-serif);
-        font-style: italic;
-    }
-
-    .hero p {
-        font-size: 1.25rem;
-        color: var(--text-light);
-        margin: 0 auto 40px;
-        max-width: 650px;
-        font-weight: 400;
-        line-height: 1.6;
-    }
-
-    @media (min-width: 769px) {
-        .hero-tagline {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            text-transform: none;
-            letter-spacing: normal;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-    }
-
-    .hero-btns {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    @media (max-width: 768px) {
-        .hero {
-            padding: 0 !important;
-            margin: 0 !important;
-            width: 100% !important;
-            max-width: none !important;
-        }
-
-        .hero-image-area {
-            height: 100vh;
-            width: 100vw;
-            background-attachment: scroll; /* Fixing the mobile zoom bug */
-            padding-bottom: 220px;
-            background-position: center 15%; 
-        }
-
-        .hero-title-bottom h1 {
-            font-size: 3.2rem;
-            padding: 0 20px;
-        }
-
-        .hero-content-area {
-            padding: 80px 20px;
-        }
-
-        .hero-tagline {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            text-transform: none;
-            margin-top: -50px;
-            margin-bottom: 60px;
-        }
-
-        .hero-content-watermark {
-            max-width: 550px;
-        }
-
-        .hero-watermark-text {
-            font-size: 0.65rem;
-            white-space: normal;
-            width: 90%;
-            margin: 0 auto;
-            line-height: 1.4;
-        }
-
-        .hero-watermark-wrapper {
-            top: 45%;
-            transform: translate(-50%, -50%);
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            padding: 0 15px;
-        }
-
-        .hero-content-area {
-            padding: 80px 20px 140px;
-            position: relative;
-            min-height: 520px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-content-inner {
-            position: static !important;
-            padding-bottom: 0;
-            width: 100%;
-            margin-top: -60px;
-        }
-
-        .hero-btns {
-            position: absolute;
-            bottom: 40px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: 0;
-        }
-    }
-
-    /* CALCULATORS SECTION */
-    .calculators-section {
-        background-color: var(--white);
-        padding: 100px 20px;
-        border-bottom: 1px solid rgba(26, 54, 93, 0.05);
-    }
-
-    .calculators-section .section-title {
-        text-align: center;
-        margin-bottom: 60px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .calculators-section .section-title h2 {
-        font-family: 'Teodor', var(--font-serif);
-        font-size: 3.2rem;
-        color: var(--primary-color);
-        margin-bottom: 15px;
-    }
-
-    .calc-nav {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 60px;
-        flex-wrap: wrap;
-    }
-
-    .calc-nav-btn {
-        background: transparent;
-        border: 1px solid rgba(26, 54, 93, 0.1);
-        padding: 12px 24px;
-        border-radius: 50px;
-        color: var(--text-light);
-        font-family: var(--font-sans);
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 0.95rem;
-    }
-
-    .calc-nav-btn:hover {
-        border-color: var(--primary-color);
-        color: var(--primary-color);
-    }
-
-    .calc-nav-btn.active {
-        background: var(--primary-color);
-        color: var(--white);
-        border-color: var(--primary-color);
-        box-shadow: 0 4px 15px rgba(26, 54, 93, 0.2);
-    }
-
-    .calc-wrapper {
-        min-height: 500px;
-        position: relative;
-    }
-
-    .calc-panel {
-        display: none;
-        animation: fadeIn 0.5s ease forwards;
-    }
-
-    .calc-panel.active {
-        display: block;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .calc-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-        align-items: center;
-    }
-
-    .input-group {
-        margin-bottom: 35px;
-    }
-
-    .input-group label {
-        display: flex;
-        justify-content: space-between;
-        font-weight: 500;
-        margin-bottom: 12px;
-        font-size: 0.95rem;
-        color: var(--primary-color);
-    }
-
-    .input-val {
-        color: var(--accent-color);
-        font-weight: 700;
-    }
-
-    input[type="range"] {
-        width: 100%;
-        height: 4px;
-        background: #e2e8f0;
-        border-radius: 2px;
-        appearance: none;
-        cursor: pointer;
-    }
-
-    input[type="range"]::-webkit-slider-thumb {
-        appearance: none;
-        width: 18px;
-        height: 18px;
-        background: var(--primary-color);
-        border: 3px solid var(--white);
-        border-radius: 50%;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        transition: transform 0.2s ease;
-    }
-
-    input[type="range"]:active::-webkit-slider-thumb {
-        transform: scale(1.2);
-    }
-
-    .calc-results {
-        background: #f8fafc;
-        padding: 50px;
-        border-radius: var(--radius-sm);
-        text-align: center;
-        border: 1px solid rgba(26, 54, 93, 0.05);
-    }
-
-    .result-box {
-        margin-bottom: 40px;
-    }
-
-    .result-box:last-child {
-        margin-bottom: 0;
-    }
-
-    .result-label {
-        display: block;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--text-light);
-        margin-bottom: 10px;
-    }
-
-    .result-value {
-        font-family: var(--font-serif);
-        font-size: 4rem;
-        color: var(--primary-color);
-        line-height: 1;
-        font-weight: 700;
-    }
-
-    .result-value-sm {
-        font-family: var(--font-serif);
-        font-size: 2.5rem;
-        color: var(--primary-color);
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
-
-    .stress-test-note {
-        font-size: 0.75rem;
-        color: #94a3b8;
-        font-style: italic;
-        margin-top: 15px;
-    }
-
-    @media (max-width: 992px) {
-        .calc-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-        
-        .calc-results {
-            padding: 30px;
-        }
-
-        .result-value {
-            font-size: 3rem;
-        }
-    }
-
-    /* MODAL STYLES */
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px 20px;
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.8s ease, visibility 0.8s ease;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .modal.active {
-        visibility: visible;
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(26, 54, 93, 0.94);
-        backdrop-filter: blur(0px);
-        -webkit-backdrop-filter: blur(0px);
-        transition: backdrop-filter 1s ease;
-    }
-
-    .modal.active .modal-overlay {
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-    }
-
-    .modal-container {
-        position: relative;
-        background-color: var(--white);
-        width: 100%;
-        max-width: 800px;
-        max-height: 90vh;
-        border-radius: var(--radius-sm);
-        overflow-y: auto;
-        padding: 60px;
-        box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6);
-        z-index: 1001;
-        opacity: 0;
-        transform: translateY(40px) scale(0.96);
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        pointer-events: none;
-    }
-
-    .modal.active .modal-container {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        pointer-events: auto;
-    }
-
-    /* Staggered Content Reveal */
-    .reveal-item {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    .modal.active .reveal-item {
-        animation: modalReveal 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-    }
-
-    @keyframes modalReveal {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .modal-close {
-        position: absolute;
-        top: 25px;
-        right: 25px;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        font-weight: 300;
-        color: var(--primary-color);
-        cursor: pointer;
-        opacity: 0.3;
-        transition: all 0.3s ease;
-        z-index: 10;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .modal-close:hover {
-        opacity: 1;
-        transform: rotate(90deg);
-    }
-
-    .modal-header-icon {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 30px;
-        color: var(--accent-color);
-    }
-
-    .modal-content h2 {
-        font-family: 'Teodor', var(--font-serif);
-        font-size: 3rem;
-        color: var(--primary-color);
-        margin-bottom: 30px;
-        line-height: 1.1;
-    }
-
-    .modal-section {
-        margin-bottom: 40px;
-    }
-
-    .modal-section-title {
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: var(--accent-color);
-        margin-bottom: 15px;
-        display: block;
-    }
-
-    .modal-steps {
-        list-style: none;
-        padding: 0;
-    }
-
-    .modal-steps li {
-        position: relative;
-        padding-left: 35px;
-        margin-bottom: 15px;
-        font-size: 1.05rem;
-        color: var(--text-light);
-        line-height: 1.5;
-    }
-
-    .modal-steps li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 10px;
-        width: 18px;
-        height: 2px;
-        background-color: var(--accent-color);
-    }
-
-    .expert-quote {
-        background-color: #f8fafc;
-        padding: 30px;
-        border-left: 4px solid var(--accent-color);
-        font-style: italic;
-        margin: 40px 0;
-    }
-
-    .expert-quote p {
-        font-size: 1.15rem;
-        color: var(--primary-color);
-        margin: 0;
-    }
-
-    .modal-footer {
-        border-top: 1px solid rgba(26, 54, 93, 0.05);
-        padding-top: 40px;
-        display: flex;
-        justify-content: center;
-    }
-
-    body.modal-open {
-        overflow: hidden;
-    }
-
-    @media (max-width: 768px) {
-        .modal {
-            align-items: flex-start;
-            padding: 60px 20px;
-        }
-
-        .modal-container {
-            padding: 40px 25px;
-            max-height: none;
-            height: auto;
-            margin-bottom: 60px;
-        }
-
-        .modal-content h2 {
-            font-size: 2.2rem;
-        }
-    }
-    .reveal-section {
-        background-color: var(--white);
-        margin-top: 60px;
-        padding: 120px 20px 80px;
-        text-align: center;
-        border-bottom: 1px solid rgba(26, 54, 93, 0.08);
-    }
-
-    .reveal-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .reveal-title {
-        font-family: 'Teodor', var(--font-serif);
-        font-size: clamp(2rem, 3.8vw, 3.2rem);
-        line-height: 1.2;
-        margin-bottom: 40px;
-        font-weight: normal;
-        letter-spacing: -0.02em;
-    }
-
-    .reveal-cta {
-        margin-top: 60px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 1s ease 0.5s;
-    }
-
-    .reveal-cta.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .reveal-subtext {
-        font-size: 1.25rem;
-        color: var(--text-light);
-        max-width: 600px;
-        margin: 40px auto 0;
-        font-weight: 300;
-        line-height: 1.8;
-    }
-
-    /* ABOUT SECTION STYLES */
-    .about-section {
-        background-color: var(--white);
-        padding-top: 60px;
-        padding-bottom: 120px;
-        border-bottom: 1px solid rgba(26, 54, 93, 0.08);
-    }
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.5fr;
-        gap: 60px;
-        align-items: center;
-    }
-
-    .about-portrait {
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: var(--shadow-lg);
-    }
-
-    .about-portrait img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .about-text h2 {
-        font-size: 2.5rem;
-        margin-bottom: 25px;
-    }
-
-    .about-text p {
-        font-size: 1.1rem;
-        color: var(--text-light);
-        margin-bottom: 20px;
-    }
-
-    .about-text .license {
-        font-weight: 600;
-        color: var(--primary-color);
-        margin-top: 30px;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    /* SERVICES SECTION STYLES */
-    .services-v2 {
-        background-color: var(--white);
-        padding: 0;
-        border-bottom: 1px solid rgba(26, 54, 93, 0.08);
-    }
-
-    .services-v2 {
-        padding-top: 100px;
-    }
-
-    .service-row {
-        display: flex;
-        min-height: 80vh;
-        align-items: center;
-    }
-
-    .services-header {
-        text-align: center;
-        margin-bottom: 80px;
-        padding: 0 20px;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .services-header h2 {
-        font-family: 'Teodor', var(--font-serif);
-        font-size: 3.2rem;
-        color: var(--primary-color);
-        margin-bottom: 20px;
-    }
-
-    .services-header p {
-        font-size: 1.2rem;
-        color: var(--text-light);
-        line-height: 1.6;
-    }
-
-    .service-row:nth-child(even) {
-        flex-direction: row-reverse;
-    }
-
-    .service-image {
-        flex: 1;
-        height: 85vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
-    }
-
-    .service-image img {
-        width: 100%;
-        height: 100%;
-        max-width: 420px;
-        object-fit: cover;
-        border-radius: 250px;
-        transition: transform 1.5s ease;
-    }
-
-    .service-row:hover .service-image img {
-        transform: scale(1.05);
-    }
-
-    .service-content {
-        flex: 1;
-        padding: 10%;
-        max-width: 700px;
-    }
-
-    .service-label {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--accent-color);
-        margin-bottom: 20px;
-        display: block;
-    }
-
-    .service-content h3 {
-        font-size: 3rem;
-        margin-bottom: 30px;
-    }
-
-    .service-content p {
-        font-size: 1.1rem;
-        color: var(--text-light);
-        margin-bottom: 40px;
-    }
-
-    /* FAQ SECTION STYLES */
-    .faq-section {
-        background-color: var(--white);
-        padding: 120px 20px;
-        text-align: center;
-    }
-
-    .faq-section h2 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-    }
-
-    .faq-container {
-        max-width: 800px;
-        margin: 60px auto 0;
-        text-align: left;
-    }
-
-    .faq-item {
-        margin-bottom: 30px;
-        border-bottom: 1px solid rgba(26, 54, 93, 0.1);
-    }
-
-    .faq-question {
-        padding: 25px 0;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.2rem;
-        color: var(--primary-color);
-        transition: all 0.3s ease;
-        font-family: var(--font-serif);
-        font-weight: 300;
-    }
-
-    .faq-question:hover {
-        color: var(--accent-color);
-    }
-
-    .faq-answer {
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-        color: var(--text-light);
-        font-size: 1rem;
-        line-height: 1.8;
-    }
-
-    .faq-item.active .faq-answer {
-        padding-bottom: 30px;
-        max-height: 400px;
-    }
-
-    .faq-icon::before {
-        content: '↓';
-        font-size: 1.2rem;
-        transition: transform 0.4s ease;
-        display: inline-block;
-    }
-
-    .faq-item.active .faq-icon::before {
-        transform: rotate(180deg);
-    }
-
-    .faq-item.active .faq-icon {
-        transform: rotate(45deg);
-    }
-
-    /* FINAL CTA SECTION STYLES */
-    .final-cta-section {
-        background-color: var(--bg-color);
-        color: var(--primary-color);
-        padding: 120px 20px;
-        text-align: center;
-    }
-
-    .final-cta-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .final-cta-section h2 {
-        font-family: 'Teodor', var(--font-serif);
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
-        color: var(--primary-color);
-        margin-bottom: 30px;
-        line-height: 1.1;
-    }
-
-    .final-cta-section p {
-        font-size: 1.2rem;
-        color: var(--text-light);
-        margin-bottom: 50px;
-        font-weight: 300;
-    }
-
-    .final-cta-section .btn-primary {
-        background-color: var(--accent-color);
-        color: var(--white);
-        padding: 20px 45px;
-        font-size: 1rem;
-    }
-
-    .final-cta-section .btn-primary:hover {
-        background-color: var(--white);
-        color: var(--primary-color);
-    }
-
-    /* CONTACT SECTION STYLES */
-    .contact-section {
-        background-color: var(--white);
-    }
-
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 80px;
-        align-items: start;
-    }
-
-    .contact-info h2 {
-        font-family: 'Teodor', var(--font-serif);
-        font-size: 3rem;
-        margin-bottom: 30px;
-    }
-
-    .contact-info p {
-        font-size: 1.1rem;
-        color: var(--text-light);
-        margin-bottom: 40px;
-        line-height: 1.6;
-    }
-
-    .contact-details {
-        margin-top: 40px;
-    }
-
-    .contact-item {
-        margin-bottom: 25px;
-    }
-
-    .contact-item label {
-        display: block;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--accent-color);
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
-
-    .contact-item span {
-        font-size: 1.25rem;
-        color: var(--primary-color);
-        font-weight: 500;
-    }
-
-    .contact-form {
-        background-color: #f9fbfd;
-        padding: 50px;
-        border-radius: 12px;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-group label {
-        display: block;
-        font-size: 0.9rem;
-        margin-bottom: 8px;
-        font-weight: 500;
-        color: var(--primary-color);
-    }
-
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 15px;
-        border: 1px solid rgba(26, 54, 93, 0.1);
-        border-radius: 6px;
-        font-family: inherit;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        background-color: var(--white);
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-        outline: none;
-        border-color: var(--accent-color);
-        box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
-    }
-
-    .contact-form .btn {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    /* MEDIA QUERIES */
-    @media (max-width: 992px) {
-
-        .service-row,
-        .service-row:nth-child(even) {
-            flex-direction: column;
-            height: auto;
-        }
-
-        .service-image {
-            width: 100%;
-            height: auto;
-            min-height: 450px;
-            padding: 40px 20px;
-        }
-
-        .service-image img {
-            width: 260px;
-            height: 400px;
-            margin: 0 auto;
-            border-radius: 200px;
-            /* Semi-circular ends */
-        }
-
-        .service-content {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .contact-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-
-        .contact-form {
-            padding: 30px 20px;
-        }
-
-        .service-content h3 {
-            font-size: 2.2rem;
-        }
-
-        .about-grid {
-            grid-template-columns: 1fr;
-            text-align: center;
-        }
-    }
-
-
-    /* REVIEWS SECTION STYLES */
-    .reviews-section {
-        padding: 160px 20px;
-        background-color: var(--bg-color);
-        text-align: center;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .reviews-container {
-        max-width: 900px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .review-slider {
-        position: relative;
-        min-height: 350px;
-        margin-bottom: 40px;
-    }
-
-    .review-slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.8s ease, visibility 0.8s;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .review-slide.active {
-        opacity: 1;
-        visibility: visible;
-        position: relative;
-    }
-
-    .review-quote {
-        font-family: var(--font-serif);
-        font-size: clamp(1.5rem, 4vw, 2.2rem);
-        line-height: 1.4;
-        color: var(--primary-color);
-        margin-bottom: 30px;
-        font-style: italic;
-        letter-spacing: -0.01em;
-    }
-
-    .review-author {
-        font-family: var(--font-sans);
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: var(--accent-color);
-        font-weight: 600;
-    }
-
-    .review-dots {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 20px;
-    }
-
-    .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: rgba(26, 54, 93, 0.2);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: none;
-        padding: 0;
-    }
-
-    .dot.active {
-        background-color: var(--accent-color);
-        transform: scale(1.3);
-    }
-</style>
-
-<!-- HTML Sections Grouped Together -->
-<section class="hero" id="hero">
-    <div class="hero-image-area">
-        <div class="hero-title-bottom">
-            <h1>Your Journey Home <br><em>Starts Here.</em></h1>
-        </div>
+<!-- 1. Hero Section -->
+<section id="hero" class="hero">
+    <div class="hero-banners">
+        <div class="hero-banner-slice" style="--slice-idx: 0; --left: 0%; --right: calc(80% - 1px);"></div>
+        <div class="hero-banner-slice" style="--slice-idx: 1; --left: calc(20% - 1px); --right: calc(60% - 1px);"></div>
+        <div class="hero-banner-slice" style="--slice-idx: 2; --left: calc(40% - 1px); --right: calc(40% - 1px);"></div>
+        <div class="hero-banner-slice" style="--slice-idx: 3; --left: calc(60% - 1px); --right: calc(20% - 1px);"></div>
+        <div class="hero-banner-slice" style="--slice-idx: 4; --left: calc(80% - 1px); --right: 0%;"></div>
     </div>
-
-    <section class="reveal-section">
-        <div class="reveal-container">
-            <h2 class="reveal-title">
-                <span class="reveal-text">Turning your monthly expense into a smart investment strategy. Powered by Dominion
-                    Lending Centres and backed by Canada’s largest network of 230+ lenders, mortgages are structured to
-                    secure competitive rates and transform home financing into a strategic wealth-building asset.
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content-centered">
+            <h1 class="split-reveal">
+                <span class="line-1">
+                    <span class="word-mask"><span class="word-inner" style="--word-idx: 0;">We</span></span>
+                    <span class="word-mask"><span class="word-inner" style="--word-idx: 1;">Love</span></span>
+                    <span class="word-mask"><span class="word-inner" style="--word-idx: 2;">Cleaning</span></span>
                 </span>
-            </h2>
-        </div>
-    </section>
-
-    <div class="hero-content-area">
-        <div class="hero-watermark-wrapper">
-            <img src="/assets/dominion-3.png" alt="" class="hero-content-watermark">
-            <div class="hero-watermark-text">Dominion Lending Centres Mortgages On Point Brokerage Licence #13119</div>
-        </div>
-        <div class="hero-content-inner">
-            <div class="hero-tagline">Licensed Mortgage Professional</div>
-            <p>Providing expert, unbiased mortgage advice with access to hundreds of products tailored to your unique
-                financial needs.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn btn-primary">Start Your Application</a>
-            </div>
+                <span class="line-2">
+                    <span class="word-mask"><span class="word-inner" style="--word-idx: 3;">So</span></span>
+                    <span class="word-mask"><span class="word-inner" style="--word-idx: 4;">you</span></span>
+                    <span class="word-mask"><span class="word-inner" style="--word-idx: 5;">don’t</span></span>
+                    <span class="word-mask"><span class="word-inner" style="--word-idx: 6;">have</span></span>
+                    <span class="word-mask"><span class="word-inner" style="--word-idx: 7;">to</span></span>
+                </span>
+            </h1>
         </div>
     </div>
+</section>
 
-<section class="about-section" id="about">
+<!-- 2. Intro Section -->
+<section id="intro" class="intro-section">
+    <div class="hero-overlap">
+        <div class="hero-smoke">
+            <img src="/assets/smoke.webp" alt="">
+        </div>
+        <div class="hero-smoke-overlay"></div>
+    </div>
     <div class="container">
-        <div class="about-grid">
-            <div class="about-portrait">
-                <img src="/assets/carol-ann-bryant.JPG" alt="Carole Ann Bryant - Mortgage Broker">
-            </div>
-            <div class="about-text">
-                <h2>Unbiased Expertise. <br><em>Tailored for You.</em></h2>
-                <p>Your mortgage is likely your largest financial commitment. Choosing the right one can save you
-                    thousands. Unlike a bank, I work with dozens of lenders to ensure you have access to the most
-                    competitive rates and products in Canada.</p>
-                <p>From first-time buyers to complex refinances, my mission is to provide professional, unbiased advice
-                    that simplifies your journey to homeownership.</p>
-                <div class="license">
-                    {{ site.license }} <br>
-                    {{ site.brokerage }} | Brokerage Licence #13119
-                </div>
-            </div>
+        <div class="intro-content">
+            <p class="reveal-text">Mops Inc. provides professional, detail-oriented cleaning and janitorial services in
+                Belleville and the Quinte region. Trust our dedicated, living-wage team to make your home, office, or
+                vacation rental shine.</p>
+            <a href="#contact" class="btn btn-primary" id="reveal-cta">Get a Free Quote</a>
         </div>
     </div>
 </section>
 
-<section class="services-v2" id="services">
-    <div class="services-header">
-        <h2>Expert Solutions <br><em>Tailored to Your Life.</em></h2>
-        <p>From your first home to strategic refinances, we provide the unbiased expertise and market access needed to secure your financial future.</p>
-    </div>
-    <div class="service-row">
-        <div class="service-image">
-            <img src="/assets/home-purchase.png" alt="Happy family in new home">
-        </div>
-        <div class="service-content">
-            <span class="service-label">Purchase</span>
-            <h3>Home Purchase</h3>
-            <p>Your home is more than an address. It's an investment in your future. We provide the expertise to ensure
-                you secure the best possible financing terms for your new beginning.</p>
-            <button class="btn btn-outline service-modal-btn" data-service="purchase">Explore Solutions</button>
-        </div>
-    </div>
-
-    <div class="service-row">
-        <div class="service-image">
-            <img src="/assets/mortgage-renewal.png" alt="Modern office meeting">
-        </div>
-        <div class="service-content">
-            <span class="service-label">Renewal</span>
-            <h3>Mortgage Renewal</h3>
-            <p>Don't just sign your renewal notice. Let's review your financial goals and find a product that aligns
-                with where you are today, not where you were five years ago.</p>
-            <button class="btn btn-outline service-modal-btn" data-service="renewal">Review Your Options</button>
-        </div>
-    </div>
-
-    <div class="service-row">
-        <div class="service-image">
-            <img src="/assets/equity-refinance.png" alt="Beautiful home exterior">
-        </div>
-        <div class="service-content">
-            <span class="service-label">Refinance</span>
-            <h3>Equity & Refinance</h3>
-            <p>Unlock the power of your home's equity. From debt consolidation to investment opportunities, we help you
-                leverage your largest asset effectively.</p>
-            <button class="btn btn-outline service-modal-btn" data-service="refinance">Unlock Equity</button>
-        </div>
-    </div>
-</section>
-
-<section class="calculators-section" id="calculators">
+<!-- 2. Our Mission Section -->
+<section id="mission" class="mission">
     <div class="container">
-        <div class="section-title">
-            <h2>Strategic Planning Tools</h2>
-            <p>Accurate, real-time insights to help you make informed mortgage decisions.</p>
+        <div class="mission-header">
+            <h2 class="reveal-title"><span class="reveal-title-text">Vibrant Cleanliness</span></h2>
+            <p class="mission-lead">
+                Stop worrying about cleaning your office or facility and focus on what really matters - your business.
+                Our cleaning team is passionate about keeping your workspace spotless and inviting, so you can provide
+                your clients and employees with a clean and healthy environment.
+            </p>
+            <p class="mission-sublead">
+                Contact us today to schedule a consultation and see how we can make your business shine!
+            </p>
         </div>
+    </div>
 
-        <div class="calc-nav">
-            <button class="calc-nav-btn active" data-calc="qualify">Mortgage Qualifier</button>
-            <button class="calc-nav-btn" data-calc="refinance">Mortgage Refinance</button>
-            <button class="calc-nav-btn" data-calc="payoff">Mortgage Payoff</button>
-        </div>
-
-        <div class="calc-wrapper">
-            <!-- Purchase Power Calculator -->
-            <div class="calc-panel active" id="calc-qualify">
-                <div class="calc-grid">
-                    <div class="calc-inputs">
-                        <div class="input-group">
-                            <label>Annual Household Income <span class="input-val" id="income-val">$120,000</span></label>
-                            <input type="range" id="income" min="40000" max="500000" step="5000" value="120000">
-                        </div>
-                        <div class="input-group">
-                            <label>Down Payment <span class="input-val" id="down-val">$50,000</span></label>
-                            <input type="range" id="down" min="5000" max="500000" step="5000" value="50000">
-                        </div>
-                        <div class="input-group">
-                            <label>Current Interest Rate <span class="input-val" id="rate-val">5.2%</span></label>
-                            <input type="range" id="rate" min="1" max="10" step="0.1" value="5.2">
-                        </div>
-                        <div class="input-group">
-                            <label>Monthly Debt (Car, Credit Cards) <span class="input-val" id="debt-val">$400</span></label>
-                            <input type="range" id="debt" min="0" max="5000" step="100" value="400">
-                        </div>
-                        <div class="input-group">
-                            <label>Amortization (Years) <span class="input-val" id="q-amort-val">25</span></label>
-                            <input type="range" id="q-amort" min="10" max="30" step="1" value="25">
-                        </div>
-                        <div class="input-group">
-                            <label>Mortgage Term (Years) <span class="input-val" id="q-term-val">5</span></label>
-                            <input type="range" id="q-term" min="1" max="10" step="1" value="5">
-                        </div>
-                        <div class="input-group">
-                            <label>Annual Property Taxes <span class="input-val" id="q-taxes-val">$3,000</span></label>
-                            <input type="range" id="q-taxes" min="0" max="15000" step="100" value="3000">
-                        </div>
-                        <div class="input-group">
-                            <label>Monthly Heat <span class="input-val" id="q-heat-val">$150</span></label>
-                            <input type="range" id="q-heat" min="0" max="500" step="10" value="150">
-                        </div>
-                        <div class="input-group">
-                            <label>Monthly Condo Fees <span class="input-val" id="q-condo-val">$0</span></label>
-                            <input type="range" id="q-condo" min="0" max="2000" step="50" value="0">
-                        </div>
-                    </div>
-                    <div class="calc-results">
-                        <div class="result-box">
-                            <span class="result-label">Estimated Buying Power</span>
-                            <div class="result-value" id="buying-power">$0</div>
-                        </div>
-                        <div class="result-box secondary">
-                            <span class="result-label">Total Loan Amount (inc. CMHC)</span>
-                            <div class="result-value-sm" id="qualify-loan">$0</div>
-                        </div>
-                        <div class="result-box secondary">
-                            <span class="result-label">Total Monthly Payment</span>
-                            <div class="result-value-sm" id="qualify-payment">$0</div>
-                            <div id="qualify-breakdown" style="font-size: 0.85rem; color: var(--text-light); margin-top: 5px; font-weight: normal;"></div>
-                            <p class="stress-test-note" style="margin-top: 10px;">*Limits evaluated via the Canadian Stress Test.</p>
-                        </div>
-                    </div>
+    <div class="mission-highlights">
+        <!-- 1. Large Commercial Spaces -->
+        <div class="highlight-item" id="commercial-spaces">
+            <div class="container highlight-item-inner">
+                <div class="highlight-text">
+                    <h3>Large Commercial Spaces</h3>
+                    <p>Meticulous office and facility cleaning tailored to large-scale operations. From daily janitorial
+                        tasks to deep floor care and high-touch disinfection, we keep your corporate environment
+                        pristine, healthy, and professional.</p>
+                </div>
+                <div class="highlight-image">
+                    <img src="/assets/commercial-spaces.png" alt="Large Commercial Spaces">
                 </div>
             </div>
+        </div>
 
-            <!-- Refinance Calculator -->
-            <style>
-                .ref-calc-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-                .ref-desktop-spacer { display: inline; visibility: hidden; }
-                @media (max-width: 992px) { 
-                    .ref-calc-inputs { grid-template-columns: 1fr; gap: 0px; }
-                    .ref-desktop-spacer { display: none; }
-                }
-            </style>
-            <div class="calc-panel" id="calc-refinance">
-                <div class="calc-grid" style="display: block;">
-                    <div class="calc-inputs ref-calc-inputs">
-                        <div>
-                            <h5 style="margin-bottom: 20px; color: var(--primary-color); font-size: 1.1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">Original Mortgage</h5>
-                            <div class="input-group">
-                                <label>Original Mortgage Balance <span class="input-val" id="ref-orig-bal-val">$200,000</span></label>
-                                <input type="range" id="ref-orig-bal" min="50000" max="1500000" step="5000" value="200000">
-                            </div>
-                            <div class="input-group">
-                                <label>Original Rate <span class="input-val" id="ref-orig-rate-val">5.5%</span></label>
-                                <input type="range" id="ref-orig-rate" min="1" max="15" step="0.1" value="5.5">
-                            </div>
-                            <div class="input-group">
-                                <label>Original Amortization (Years) <span class="input-val" id="ref-orig-amort-val">25</span></label>
-                                <input type="range" id="ref-orig-amort" min="5" max="30" step="1" value="25">
-                            </div>
-                            <div class="input-group">
-                                <label>Number of Payments Made <span class="input-val" id="ref-pmts-made-val">12</span></label>
-                                <input type="range" id="ref-pmts-made" min="1" max="360" step="1" value="12">
-                            </div>
-                            <div style="font-size: 0.9rem; color: var(--text-light); text-align: right; margin-top: -10px; margin-bottom: 20px; line-height: 1.6;">
-                                <!-- Spacer to perfectly align with the right column -->
-                                <span class="ref-desktop-spacer">Spacer<br></span>
-                                Original Payment: <strong id="ref-orig-pmt-display" style="color: var(--primary-color);">$0</strong>/mo
-                            </div>
-                        </div>
-                        <div>
-                            <h5 style="margin-bottom: 20px; color: var(--primary-color); font-size: 1.1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">New Mortgage</h5>
-                            <div class="input-group">
-                                <label>New Rate <span class="input-val" id="ref-new-rate-val">4.5%</span></label>
-                                <input type="range" id="ref-new-rate" min="1" max="15" step="0.1" value="4.5">
-                            </div>
-                            <div class="input-group">
-                                <label>New Amortization (Years) <span class="input-val" id="ref-new-amort-val">25</span></label>
-                                <input type="range" id="ref-new-amort" min="5" max="30" step="1" value="25">
-                            </div>
-                            <div class="input-group">
-                                <label>Closing Costs <span class="input-val" id="ref-closing-val">$1,800</span></label>
-                                <input type="range" id="ref-closing" min="0" max="10000" step="100" value="1800">
-                            </div>
-                            <div class="input-group">
-                                <label>Prepayment Penalties <span class="input-val" id="ref-penalty-val">$100</span></label>
-                                <input type="range" id="ref-penalty" min="0" max="25000" step="100" value="100">
-                            </div>
-                            <div style="font-size: 0.9rem; color: var(--text-light); text-align: right; margin-top: -10px; margin-bottom: 20px; line-height: 1.6;">
-                                New Balance: <strong id="ref-new-bal-display" style="color: var(--primary-color);">$196,131.20</strong><br>
-                                New Payment: <strong id="ref-new-pmt-display" style="color: var(--primary-color);">$0</strong>/mo
-                            </div>
-                        </div>
-                    </div>
-                    <div class="calc-results" style="text-align: left; padding: 40px 30px; margin-top: 20px;">
-                        <h4 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--primary-color); margin-bottom: 15px;">
-                            You could save <span id="ref-savings-main" style="color: var(--accent-color);">$0</span> in interest
-                        </h4>
-                        <div style="font-size: 1.1rem; color: var(--text-color);">
-                            Your payment will decrease <span id="ref-decrease" style="font-weight: 600;">$0 per month</span>
-                        </div>
-                        <div style="margin-top: 15px; font-size: 0.85rem; color: var(--text-light);">
-                            *Net Refinance Math: Total interest savings minus <span id="ref-out-of-pocket" style="font-weight: 600;">$0</span> in upfront fees equals <strong id="ref-net-savings" style="color: var(--text-color);">$0</strong> net value.
-                        </div>
-                    </div>
+        <!-- 2. Hotel Takeover -->
+        <div class="highlight-item" id="hotel-takeover">
+            <div class="container highlight-item-inner">
+                <div class="highlight-text">
+                    <h3>Hotel Takeover</h3>
+                    <p>Seamless and efficient room turnover and public area maintenance for hotels, resorts, and
+                        boutiques. Our specialized hospitality team integrates into your workflow to ensure immaculate
+                        guest reviews.</p>
+                </div>
+                <div class="highlight-image">
+                    <img src="/assets/hotel-takeover.png" alt="Hotel Takeover">
                 </div>
             </div>
+        </div>
 
-            <!-- Payoff Calculator -->
-            <div class="calc-panel" id="calc-payoff">
-                <div class="calc-grid">
-                    <div class="calc-inputs">
-                        <div class="input-group">
-                            <label>Original Mortgage Amount <span class="input-val" id="pay-bal-val">$220,000</span></label>
-                            <input type="range" id="pay-bal" min="50000" max="1500000" step="5000" value="220000">
-                        </div>
-                        <div class="input-group">
-                            <label>Interest Rate <span class="input-val" id="pay-rate-val">4.5%</span></label>
-                            <input type="range" id="pay-rate" min="1" max="10" step="0.1" value="4.5">
-                        </div>
-                        <div class="input-group">
-                            <label>Original Amortization (Years) <span class="input-val" id="pay-amort-val">25</span></label>
-                            <input type="range" id="pay-amort" min="5" max="30" step="1" value="25">
-                        </div>
-                        <div class="input-group">
-                            <label>Years Remaining <span class="input-val" id="pay-remain-val">20</span></label>
-                            <input type="range" id="pay-remain" min="1" max="30" step="1" value="20">
-                        </div>
-                        <div class="input-group">
-                            <label style="margin-bottom: 5px;">Payment Type</label>
-                            <select id="pay-freq" style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 4px; font-family: inherit; font-size: 0.95rem; background-color: var(--white); cursor: pointer; color: var(--primary-color);">
-                                <option value="12">Monthly</option>
-                                <option value="26">Bi-Weekly</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label>Additional Payment <span class="input-val" id="pay-extra-val">$100</span></label>
-                            <input type="range" id="pay-extra" min="0" max="2000" step="10" value="100">
-                        </div>
-                        <div class="input-group">
-                            <label style="margin-bottom: 5px;">Additional Payment Frequency</label>
-                            <select id="pay-extra-freq" style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 4px; font-family: inherit; font-size: 0.95rem; background-color: var(--white); cursor: pointer; color: var(--primary-color);">
-                                <option value="12">Monthly</option>
-                                <option value="26" selected>Bi-Weekly</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="calc-results" style="text-align: left; padding: 40px 30px;">
-                        <h4 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--primary-color); margin-bottom: 25px; line-height: 1.4;">
-                            Your additional payments shorten your mortgage by <span id="pay-time-saved" style="color: var(--accent-color);">0 Years</span>.
-                        </h4>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 25px;">
-                            <div>
-                                <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 5px;">Current payment:</span>
-                                <strong id="pay-current-pmt" style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--primary-color);">$0</strong>
-                            </div>
-                            <div>
-                                <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 5px;">Total scheduled pmts:</span>
-                                <strong id="pay-total-scheduled" style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--primary-color);">$0</strong>
-                            </div>
-                            <div>
-                                <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 5px;">Accelerated savings:</span>
-                                <strong id="pay-accelerated-savings" style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--accent-color);">$0</strong>
-                            </div>
-                            <div>
-                                <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin-bottom: 5px;">Total accelerated pmts:</span>
-                                <strong id="pay-total-accelerated" style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--primary-color);">$0</strong>
-                            </div>
-                        </div>
-                        <p class="stress-test-note" style="margin-top: 25px; font-size: 0.8rem;">Assumes consistent additional payments over the remaining life of the mortgage.</p>
-                    </div>
+        <!-- 3. Multi-unit vacation rentals -->
+        <div class="highlight-item" id="vacation-rentals">
+            <div class="container highlight-item-inner">
+                <div class="highlight-text">
+                    <h3>Multi-unit vacation rentals</h3>
+                    <p>Fast, high-standard turnover cleaning for vacation rentals and Airbnbs. We handle everything from
+                        fresh linens to detailing, helping you maintain a consistent 5-star standard across all units.
+                    </p>
+                </div>
+                <div class="highlight-image">
+                    <img src="/assets/vacation-rentals.png" alt="Multi-unit vacation rentals">
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Municipal & Government -->
+        <div class="highlight-item" id="municipal-spaces">
+            <div class="container highlight-item-inner">
+                <div class="highlight-text">
+                    <h3>Municipal & Government</h3>
+                    <p>Reliable and secure cleaning services for municipal buildings, public libraries, and government
+                        facilities. Vetted, background-checked staff adhering to strict safety and sanitization
+                        standards.</p>
+                </div>
+                <div class="highlight-image">
+                    <img src="/assets/municipal-spaces.png" alt="Municipal & Government">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="reviews-section" id="reviews">
-    <div class="reviews-container">
-        <div class="review-slider">
-            <!-- Slide 1 -->
-            <div class="review-slide active">
-                <blockquote class="review-quote">"Carole Ann made our first home purchase seamless. Her expertise and
-                    access to rates we couldn't find ourselves were game-changers."</blockquote>
-                <cite class="review-author">Sarah & Mark T.</cite>
-            </div>
-            <!-- Slide 2 -->
-            <div class="review-slide">
-                <blockquote class="review-quote">"Professional, strategic, and always available. She didn't just find us
-                    a mortgage; she helped us plan our financial future."</blockquote>
-                <cite class="review-author">David R.</cite>
-            </div>
-            <!-- Slide 3 -->
-            <div class="review-slide">
-                <blockquote class="review-quote">"The renewal process was effortless thanks to Carole Ann. We saved
-                    thousands over what our bank was offering."</blockquote>
-                <cite class="review-author">Jennifer L.</cite>
-            </div>
-            <!-- Slide 4 -->
-            <div class="review-slide">
-                <blockquote class="review-quote">"Extremely knowledgeable about equity and refinancing. She made the
-                    complex simple and the results were outstanding."</blockquote>
-                <cite class="review-author">Michael S.</cite>
-            </div>
-        </div>
-        <div class="review-dots">
-            <button class="dot active" aria-label="Go to slide 1"></button>
-            <button class="dot" aria-label="Go to slide 2"></button>
-            <button class="dot" aria-label="Go to slide 3"></button>
-            <button class="dot" aria-label="Go to slide 4"></button>
-        </div>
-    </div>
-</section>
-
-<section class="faq-section" id="faq">
+<!-- 3. CTA Section -->
+<section id="cta" class="cta-banner">
     <div class="container">
-        <div class="section-title">
-            <h2>Common Questions</h2>
-            <p>Answers to some of the most frequently asked questions about mortgages in Canada.</p>
-        </div>
-
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
-                    What is the difference between a mortgage broker and a bank?
-                    <span class="faq-icon"></span>
-                </div>
-                <div class="faq-answer">
-                    A bank only offers mortgage products from their own institution. As a licensed mortgage
-                    professional, I have access to dozens of different lenders, including major banks, credit unions,
-                    and private lenders, allowing me to find the best product and rate for your specific situation.
-                </div>
+        <div class="cta-grid">
+            <div class="cta-content">
+                <h2 class="reveal-title"><span class="reveal-title-text">Ready for a Spotless Space?</span></h2>
+                <p>Tell us about your home, office, or rental property. Our team will build a customized service package
+                    matching your exact needs and schedule.</p>
             </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    How much does it cost to use a mortgage broker?
-                    <span class="faq-icon"></span>
-                </div>
-                <div class="faq-answer">
-                    In most cases (standard residential mortgages), there is no cost to you! The lender pays the broker
-                    a finder's fee for bringing them the business. For complex or commercial mortgages, a fee may be
-                    charged, which would be discussed upfront.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    What is a mortgage pre-approval?
-                    <span class="faq-icon"></span>
-                </div>
-                <div class="faq-answer">
-                    A pre-approval is a commitment from a lender to provide you with a specific mortgage amount at a
-                    certain interest rate for a period (usually 90-120 days). It helps you know your budget and makes
-                    your offer more attractive to sellers.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    Fixed vs. Variable: Which is better?
-                    <span class="faq-icon"></span>
-                </div>
-                <div class="faq-answer">
-                    A fixed rate remains the same for your entire term, providing stability. A variable rate fluctuates
-                    with the prime rate, which can save you money if rates drop, but carries more risk if rates rise.
-                    The right choice depends on your risk tolerance and financial goals.
-                </div>
+            <div class="cta-actions">
+                <a href="#contact" class="btn btn-primary">Request a Custom Quote</a>
             </div>
         </div>
     </div>
 </section>
 
-</section>
+<!-- 4. FAQ Section (Details/Summary Exclusive Accordion) -->
+<section id="faq" class="faq">
+    <div class="container">
+        <div class="section-header">
 
-<section class="final-cta-section">
-    <div class="final-cta-container">
-        <h2>Ready to get more from your mortgage?</h2>
-        <p>Find the right financing at the right rate.</p>
-        <a href="#contact" class="btn btn-primary">Start Application</a>
+            <h2>Frequently Asked Questions</h2>
+            <p>Here are answers to the questions we get asked most often about our cleaning services and teams.</p>
+        </div>
+
+        <div class="faq-accordion">
+            <details name="faq">
+                <summary>What cleaning services does Mops Inc. offer?</summary>
+                <div class="faq-content-wrapper">
+                    <p>Mops Inc. operates through three specialized divisions to serve different needs: <strong>Mommy
+                            Mops</strong> handles home and residential cleanings; <strong>Major Mops</strong> provides
+                        commercial and office janitorial services; and <strong>Suite Services</strong> delivers fast,
+                        premium turnarounds for vacation rentals, resorts, and hotels.</p>
+                </div>
+            </details>
+
+            <details name="faq">
+                <summary>What geographic areas do you serve?</summary>
+                <div class="faq-content-wrapper">
+                    <p>We are based in Belleville, Ontario, and proudly serve the entire Quinte region, including
+                        Belleville, Quinte West, and Prince Edward County.</p>
+                </div>
+            </details>
+
+            <details name="faq">
+                <summary>How much do your cleaning services cost?</summary>
+                <div class="faq-content-wrapper">
+                    <p>Because every space is unique, we do not have a standard flat-rate price list. We provide
+                        personalized quotes based on factors like square footage, the current condition of the space,
+                        cleaning frequency, and specific tasks required. Contact us today for a free walkthrough and
+                        customized quote!</p>
+                </div>
+            </details>
+
+            <details name="faq">
+                <summary>What are your safety and sanitization standards?</summary>
+                <div class="faq-content-wrapper">
+                    <p>Safety and hygiene are our top priorities. We follow strict disinfection protocols and use
+                        professional-grade, eco-friendly sanitizers. Additionally, all Mops Inc. staff members are fully
+                        vetted, bonded, insured, and trained to meet strict standards.</p>
+                </div>
+            </details>
+
+            <details name="faq">
+                <summary>Why is being a Living Wage Employer important?</summary>
+                <div class="faq-content-wrapper">
+                    <p>By paying certified living wages, we invest in our employees' health and financial well-being.
+                        This ensures lower staff turnover, higher job satisfaction, and a dedicated, motivated team that
+                        takes pride in delivering exceptional service to our clients.</p>
+                </div>
+            </details>
+        </div>
     </div>
 </section>
 
-<section class="contact-section" id="contact">
+<!-- 5. Contact Section -->
+<section id="contact" class="contact">
     <div class="container">
         <div class="contact-grid">
             <div class="contact-info">
+
                 <h2>Get in Touch</h2>
-                <p>Have a question or ready to start? Send a message and I'll get back to you shortly to discuss your
-                    mortgage strategy.</p>
+                <p>Ready to experience vibrant cleanliness? Tell us a bit about what you need, and we'll reach out to
+                    schedule a consultation or provide a custom quote.</p>
 
                 <div class="contact-details">
-                    <div class="contact-item">
-                        <label>Phone</label>
-                        <span>{{ site.phone }}</span>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📞</div>
+                        <div class="contact-detail-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:{{ site.phone }}">{{ site.phone }}</a></p>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <label>Email</label>
-                        <span>{{ site.email }}</span>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">✉️</div>
+                        <div class="contact-detail-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <label>Brokerage</label>
-                        <span>{{ site.brokerage }} | Brokerage Licence #13119</span>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📍</div>
+                        <div class="contact-detail-text">
+                            <h4>Location</h4>
+                            <p>{{ site.address }}</p>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <label>Licence</label>
-                        <span>{{ site.license }}</span>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">🕒</div>
+                        <div class="contact-detail-text">
+                            <h4>Hours</h4>
+                            <p>Monday – Friday: 9:00 AM – 5:00 PM (Closed Weekends)</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="contact-form">
-                <form action="#" method="POST">
+            <div class="contact-form-container">
+                <form class="contact-form" action="/thanks" method="POST">
                     <div class="form-group">
-                        <label for="name">FullName</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Jane Doe" autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <input type="email" id="email" name="email" required placeholder="jane@example.com"
+                            autocomplete="email" inputmode="email">
                     </div>
                     <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="How can I help you today?"
-                            required></textarea>
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" autocomplete="tel"
+                            inputmode="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Preferred Service</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="hotel-takeover">Hotel Takeover</option>
+                            <option value="vacation-rentals">Vacation Rentals</option>
+                            <option value="municipal-gov">Municipal and Gov</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help you?</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Please describe the size of your space and any specific requirements..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
@@ -1619,472 +287,3 @@ title: Home
         </div>
     </div>
 </section>
-
-<!-- SERVICE DEEP-DIVE MODAL -->
-<div id="service-modal" class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-container">
-        <button class="modal-close" aria-label="Close Modal">&times;</button>
-        <div class="modal-content">
-            <div id="modal-content-area">
-                <!-- Dynamic Content Injected Here -->
-            </div>
-            <div class="modal-footer">
-                <a href="#contact" class="btn btn-primary modal-cta">Start Your Strategy</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Scripts Grouped Together -->
-<script>
-    // Scroll Reveal Observer
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.reveal-text').forEach(text => {
-        revealObserver.observe(text);
-    });
-
-    const revealCta = document.getElementById('reveal-cta');
-    if (revealCta) revealObserver.observe(revealCta);
-
-    // Shared state for scroll animations
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        
-        // 1. Text Reveal Logic
-        const reveals = document.querySelectorAll('.reveal-text');
-        reveals.forEach(reveal => {
-            const rect = reveal.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const visibility = (windowHeight - rect.top) / windowHeight;
-            const progress = Math.min(Math.max(visibility * 2 - 0.6, 0), 1);
-            reveal.style.backgroundSize = `${progress * 100}% 100%`;
-        });
-
-        // 2. Universal Parallax Effect
-        const hero = document.querySelector('.hero-image-area');
-        if (hero) {
-            // High-performance parallax for all devices
-            // Desktop is slightly slower (0.3) for cinematic depth; Mobile is 0.4 for a better crawl
-            const parallaxSpeed = window.innerWidth <= 768 ? 0.4 : 0.3;
-            const initialOffset = window.innerWidth <= 768 ? 15 : 0;
-            hero.style.backgroundPosition = `center calc(${initialOffset}% + ${scrolled * parallaxSpeed}px)`;
-        }
-    });
-
-    // FAQ Accordion Logic
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-            const item = question.parentElement;
-            item.classList.toggle('active');
-        });
-    });
-
-    // Review Slider Logic
-    const slides = document.querySelectorAll('.review-slide');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    let slideInterval;
-
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-
-        if (slides[index]) slides[index].classList.add('active');
-        if (dots[index]) dots[index].classList.add('active');
-        currentSlide = index;
-    }
-
-    function startAutoRotate() {
-        if (slides.length > 0) {
-            slideInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }, 8000);
-        }
-    }
-
-    function resetAutoRotate() {
-        clearInterval(slideInterval);
-        startAutoRotate();
-    }
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            resetAutoRotate();
-        });
-    });
-
-    // Initial start
-    startAutoRotate();
-
-    // SERVICE MODAL LOGIC
-    const modal = document.getElementById('service-modal');
-    const modalContent = document.getElementById('modal-content-area');
-    const modalClose = document.querySelector('.modal-close');
-    const modalOverlay = document.querySelector('.modal-overlay');
-    const serviceBtns = document.querySelectorAll('.service-modal-btn');
-
-    const serviceData = {
-        purchase: {
-            title: "Expert Strategy for your <em>New Beginning.</em>",
-            description: "A bank only offers their own products. As your mortgage professional, I offer you the entire market. We'll identify products that offer the best long-term value and flexibility, beyond just the interest rate.",
-            steps: [
-                "Educational briefing on current market trends",
-                "Strategic search for products with maximum flexibility",
-                "Expert negotiation leveraging industry relationships",
-                "Guidance from pre-approval to the keys in your hand"
-            ],
-            quote: "My mission is to ensure you aren't just getting a mortgage, but a strategic financial tool tailored to your future."
-        },
-        renewal: {
-            title: "Avoid the Convenience Trap at <em>Renewal.</em>",
-            description: "Don't sign the first offer you receive in the mail. Lenders often send notices late, hoping you won't have time to shop around. We'll start the process 4 to 6 months early to ensure you're in the shopper's seat.",
-            steps: [
-                "Proactive early review of your 5-year goals",
-                "Independent comparison of your current lender against the market",
-                "Seamless management of the transfer/switch process",
-                "Locking in rates while you wait for your maturity date"
-            ],
-            quote: "Convenience at renewal can cost you thousands. A quick comparison today can save you a fortune over your next term."
-        },
-        refinance: {
-            title: "Leverage your Home Equity <em>Strategically.</em>",
-            description: "Refinancing is a powerful tool to improve your overall cash flow and net worth. Whether it's home improvements, debt consolidation, or new investments, we structure your mortgage to maximize your largest asset.",
-            steps: [
-                "Professional equity valuation and limits assessment",
-                "Debt consolidation analysis for immediate cash flow",
-                "Restructuring for liquidity versus payment optimization",
-                "Strategic advice on break-even points and penalties"
-            ],
-            quote: "Your home equity is your greatest financial lever. We'll ensure you're using it to build wealth, not just debt."
-        }
-    };
-
-    function showModal(service) {
-        const data = serviceData[service];
-        if (!data) return;
-
-        modalContent.innerHTML = `
-            <div class="modal-section reveal-item" style="animation-delay: 0.2s">
-                <h2>${data.title}</h2>
-                <p class="modal-description">${data.description}</p>
-            </div>
-            <div class="modal-section reveal-item" style="animation-delay: 0.35s">
-                <span class="modal-section-title">Strategic Process</span>
-                <ul class="modal-steps">
-                    ${data.steps.map(step => `<li>${step}</li>`).join('')}
-                </ul>
-            </div>
-            <div class="expert-quote reveal-item" style="animation-delay: 0.5s">
-                <p>"${data.quote}"</p>
-            </div>
-        `;
-
-        modal.classList.add('active');
-        document.body.classList.add('modal-open');
-    }
-
-    function hideModal() {
-        modal.classList.remove('active');
-        document.body.classList.remove('modal-open');
-    }
-
-    serviceBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            showModal(btn.dataset.service);
-        });
-    });
-
-    modalClose.addEventListener('click', hideModal);
-    modalOverlay.addEventListener('click', hideModal);
-    
-    // Close on Escape
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) hideModal();
-    });
-
-    // Handle Modal CTA scroll
-    document.querySelector('.modal-cta').addEventListener('click', (e) => {
-        hideModal();
-        // Allow default anchor behavior
-    });
-
-    // CALCULATOR LOGIC
-    const calcTabs = document.querySelectorAll('.calc-nav-btn');
-    const calcPanels = document.querySelectorAll('.calc-panel');
-
-    calcTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = tab.dataset.calc;
-            calcTabs.forEach(t => t.classList.remove('active'));
-            calcPanels.forEach(p => p.classList.remove('active'));
-            tab.classList.add('active');
-            document.getElementById(`calc-${target}`).classList.add('active');
-        });
-    });
-
-    // Formatting Helpers
-    const formatCurrency = (val) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(val);
-
-    // 1. Purchase Power (Qualifier) Logic
-    const qIncome = document.getElementById('income');
-    const qDown = document.getElementById('down');
-    const qRate = document.getElementById('rate');
-    const qDebt = document.getElementById('debt');
-    const qAmort = document.getElementById('q-amort');
-    const qTerm = document.getElementById('q-term');
-    const qTaxes = document.getElementById('q-taxes');
-    const qHeat = document.getElementById('q-heat');
-    const qCondo = document.getElementById('q-condo');
-
-    // Helper for Canadian semi-annual compounding to monthly rate
-    function getMonthlyRate(annualRate) {
-        return Math.pow(1 + annualRate / 2, 1 / 6) - 1;
-    }
-
-    function updateQualify() {
-        // Update display values
-        document.getElementById('income-val').innerText = formatCurrency(qIncome.value);
-        document.getElementById('down-val').innerText = formatCurrency(qDown.value);
-        document.getElementById('rate-val').innerText = qRate.value + '%';
-        document.getElementById('debt-val').innerText = formatCurrency(qDebt.value);
-        document.getElementById('q-amort-val').innerText = qAmort.value;
-        document.getElementById('q-term-val').innerText = qTerm.value;
-        document.getElementById('q-taxes-val').innerText = formatCurrency(qTaxes.value);
-        document.getElementById('q-heat-val').innerText = formatCurrency(qHeat.value);
-        document.getElementById('q-condo-val').innerText = formatCurrency(qCondo.value);
-
-        // Core Canadian Mortgage Logic
-        const annualIncome = parseFloat(qIncome.value);
-        const monthlyDebt = parseFloat(qDebt.value);
-        const downPayment = parseFloat(qDown.value);
-        const contractRate = parseFloat(qRate.value) / 100;
-        
-        // Canadian Stress Test: Max of (Contract + 2%) or 5.25%
-        const stressRate = Math.max(contractRate + 0.02, 0.0525);
-        const monthlyStressRate = getMonthlyRate(stressRate);
-
-        // CMHC Limits (GDS: 39%, TDS: 44%)
-        const monthlyIncome = annualIncome / 12;
-        const gdsLimit = monthlyIncome * 0.39;
-        const tdsLimit = (monthlyIncome * 0.44) - monthlyDebt;
-        
-        // We use the more restrictive of GDS or TDS
-        const heatingCosts = parseFloat(qHeat.value);
-        const propertyTaxes = parseFloat(qTaxes.value) / 12;
-        const condoCostsGDS = parseFloat(qCondo.value) * 0.5; // 50% of condo fees for GDS Limits
-        const condoCostsActual = parseFloat(qCondo.value);
-
-        const maxMonthlyPI_GDS = gdsLimit - heatingCosts - propertyTaxes - condoCostsGDS;
-        const maxMonthlyPI_TDS = tdsLimit - heatingCosts - propertyTaxes - condoCostsGDS;
-        const maxMonthlyPI = Math.max(0, Math.min(maxMonthlyPI_GDS, maxMonthlyPI_TDS));
-
-        // Selected Amortization Formula
-        const n = parseInt(qAmort.value) * 12;
-        const maxLoan = maxMonthlyPI * (1 - Math.pow(1 + monthlyStressRate, -n)) / monthlyStressRate;
-        
-        // Account for CMHC Insurance Premium to find base purchase power
-        let maxPurchaseByIncome = maxLoan + downPayment;
-        let defaultDPPercent = downPayment / maxPurchaseByIncome;
-        let cmhcRate = 0;
-        
-        if (defaultDPPercent >= 0.05 && defaultDPPercent < 0.10) cmhcRate = 0.040;
-        else if (defaultDPPercent >= 0.10 && defaultDPPercent < 0.15) cmhcRate = 0.031;
-        else if (defaultDPPercent >= 0.15 && defaultDPPercent < 0.20) cmhcRate = 0.028;
-
-        if (cmhcRate > 0) {
-            maxPurchaseByIncome = (maxLoan / (1 + cmhcRate)) + downPayment;
-        }
-
-        // Apply Canadian Minimum Down Payment Rules
-        let maxPurchaseByDP = 0;
-        if (downPayment < 25000) {
-            maxPurchaseByDP = downPayment / 0.05;
-        } else if (downPayment < 75000) {
-            maxPurchaseByDP = 500000 + (downPayment - 25000) / 0.10;
-        } else if (downPayment < 200000) {
-            maxPurchaseByDP = 999999; // Can't buy 1M+ without 20% down
-        } else {
-            maxPurchaseByDP = downPayment / 0.20;
-        }
-
-        const maxPurchase = Math.min(maxPurchaseByIncome, maxPurchaseByDP);
-        
-        // Actual Mortgage Payment (using contract rate, including CMHC if applicable)
-        const finalPurchase = maxPurchase;
-        const finalDPPercent = downPayment / finalPurchase;
-        let finalCmhcRate = 0;
-        if (finalDPPercent >= 0.05 && finalDPPercent < 0.10) finalCmhcRate = 0.040;
-        else if (finalDPPercent >= 0.10 && finalDPPercent < 0.15) finalCmhcRate = 0.031;
-        else if (finalDPPercent >= 0.15 && finalDPPercent < 0.20) finalCmhcRate = 0.028;
-        
-        const actualLoanAmount = (finalPurchase - downPayment) * (1 + finalCmhcRate);
-        const monthlyContractRate = getMonthlyRate(contractRate);
-        const actualPI = actualLoanAmount > 0 ? actualLoanAmount * (monthlyContractRate * Math.pow(1 + monthlyContractRate, n)) / (Math.pow(1 + monthlyContractRate, n) - 1) : 0;
-        
-        const totalPayment = actualPI + heatingCosts + propertyTaxes + condoCostsActual;
-
-        document.getElementById('buying-power').innerText = formatCurrency(maxPurchase);
-        document.getElementById('qualify-loan').innerText = formatCurrency(actualLoanAmount);
-        document.getElementById('qualify-payment').innerText = formatCurrency(totalPayment) + "/mo";
-        
-        let breakdownHTML = `PI: ${formatCurrency(actualPI)}`;
-        if (propertyTaxes > 0) breakdownHTML += ` | Taxes: ${formatCurrency(propertyTaxes)}`;
-        if (heatingCosts > 0) breakdownHTML += ` | Heat: ${formatCurrency(heatingCosts)}`;
-        if (condoCostsActual > 0) breakdownHTML += ` | Condo: ${formatCurrency(condoCostsActual)}`;
-        document.getElementById('qualify-breakdown').innerText = breakdownHTML;
-    }
-
-    // Helper: calculate total interest paid over a term
-    function getInterestPaid(balance, monthlyRate, pmt, months) {
-        let interest = 0;
-        let b = balance;
-        for(let i=0; i<months; i++) {
-            let intThisMonth = b * monthlyRate;
-            interest += intThisMonth;
-            let prinThisMonth = pmt - intThisMonth;
-            b -= prinThisMonth;
-        }
-        return interest;
-    }
-
-    // 2. Refinance Savings Logic
-    function updateRefinance() {
-        const origBal = parseFloat(document.getElementById('ref-orig-bal').value);
-        const origRate = getMonthlyRate(parseFloat(document.getElementById('ref-orig-rate').value) / 100);
-        const origAmort = parseInt(document.getElementById('ref-orig-amort').value) * 12;
-        const pmtsMade = parseInt(document.getElementById('ref-pmts-made').value);
-
-        const newRate = getMonthlyRate(parseFloat(document.getElementById('ref-new-rate').value) / 100);
-        const newAmort = parseInt(document.getElementById('ref-new-amort').value) * 12;
-        const closing = parseFloat(document.getElementById('ref-closing').value);
-        const penalty = parseFloat(document.getElementById('ref-penalty').value);
-
-        document.getElementById('ref-orig-bal-val').innerText = formatCurrency(origBal);
-        document.getElementById('ref-orig-rate-val').innerText = document.getElementById('ref-orig-rate').value + '%';
-        document.getElementById('ref-orig-amort-val').innerText = origAmort / 12;
-        document.getElementById('ref-pmts-made-val').innerText = pmtsMade;
-        
-        document.getElementById('ref-new-rate-val').innerText = document.getElementById('ref-new-rate').value + '%';
-        document.getElementById('ref-new-amort-val').innerText = newAmort / 12;
-        document.getElementById('ref-closing-val').innerText = formatCurrency(closing);
-        document.getElementById('ref-penalty-val').innerText = formatCurrency(penalty);
-
-        const origPmt = origBal * origRate / (1 - Math.pow(1 + origRate, -origAmort));
-        
-        let currentBal = origBal;
-        for(let i=0; i<pmtsMade; i++) {
-            let int = currentBal * origRate;
-            currentBal -= (origPmt - int);
-        }
-        
-        document.getElementById('ref-orig-pmt-display').innerText = formatCurrency(origPmt);
-        document.getElementById('ref-new-bal-display').innerText = formatCurrency(currentBal);
-
-        const newPmt = currentBal * newRate / (1 - Math.pow(1 + newRate, -newAmort));
-        document.getElementById('ref-new-pmt-display').innerText = formatCurrency(newPmt);
-        
-        const origRemainingPmts = Math.max(0, origAmort - pmtsMade);
-        const totalOrigRemaining = origPmt * origRemainingPmts;
-        const totalNewRemaining = newPmt * newAmort;
-        
-        const netSavings = totalOrigRemaining - totalNewRemaining;
-        const pmtDecrease = origPmt - newPmt;
-        const outOfPocket = closing + penalty;
-        const trueNetValue = netSavings - outOfPocket;
-
-        document.getElementById('ref-savings-main').innerText = formatCurrency(Math.max(netSavings, 0));
-        
-        const decreaseEl = document.getElementById('ref-decrease');
-        if (pmtDecrease > 0) {
-            decreaseEl.innerText = `${formatCurrency(pmtDecrease)} per month`;
-            decreaseEl.style.color = "var(--text-color)";
-        } else {
-            decreaseEl.innerText = `increase ${formatCurrency(Math.abs(pmtDecrease))} per month`;
-            decreaseEl.style.color = "red";
-        }
-        
-        document.getElementById('ref-out-of-pocket').innerText = formatCurrency(outOfPocket);
-        document.getElementById('ref-net-savings').innerText = formatCurrency(trueNetValue);
-        document.getElementById('ref-net-savings').style.color = trueNetValue >= 0 ? 'var(--text-color)' : 'red';
-    }
-
-    // 3. Accelerated Payoff Logic
-    function getPeriodRate(annualRate, periodsPerYear) {
-        return Math.pow(1 + annualRate / 2, 2 / periodsPerYear) - 1;
-    }
-
-    function updatePayoff() {
-        const bal = parseFloat(document.getElementById('pay-bal').value);
-        const freq = parseInt(document.getElementById('pay-freq').value);
-        const rate = getPeriodRate(parseFloat(document.getElementById('pay-rate').value) / 100, freq);
-        const origAmort = parseInt(document.getElementById('pay-amort').value);
-        const remainAmort = parseInt(document.getElementById('pay-remain').value);
-        
-        const extraFreq = parseInt(document.getElementById('pay-extra-freq').value);
-        const rawExtra = parseFloat(document.getElementById('pay-extra').value);
-        // Normalize the additional payment amount into the base Payment Type timeline 
-        const extra = rawExtra * (extraFreq / freq);
-
-        document.getElementById('pay-bal-val').innerText = formatCurrency(bal);
-        document.getElementById('pay-rate-val').innerText = document.getElementById('pay-rate').value + '%';
-        document.getElementById('pay-amort-val').innerText = origAmort;
-        document.getElementById('pay-remain-val').innerText = remainAmort;
-        document.getElementById('pay-extra-val').innerText = formatCurrency(rawExtra);
-
-        const nOrig = origAmort * freq;
-        let nRemain = remainAmort * freq;
-        if (nRemain > nOrig) { 
-            nRemain = nOrig; 
-            document.getElementById('pay-remain').value = origAmort; 
-            document.getElementById('pay-remain-val').innerText = origAmort;
-        }
-        const periodsElapsed = nOrig - nRemain;
-
-        // Base payment calculated from ORIGINAL metrics
-        const standardPmt = bal * (rate * Math.pow(1 + rate, nOrig)) / (Math.pow(1 + rate, nOrig) - 1);
-        
-        // Find current balance after elapsed periods
-        let currentBal = bal;
-        for(let i=0; i<periodsElapsed; i++) {
-            let interest = currentBal * rate;
-            currentBal -= (standardPmt - interest);
-        }
-
-        const acceleratedPmt = standardPmt + extra;
-        const totalScheduled = standardPmt * nOrig;
-
-        let periodsToPayoff = -Math.log(1 - (rate * currentBal / acceleratedPmt)) / Math.log(1 + rate);
-        if (isNaN(periodsToPayoff)) periodsToPayoff = nRemain;
-
-        const paymentsAlreadyMade = standardPmt * periodsElapsed;
-        const totalAccelerated = paymentsAlreadyMade + (acceleratedPmt * periodsToPayoff);
-        const interestSaved = totalScheduled - totalAccelerated;
-        const timeSaved = (nRemain - periodsToPayoff) / freq;
-
-        document.getElementById('pay-current-pmt').innerText = formatCurrency(standardPmt);
-        document.getElementById('pay-total-scheduled').innerText = formatCurrency(totalScheduled);
-        document.getElementById('pay-accelerated-savings').innerText = formatCurrency(Math.max(interestSaved, 0));
-        document.getElementById('pay-total-accelerated').innerText = formatCurrency(totalAccelerated);
-        document.getElementById('pay-time-saved').innerText = timeSaved > 0 ? timeSaved.toFixed(1) : "0";
-    }
-
-    // Event Listeners for all inputs
-    [qIncome, qDown, qRate, qDebt, qAmort, qTerm, qTaxes, qHeat, qCondo].forEach(el => el.addEventListener('input', updateQualify));
-    ['ref-orig-bal', 'ref-orig-rate', 'ref-orig-amort', 'ref-pmts-made', 'ref-new-rate', 'ref-new-amort', 'ref-closing', 'ref-penalty'].forEach(id => document.getElementById(id).addEventListener('input', updateRefinance));
-    ['pay-bal', 'pay-rate', 'pay-amort', 'pay-remain', 'pay-freq', 'pay-extra', 'pay-extra-freq'].forEach(id => document.getElementById(id).addEventListener('input', updatePayoff));
-
-    // Initial run
-    updateQualify();
-    updateRefinance();
-    updatePayoff();
-</script>

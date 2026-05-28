@@ -1,202 +1,134 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ site.name }} | Expert Mortgage Broker in Georgetown, ON</title>
-
-  <meta name="description"
-    content="Professional mortgage advice from {{ site.name }}, {{ site.title }} at {{ site.brokerage }}. Specialized in Home Purchases, Renewals, and Refinancing. Serving Georgetown and across Ontario." />
-  <meta name="keywords"
-    content="Mortgage Broker, Georgetown, Ontario, Home Purchase, Mortgage Renewal, Refinancing, Carole Ann Bryant, Dominion Lending Centres" />
+  
+  <!-- Primary SEO Tags -->
+  <title>{{ site.name }} | {{ site.title }} in Belleville & Quinte Region</title>
+  <meta name="description" content="Professional cleaning and janitorial services from {{ site.name }}. Specialized in home cleaning (Mommy Mops), commercial cleaning (Major Mops), and vacation rental turnarounds (Suite Services). Certified Ontario Living Wage Employer." />
+  <meta name="keywords" content="Cleaning Services, Janitorial Services, Home Cleaning, Commercial Cleaning, Office Cleaning, Vacation Rental Cleaning, Belleville, Quinte West, Prince Edward County, Mommy Mops, Major Mops, Mops Inc" />
   <meta name="author" content="{{ site.name }}" />
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ site.url }}" />
 
+  <!-- Preload Hero Images for LCP Optimization -->
+  <link rel="preload" as="image" href="/assets/mops-maid.jpg" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/mops-maid-mobile.jpg" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/smoke.webp" fetchpriority="low" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.url }}" />
-  <meta property="og:title" content="{{ site.name }} | Mortgage Broker Georgetown, ON" />
-  <meta property="og:description" content="Expert mortgage advice with access to hundreds of products. Specializing in home purchases, renewals, and equity refinancing." />
-  <meta property="og:image" content="{{ site.url }}assets/carol-ann-bryant.JPG" />
+  <meta property="og:title" content="{{ site.name }} | {{ site.title }}" />
+  <meta property="og:description" content="Professional cleaning services customized to your needs. Serving residential, commercial, and hospitality properties across the Quinte region." />
+  <meta property="og:image" content="{{ site.url }}assets/mops-maid.jpg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="{{ site.url }}" />
-  <meta property="twitter:title" content="{{ site.name }} | Mortgage Broker Georgetown" />
-  <meta property="twitter:description" content="Professional mortgage solutions tailored to your unique financial situation." />
-  <meta property="twitter:image" content="{{ site.url }}assets/carol-ann-bryant.JPG" />
+  <meta property="twitter:title" content="{{ site.name }} | {{ site.title }}" />
+  <meta property="twitter:description" content="Vibrant cleanliness with a human-first approach. Trusted home and commercial cleaning in Belleville." />
+  <meta property="twitter:image" content="{{ site.url }}assets/mops-maid.jpg" />
 
-  <!-- Structured Data: FinancialService / Mortgage Broker -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Favicons and Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Structured Data: House Cleaning Service -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
-    "name": "{{ site.name }} - {{ site.brokerage }}",
-    "description": "Licensed mortgage professional providing expert advice on home purchases, renewals, and refinancing in Georgetown and across Ontario.",
+    "@type": "HouseCleaningService",
+    "name": "{{ site.name }}",
+    "description": "Professional cleaning and janitorial services in Belleville and the Quinte region. Specializing in home cleaning (Mommy Mops), commercial cleaning (Major Mops), and vacation rental turnover (Suite Services).",
     "url": "{{ site.url }}",
     "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "83 Mill Street, Suite 203",
-      "addressLocality": "Georgetown",
+      "streetAddress": "250 Sidney Street",
+      "addressLocality": "Belleville",
       "addressRegion": "ON",
-      "postalCode": "L7G 5E9",
+      "postalCode": "K8P 3Z3",
       "addressCountry": "CA"
     },
-    "image": "{{ site.url }}assets/carol-ann-bryant.JPG",
-    "priceRange": "$$$",
-    "legalName": "{{ site.name }}",
-    "memberOf": {
-      "@type": "Organization",
-      "name": "{{ site.brokerage }}"
-    },
-    "identifier": [
+    "image": "{{ site.url }}assets/mops-maid.jpg",
+    "priceRange": "$$",
+    "areaServed": [
       {
-        "@type": "PropertyValue",
-        "name": "Originator Licence",
-        "value": "M08001276"
+        "@type": "AdministrativeArea",
+        "name": "Belleville, ON"
       },
       {
-        "@type": "PropertyValue",
-        "name": "Brokerage Licence",
-        "value": "13119"
+        "@type": "AdministrativeArea",
+        "name": "Quinte West, ON"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Prince Edward County, ON"
       }
     ]
   }
   </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <style>
-    @font-face {
-      font-family: 'Teodor';
-      src: url('/assets/teodor.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    :root {
-      --bg-color: #f2f8fc;
-      --primary-color: #1a365d;
-      /* Deep Navy */
-      --accent-color: #b8860b;
-      /* Gold/Brass */
-      --text-color: #1a365d;
-      --text-light: rgba(26, 54, 93, 0.7);
-      --white: #ffffff;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-
-      --font-serif: 'Teodor', 'Playfair Display', serif;
-      --font-sans: 'Inter', sans-serif;
-
-      --radius: 2rem;
-      --radius-sm: 0.75rem;
-      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-sans);
-      line-height: 1.8;
-      overflow-x: hidden;
-      letter-spacing: -0.01em;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: var(--font-serif);
-      color: var(--primary-color);
-      font-weight: 300;
-      line-height: 1.2;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    section {
-        padding: 120px 20px;
-        max-width: 1400px;
-        margin: 0 auto;
-        scroll-margin-top: 100px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Scroll Reveal Base Classes */
-    .reveal-text {
-      color: rgba(26, 54, 93, 0.15);
-      background-clip: text;
-      -webkit-background-clip: text;
-      background-repeat: no-repeat;
-      background-size: 0% 100%;
-      background-image: linear-gradient(90deg, var(--primary-color), var(--primary-color));
-    }
-
-    .reveal-text.visible {
-      background-size: 100% 100%;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 16px 32px;
-      border-radius: var(--radius-sm);
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .btn-primary {
-      background-color: var(--primary-color);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--accent-color);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--primary-color);
-      color: var(--primary-color);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--primary-color);
-      color: var(--white);
-    }
-  </style>
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <!-- Structured Data: FAQ Page Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What cleaning services does Mops Inc. offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mops Inc. operates through three main divisions: Mommy Mops for residential and home cleaning services, Major Mops for commercial, janitorial, and public space cleaning, and Suite Services for vacation properties, hotels, and resorts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas does Mops Inc. serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We proudly serve the entire Quinte region in Ontario, including Belleville, Quinte West, and Prince Edward County."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do your cleaning services cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because we offer highly customized cleaning and janitorial solutions based on the specific needs of your home, office, or rental property, we provide free consultations and personalized quotes rather than flat rates. Contact us at (613) 329-8439 or hello@mopsinc.com to get your quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your cleaning and safety standard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We follow a 'human-first' approach, customizing our cleaning teams and protocols to the specific requirements of each facility. We utilize professional-grade disinfectants and follow strict safety guidelines to ensure vibrant cleanliness."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Mops Inc. a certified living wage employer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Mops Inc. is a certified Ontario Living Wage Employer. We are committed to paying fair wages, reducing employment barriers, and offering flexible hours, especially for mothers and those who need accommodating work schedules."
+        }
+      }
+    ]
+  }
+  </script>
 </head>

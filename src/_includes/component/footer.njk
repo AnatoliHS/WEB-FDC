@@ -1,208 +1,11 @@
-<style>
-  .footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 100px 0 40px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
-    gap: 60px;
-    margin-bottom: 100px;
-  }
-
-  .footer-col h3 {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--accent-color);
-    margin-bottom: 30px;
-    font-weight: 700;
-  }
-
-  .footer-bio p {
-    color: #cbd5e0;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    font-size: 1rem;
-    max-width: 320px;
-  }
-
-  .footer-social {
-    display: flex;
-    gap: 15px;
-  }
-
-  .social-link {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    color: var(--white);
-  }
-
-  .social-link:hover {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    transform: translateY(-3px);
-  }
-
-  .social-link svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-  }
-
-  .footer-links a {
-    display: block;
-    color: #cbd5e0;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    text-decoration: none;
-  }
-
-  .footer-links a:hover {
-    color: var(--white);
-  }
-
-  .footer-brand-row {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 80px;
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .footer-brand-name {
-    font-family: 'Teodor', var(--font-serif);
-    font-size: clamp(3rem, 10vw, 8rem);
-    color: var(--white);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    display: block;
-    opacity: 0.9;
-    text-align: center;
-    width: 100%;
-  }
-
-  .footer-tagline {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.4em;
-    color: var(--accent-color);
-    margin-top: 20px;
-    font-weight: 500;
-    display: block;
-  }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.85rem;
-    color: #718096;
-  }
-
-  .disclaimer {
-    font-size: 0.75rem;
-    line-height: 1.6;
-    margin-top: 40px;
-    color: #4a5568;
-    max-width: 100%;
-    text-align: center;
-  }
-
-  @media (max-width: 992px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .footer-col h3 {
-      margin-bottom: 20px;
-    }
-
-    .footer-bio p {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .footer-social {
-      justify-content: center;
-    }
-
-    .footer-brand-name {
-      font-size: 8vw;
-    }
-
-    .footer-brand-row {
-      padding-top: 40px;
-    }
-
-    .footer-bottom {
-      flex-direction: column;
-      gap: 20px;
-      text-align: center;
-    }
-  }
-
-  .footer-policy-link {
-    color: #718096;
-    text-decoration: none;
-    font-size: 0.85rem;
-    position: relative;
-    transition: all 0.3s ease;
-    display: inline-block;
-  }
-
-  .footer-policy-link:hover {
-    color: var(--white);
-  }
-
-  .footer-policy-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-  }
-
-  .footer-policy-link:hover::after {
-    width: 100%;
-  }
-</style>
-
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <!-- Column 1: Bio & Social -->
-      <div class="footer-col footer-bio">
-        <h3>Expert Advice</h3>
-        <p>Providing professional, unbiased mortgage solutions tailored to your unique financial journey. Access to
-          hundreds of products across Canada.</p>
+      <div class="footer-col">
+        <h3>{{ site.name }}</h3>
+        <p>A human-first professional cleaning service based in Belleville, ON. Dedicated to providing vibrant,
+          judgment-free cleanliness for homes, offices, and vacation rentals.</p>
         <div class="footer-social">
           <a href="#" class="social-link" aria-label="Facebook">
             <svg viewBox="0 0 24 24">
@@ -226,14 +29,14 @@
         </div>
       </div>
 
-      <!-- Column 2: Navigation -->
+      <!-- Column 2: Company Navigation -->
       <div class="footer-col">
         <h3>Company</h3>
         <div class="footer-links">
           <a href="#hero">Home</a>
-          <a href="#about">About Carole</a>
-          <a href="#calculators">Estimators</a>
+          <a href="#mission">Our Mission</a>
           <a href="#faq">Common Questions</a>
+          <a href="#contact">Get in Touch</a>
         </div>
       </div>
 
@@ -241,43 +44,45 @@
       <div class="footer-col">
         <h3>Services</h3>
         <div class="footer-links">
-          <a href="javascript:void(0)" class="service-modal-btn" data-service="purchase">Home Purchase</a>
-          <a href="javascript:void(0)" class="service-modal-btn" data-service="renewal">Mortgage Renewal</a>
-          <a href="javascript:void(0)" class="service-modal-btn" data-service="refinance">Equity & Refinance</a>
+          <a href="#commercial-spaces">Commercial</a>
+          <a href="#hotel-takeover">Hotel Takeover</a>
+          <a href="#vacation-rentals">Vacation Rentals</a>
+          <a href="#municipal-spaces">Municipal & Gov</a>
         </div>
       </div>
 
-      <!-- Column 4: Location -->
+      <!-- Column 4: Location & Contact -->
       <div class="footer-col">
         <h3>Contact</h3>
         <div class="footer-links">
           <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-          <p style="color: #cbd5e0; font-size: 0.9rem; margin-top: 10px;">{{ site.address }}</p>
+          <p style="color: rgba(255, 255, 255, 0.7); margin-top: 10px;">{{ site.address }}</p>
         </div>
       </div>
     </div>
 
     <!-- Monumental Brand Row -->
     <div class="footer-brand-row">
-      <span class="footer-brand-name">Carole Ann Bryant</span>
-      <span class="footer-tagline">Licensed Mortgage Professional</span>
+      <img src="/assets/mops-inc-logo-white.svg" alt="Mops Inc. Logo" class="footer-brand-logo">
+      <span class="footer-tagline">Vibrant Cleanliness</span>
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-copyright" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-        <p style="margin: 0;">&copy; {{ site.year or '2026' }} Carole Ann Bryant. All Rights Reserved.</p>
-        <div style="display: flex; gap: 25px;">
-          <a href="/privacy" class="footer-policy-link">Privacy Policy</a>
-          <a href="/terms" class="footer-policy-link">Terms of Use</a>
-        </div>
+      <div class="footer-copyright">
+        <p>&copy; {{ site.year or '2026' }} {{ site.brokerage or 'Mops Inc. Ltd.' }} All Rights Reserved.</p>
       </div>
-      <p style="margin: 0;">{{ site.brokerage }} | Brokerage Licence #13119</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
     </div>
 
-    <div class="disclaimer">
-      Dominion Lending Centres is a national mortgage brokerage and leasing company with more than 2,000 members
-      offering free expert advice across Canada. {{ site.brokerage }} ({{ site.brokerageLicense }}). {{ site.license }}.
+    <div class="footer-bottom" style="border-top: none; padding-top: 15px; margin-top: 0; justify-content: center;">
+      <p style="font-size: 0.8rem; text-align: center; max-width: 800px; color: rgba(255, 255, 255, 0.4);">
+        Mops Inc. is a certified Living Wage Employer in Ontario. We are committed to fostering fair compensation,
+        reducing employment barriers, and providing stable, supportive careers in the professional cleaning industry.
+      </p>
     </div>
   </div>
 </footer>
