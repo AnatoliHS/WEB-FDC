@@ -40,6 +40,7 @@
     <div class="nav-links" id="nav-links">
       <a href="#hero">Home</a>
       <a href="#mission">Our Mission</a>
+      <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
       <a href="#contact" class="btn btn-primary">Contact</a>
     </div>
@@ -187,6 +188,261 @@
         });
       }
     });
+
+    // Count Up Animation for Statistics Circles
+    const countUpElements = document.querySelectorAll('.circle-number');
+    if (countUpElements.length > 0) {
+      const countUpObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = 1500;
+            const startTime = performance.now();
+
+            function updateNumber(now) {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const easeProgress = progress * (2 - progress); // easeOutQuad
+              const currentValue = Math.floor(easeProgress * target);
+              el.innerText = currentValue + suffix;
+
+              if (progress < 1) {
+                requestAnimationFrame(updateNumber);
+              } else {
+                el.innerText = target + suffix;
+              }
+            }
+
+            requestAnimationFrame(updateNumber);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      countUpElements.forEach(el => countUpObserver.observe(el));
+    }
+
+    // Trust Section Carousel and Timeline Progress Logic
+    const timelineItems = document.querySelectorAll('.trust-timeline-item');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    
+    if (timelineItems.length > 0 && carouselSlides.length > 0) {
+      let activeIndex = 0;
+      let intervalId = null;
+      let startTime = null;
+      const duration = 8000; // 8 seconds per slide
+      let paused = false;
+
+      function updateSlide(index) {
+        timelineItems.forEach((item, idx) => {
+          const line = item.querySelector('.progress-bar-line');
+          if (idx !== index) {
+            item.classList.remove('active');
+            if (line) line.style.width = '0%';
+          } else {
+            item.classList.add('active');
+          }
+        });
+
+        carouselSlides.forEach((slide, idx) => {
+          if (idx === index) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        activeIndex = index;
+      }
+
+      function startTimer() {
+        if (intervalId) clearInterval(intervalId);
+        startTime = performance.now();
+        
+        intervalId = setInterval(() => {
+          if (!paused) {
+            let nextIndex = (activeIndex + 1) % timelineItems.length;
+            updateSlide(nextIndex);
+            startTime = performance.now();
+          }
+        }, duration);
+      }
+
+      // Progress bar smooth update frame loop
+      function drawProgress() {
+        if (intervalId) {
+          const activeItem = timelineItems[activeIndex];
+          if (activeItem && !paused) {
+            const line = activeItem.querySelector('.progress-bar-line');
+            if (line) {
+              const elapsed = performance.now() - startTime;
+              const progress = Math.min((elapsed / duration) * 100, 100);
+              line.style.width = `${progress}%`;
+            }
+          }
+        }
+        requestAnimationFrame(drawProgress);
+      }
+
+      // Initialize
+      updateSlide(0);
+      
+      const trustSection = document.querySelector('.trust-section');
+      const trustObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startTimer();
+            requestAnimationFrame(drawProgress);
+          } else {
+            if (intervalId) {
+              clearInterval(intervalId);
+              intervalId = null;
+            }
+          }
+        });
+      }, { threshold: 0.15 });
+
+      if (trustSection) {
+        trustObserver.observe(trustSection);
+      }
+
+      timelineItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          updateSlide(index);
+          startTimer();
+        });
+      });
+    }
+
+    // Reviews Slider Logic
+    const reviewsTrack = document.querySelector('.reviews-slider-track');
+    const reviewCards = document.querySelectorAll('.review-card');
+    const reviewsNextBtn = document.querySelector('.reviews-controls .next-btn');
+    const reviewsPrevBtn = document.querySelector('.reviews-controls .prev-btn');
+    const reviewsDotsContainer = document.querySelector('.reviews-controls .reviews-dots');
+
+    if (reviewsTrack && reviewCards.length && reviewsNextBtn && reviewsPrevBtn && reviewsDotsContainer) {
+      let currentIdx = 0;
+      let autoplayTimer = null;
+      const autoplayDelay = 6000;
+
+      function getVisibleCount() {
+        if (window.innerWidth <= 600) return 1;
+        if (window.innerWidth <= 992) return 2;
+        return 3;
+      }
+
+      function updateSliderPosition() {
+        const visible = getVisibleCount();
+        const total = reviewCards.length;
+        const maxIdx = Math.max(0, total - visible);
+
+        if (currentIdx > maxIdx) currentIdx = maxIdx;
+        if (currentIdx < 0) currentIdx = 0;
+
+        const firstCard = reviewCards[0];
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        const trackStyle = window.getComputedStyle(reviewsTrack);
+        const gap = parseFloat(trackStyle.columnGap) || 30;
+
+        const offset = currentIdx * (cardWidth + gap);
+        reviewsTrack.style.transform = `translateX(-${offset}px)`;
+
+        const dots = reviewsDotsContainer.querySelectorAll('.reviews-dot');
+        dots.forEach((dot, idx) => {
+          if (idx === currentIdx) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      function rebuildDots() {
+        reviewsDotsContainer.innerHTML = '';
+        const visible = getVisibleCount();
+        const total = reviewCards.length;
+        const totalSteps = total - visible + 1;
+
+        for (let i = 0; i < totalSteps; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('reviews-dot');
+          if (i === currentIdx) dot.classList.add('active');
+          dot.addEventListener('click', () => {
+            currentIdx = i;
+            updateSliderPosition();
+            resetAutoplay();
+          });
+          reviewsDotsContainer.appendChild(dot);
+        }
+      }
+
+      function navigateReviews(dir) {
+        const visible = getVisibleCount();
+        const total = reviewCards.length;
+        const maxIdx = total - visible;
+
+        if (dir === 'next') {
+          if (currentIdx >= maxIdx) {
+            currentIdx = 0;
+          } else {
+            currentIdx++;
+          }
+        } else {
+          if (currentIdx <= 0) {
+            currentIdx = maxIdx;
+          } else {
+            currentIdx--;
+          }
+        }
+        updateSliderPosition();
+        resetAutoplay();
+      }
+
+      reviewsNextBtn.addEventListener('click', () => navigateReviews('next'));
+      reviewsPrevBtn.addEventListener('click', () => navigateReviews('prev'));
+
+      let resizeDebounce;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeDebounce);
+        resizeDebounce = setTimeout(() => {
+          rebuildDots();
+          updateSliderPosition();
+        }, 100);
+      });
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(() => {
+          navigateReviews('next');
+        }, autoplayDelay);
+      }
+
+      function stopAutoplay() {
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+
+      function resetAutoplay() {
+        startAutoplay();
+      }
+
+      // Pause auto-rotation when hovering card/slider
+      const container = document.querySelector('.reviews-slider-container');
+      if (container) {
+        container.addEventListener('mouseenter', stopAutoplay);
+        container.addEventListener('mouseleave', startAutoplay);
+      }
+
+      // Initial execution
+      rebuildDots();
+      updateSliderPosition();
+      startAutoplay();
+    }
   });
 
   window.addEventListener('scroll', () => {
@@ -222,7 +478,11 @@
       const rect = introParagraph.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       const visibility = (windowHeight - rect.top) / windowHeight;
-      const progress = Math.min(Math.max(visibility * 2.0 - 0.1, 0), 1);
+      // Start revealing when the text is 30% up from the bottom of the screen
+      // Finish revealing when it reaches 75% up from the bottom
+      const startThreshold = 0.30;
+      const endThreshold = 0.75;
+      const progress = Math.min(Math.max((visibility - startThreshold) / (endThreshold - startThreshold), 0), 1);
 
       const L = introLines.length;
       const overlap = 0.25; // 25% overlap between consecutive lines
