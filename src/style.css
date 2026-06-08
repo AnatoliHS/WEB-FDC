@@ -680,7 +680,7 @@ section {
 .intro-content p {
   font-size: clamp(1.5rem, 3.2vw, 2.1rem);
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 1.35;
   font-weight: 500;
   margin-bottom: 40px;
   font-family: var(--font-sans);
@@ -731,6 +731,7 @@ section {
 .mission {
   background-color: var(--bg-color);
   padding: 100px 0 0 0;
+  scroll-margin-top: -100px;
 }
 
 .mission-header {
@@ -1060,6 +1061,7 @@ section {
 /* 9. Contact Section & Glassmorphic Form */
 .contact {
   background-color: var(--white);
+  scroll-margin-top: -100px;
 }
 
 .contact-grid {
@@ -1397,14 +1399,13 @@ section {
 
   .nav-links {
     position: absolute;
-    top: 100%;
+    top: calc(100% - 1.5px);
     left: 0;
     width: 100%;
     background: #05152a;
     flex-direction: column;
     padding: 30px;
     gap: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--shadow-lg);
     transform: translateY(-100%);
     z-index: -1;
@@ -1429,6 +1430,18 @@ section {
     box-shadow: var(--shadow-lg);
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
+  }
+
+  .navbar.scrolled.menu-open {
+    border-bottom: none !important;
+  }
+
+  .navbar.scrolled.menu-open .nav-links {
+    left: -1px;
+    width: calc(100% + 2px);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .navbar.menu-open .nav-brand {
@@ -1469,6 +1482,10 @@ section {
   .contact-form-container {
     padding: 30px 20px;
   }
+
+  .cta-video-bg {
+    transform: scale(1.75);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1500,6 +1517,16 @@ section {
 /* 11.5 Trust Section Carousel */
 .trust-section {
   padding: 100px 0;
+  scroll-margin-top: -100px;
+}
+
+@media (min-width: 993px) {
+  .trust-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+  }
 }
 
 .trust-grid {
@@ -1601,14 +1628,14 @@ section {
   bottom: 24px;
   left: 24px;
   right: 24px;
-  background: rgba(35, 31, 32, 0.88);
-  /* Deep slate semi-transparent card */
+  background: rgba(255, 255, 255, 0.92);
+  /* Premium off-white glassmorphic card */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(35, 31, 32, 0.1);
   border-radius: var(--radius-sm);
   padding: 20px;
-  color: var(--white);
+  color: var(--text-color);
   z-index: 5;
   box-shadow: var(--shadow-lg);
   pointer-events: none;
@@ -1628,8 +1655,8 @@ section {
   font-family: var(--font-sans);
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--accent-color);
-  /* Amber/orange branding color */
+  color: var(--accent-pink);
+  /* Highly visible pink/red brand accent */
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1639,7 +1666,7 @@ section {
   font-family: var(--font-sans);
   font-size: 0.9rem;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-light);
   margin-bottom: 0;
 }
 
@@ -1679,6 +1706,7 @@ section {
 .reviews-section {
   background-color: var(--bg-color) !important;
   padding: 100px 0;
+  scroll-margin-top: -100px;
 }
 
 .reviews-section .section-header h2 {
@@ -1893,6 +1921,7 @@ section {
 
 .faq {
   background-color: #e8274e !important;
+  scroll-margin-top: -100px;
 }
 
 .faq .section-header h2 {

@@ -39,6 +39,7 @@
 
     <div class="nav-links" id="nav-links">
       <a href="#hero">Home</a>
+      <a href="#trust">About</a>
       <a href="#mission">Our Mission</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
@@ -478,10 +479,11 @@
       const rect = introParagraph.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       const visibility = (windowHeight - rect.top) / windowHeight;
-      // Start revealing when the text is 30% up from the bottom of the screen
-      // Finish revealing when it reaches 75% up from the bottom
-      const startThreshold = 0.30;
-      const endThreshold = 0.75;
+      // Start revealing when the text is 30% up from the bottom of the screen (10% on mobile)
+      // Finish revealing when it reaches 75% up from the bottom (55% on mobile)
+      const isMobile = window.innerWidth <= 768;
+      const startThreshold = isMobile ? 0.10 : 0.30;
+      const endThreshold = isMobile ? 0.55 : 0.75;
       const progress = Math.min(Math.max((visibility - startThreshold) / (endThreshold - startThreshold), 0), 1);
 
       const L = introLines.length;
