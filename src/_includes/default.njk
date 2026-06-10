@@ -2,16 +2,10 @@
 <html lang="en">
   {% include "component/head.njk" %}
   <body>
-        
-      {% include "component/navbar.njk" %}
-      
-
-      <main style="flex-grow: 1;">
+    {% include "component/navbar.njk" %}
+    <main>
       {{ content | safe }}
-      </main>
-
-      {% include "component/footer.njk" %}
-      {% include "component/scripts.njk" %}
-    </body>
-  </html>
+    </main>
+    {% include "component/footer.njk" %}
+  </body>
 </html>

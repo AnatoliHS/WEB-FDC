@@ -1,58 +1,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Primary SEO Tags -->
-  <title>{{ site.name }} | {{ site.title }} in Belleville & Quinte Region</title>
-  <meta name="description" content="Professional cleaning and janitorial services from {{ site.name }}. Specialized in home cleaning (Mommy Mops), commercial cleaning (Major Mops), and vacation rental turnarounds (Suite Services). Certified Ontario Living Wage Employer." />
-  <meta name="keywords" content="Cleaning Services, Janitorial Services, Home Cleaning, Commercial Cleaning, Office Cleaning, Vacation Rental Cleaning, Belleville, Quinte West, Prince Edward County, Mommy Mops, Major Mops, Mops Inc" />
+  <title>{{ site.name }} – {{ site.title }}</title>
+  <meta name="description" content="{{ site.name }} provides professional restoration services for homes and businesses, including water damage, fire and smoke recovery, mold remediation, and full rebuilds. From emergency response to final repair, we restore properties with care and clarity." />
+  <meta name="keywords" content="Restoration Services, Water Damage Restoration, Fire Damage Repair, Mold Remediation, Property Restoration, Emergency Restoration, Belleville, Quinte West, Prince Edward County, MOPS INC" />
   <meta name="author" content="{{ site.name }}" />
   <meta name="robots" content="index, follow" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ site.url }}" />
 
-  <!-- Preload Hero Images for LCP Optimization -->
-  <link rel="preload" as="image" href="/assets/mops-maid.jpg" media="(min-width: 769px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="/assets/mops-maid-mobile.jpg" media="(max-width: 768px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="/assets/smoke.webp" fetchpriority="low" />
-
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.url }}" />
-  <meta property="og:title" content="{{ site.name }} | {{ site.title }}" />
-  <meta property="og:description" content="Professional cleaning services customized to your needs. Serving residential, commercial, and hospitality properties across the Quinte region." />
+  <meta property="og:title" content="{{ site.name }} – {{ site.title }}" />
+  <meta property="og:description" content="Professional restoration services for homes and businesses. Water damage, fire & smoke recovery, mold remediation, and full rebuilds." />
   <meta property="og:image" content="{{ site.url }}assets/mops-maid.jpg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="{{ site.url }}" />
-  <meta property="twitter:title" content="{{ site.name }} | {{ site.title }}" />
-  <meta property="twitter:description" content="Vibrant cleanliness with a human-first approach. Trusted home and commercial cleaning in Belleville." />
+  <meta property="twitter:title" content="{{ site.name }} – {{ site.title }}" />
+  <meta property="twitter:description" content="From emergency response to final repair — we restore properties with care and clarity." />
   <meta property="twitter:image" content="{{ site.url }}assets/mops-maid.jpg" />
 
-  <!-- Google Fonts & Fontshare -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fontshare: Switzer -->
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="/style.css" />
 
-  <!-- Favicons and Manifest -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/site.webmanifest" />
 
-  <!-- Structured Data: House Cleaning Service -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "HouseCleaningService",
+    "@type": "HomeAndConstructionBusiness",
     "name": "{{ site.name }}",
-    "description": "Professional cleaning and janitorial services in Belleville and the Quinte region. Specializing in home cleaning (Mommy Mops), commercial cleaning (Major Mops), and vacation rental turnover (Suite Services).",
+    "description": "Professional restoration services for homes and businesses, including water damage, fire and smoke recovery, mold remediation, and full rebuilds.",
     "url": "{{ site.url }}",
     "telephone": "{{ site.phone }}",
     "email": "{{ site.email }}",
@@ -64,75 +60,11 @@
       "postalCode": "K8P 3Z3",
       "addressCountry": "CA"
     },
-    "image": "{{ site.url }}assets/mops-maid.jpg",
-    "priceRange": "$$",
     "areaServed": [
-      {
-        "@type": "AdministrativeArea",
-        "name": "Belleville, ON"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Quinte West, ON"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Prince Edward County, ON"
-      }
+      { "@type": "AdministrativeArea", "name": "Belleville, ON" },
+      { "@type": "AdministrativeArea", "name": "Quinte West, ON" },
+      { "@type": "AdministrativeArea", "name": "Prince Edward County, ON" }
     ]
   }
   </script>
-
-  <!-- Structured Data: FAQ Page Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What cleaning services does Mops Inc. offer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mops Inc. provides specialized commercial cleaning services tailored to different properties and needs: comprehensive Commercial office and janitorial services, secure sanitization for Municipal and Gov facilities, and fast, high-standard turnovers for Hotel Takeovers and Vacation Rentals."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What areas does Mops Inc. serve?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We proudly serve the entire Quinte region in Ontario, including Belleville, Quinte West, and Prince Edward County."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much do your cleaning services cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Because we offer highly customized cleaning and janitorial solutions based on the specific needs of your office, commercial space, or rental property, we provide free consultations and personalized quotes rather than flat rates. Contact us at (613) 329-8439 or hello@mopsinc.com to get your quote."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is your cleaning and safety standard?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We follow a 'human-first' approach, customizing our cleaning teams and protocols to the specific requirements of each facility. We utilize professional-grade disinfectants and follow strict safety guidelines to ensure vibrant cleanliness."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Mops Inc. a certified living wage employer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Mops Inc. is a certified Ontario Living Wage Employer. We are committed to paying fair wages, reducing employment barriers, and offering flexible hours, especially for mothers and those who need accommodating work schedules."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Cloudflare Turnstile API Script -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
 </head>
