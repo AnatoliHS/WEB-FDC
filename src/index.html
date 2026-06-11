@@ -118,7 +118,6 @@ and smoke recovery, mold remediation, and full rebuilds."
         <!-- Service 1: Emergency Response -->
         <div class="service-accordion-item active" data-service="emergency">
           <div class="service-accordion-header">
-            <div class="service-accordion-num">01</div>
             <div class="service-accordion-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -141,14 +140,12 @@ and smoke recovery, mold remediation, and full rebuilds."
               <span>Rapid Response</span>
               <span>Site Stabilization</span>
             </div>
-            <a href="#contact" class="service-accordion-link">Request Service →</a>
           </div>
         </div>
 
         <!-- Service 2: Damage Assessment -->
         <div class="service-accordion-item" data-service="assessment">
           <div class="service-accordion-header">
-            <div class="service-accordion-num">02</div>
             <div class="service-accordion-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -171,14 +168,12 @@ and smoke recovery, mold remediation, and full rebuilds."
               <span>Moisture Mapping</span>
               <span>Scope of Work</span>
             </div>
-            <a href="#contact" class="service-accordion-link">Request Service →</a>
           </div>
         </div>
 
         <!-- Service 3: Insurance Guidance -->
         <div class="service-accordion-item" data-service="insurance">
           <div class="service-accordion-header">
-            <div class="service-accordion-num">03</div>
             <div class="service-accordion-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -203,14 +198,12 @@ and smoke recovery, mold remediation, and full rebuilds."
               <span>Xactimate Estimating</span>
               <span>Claim Coordination</span>
             </div>
-            <a href="#contact" class="service-accordion-link">Request Service →</a>
           </div>
         </div>
 
         <!-- Service 4: Full Restoration & Rebuild -->
         <div class="service-accordion-item" data-service="rebuild">
           <div class="service-accordion-header">
-            <div class="service-accordion-num">04</div>
             <div class="service-accordion-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -233,7 +226,6 @@ and smoke recovery, mold remediation, and full rebuilds."
               <span>Structural Repair</span>
               <span>Turnkey Delivery</span>
             </div>
-            <a href="#contact" class="service-accordion-link">Request Service →</a>
           </div>
         </div>
       </div>
@@ -882,7 +874,7 @@ and smoke recovery, mold remediation, and full rebuilds."
         <h2 class="faq-heading">Questions &<br>Answers</h2>
         <p class="faq-intro">Can't find what you're looking for? Contact us directly and we'll respond within the hour.
         </p>
-        <a href="#contact" class="btn-outline">Contact Us</a>
+        <a href="#contact" class="btn-primary">Contact Us</a>
       </div>
       <div class="faq-right reveal-right">
         <div class="faq-list">
@@ -977,9 +969,9 @@ and smoke recovery, mold remediation, and full rebuilds."
       <h2 class="cta-heading">Don't Wait.<br>Damage Gets Worse.</h2>
       <p class="cta-body">Built for homeowners, landlords, and businesses who need restoration done right, from first
         response to full rebuild.</p>
+      <p class="cta-phone">{{ site.phone }}</p>
       <div class="cta-actions">
-        <a href="tel:{{ site.phone }}" class="btn-primary btn-large">📞 Call {{ site.phone }}</a>
-        <a href="#contact" class="btn-ghost-light">Send Us a Message</a>
+        <a href="#contact" class="btn-primary btn-large">Send Us a Message</a>
       </div>
     </div>
   </div>
@@ -998,7 +990,7 @@ and smoke recovery, mold remediation, and full rebuilds."
         <p class="contact-body">Tell us about your situation and we'll respond quickly with a plan. Emergency calls are
           always answered immediately.</p>
         <div class="contact-details">
-          <a href="tel:{{ site.phone }}" class="contact-detail">
+          <div class="contact-detail">
             <div class="contact-detail-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path
@@ -1009,8 +1001,8 @@ and smoke recovery, mold remediation, and full rebuilds."
               <strong>Phone (24/7)</strong>
               <span>{{ site.phone }}</span>
             </div>
-          </a>
-          <a href="mailto:{{ site.email }}" class="contact-detail">
+          </div>
+          <div class="contact-detail">
             <div class="contact-detail-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -1021,7 +1013,7 @@ and smoke recovery, mold remediation, and full rebuilds."
               <strong>Email</strong>
               <span>{{ site.email }}</span>
             </div>
-          </a>
+          </div>
           <div class="contact-detail">
             <div class="contact-detail-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
