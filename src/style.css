@@ -748,59 +748,190 @@ footer,
   margin-bottom: 32px;
 }
 
-.about-boxes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 32px;
-  margin-top: 0;
+/* ─── Bento: two independent flex columns ─── */
+.about-bento {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
 }
 
-.about-box {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+.about-bento-col {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  transition: border-color var(--dur-fast), transform var(--dur) var(--ease);
+  gap: 20px;
+  min-width: 0;
 }
 
-.about-box:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-6px);
-}
-
-.about-box-img-wrap {
-  width: 100%;
-  aspect-ratio: 16 / 10;
+/* ── Shared image panel styles ── */
+.about-bento-img,
+.about-bento-img-right {
+  border-radius: var(--radius-xl);
   overflow: hidden;
   position: relative;
+  background: var(--color-bg-card);
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  flex-shrink: 0;
 }
 
-.about-box-img-wrap img {
+.about-bento-img img,
+.about-bento-img-right img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 600ms var(--ease);
+  display: block;
+}
+
+.about-bento-img:hover img,
+.about-bento-img-right:hover img {
+  transform: scale(1.04);
+}
+
+/* Floating badge inside the doc image */
+.about-bento-img-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.about-badge-icon {
+  width: 22px;
+  height: 22px;
+  background: var(--color-accent);
+  color: #000;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Stat card (bottom-left, fills remaining column height) ── */
+.about-bento-stat {
+  flex: 1;
+  min-height: 0;
+  background: var(--color-accent);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
   transition: transform var(--dur) var(--ease);
 }
 
-.about-box:hover .about-box-img-wrap img {
-  transform: scale(1.05);
+.about-bento-stat:hover {
+  transform: translateY(-4px);
 }
 
-.about-box-content {
-  padding: 32px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.about-box-text {
-  font-size: 1rem;
-  color: var(--color-text-soft);
-  line-height: 1.6;
+.about-stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
   margin: 0;
 }
+
+.about-stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #141414;
+  margin: 0;
+  line-height: 1;
+}
+
+.about-stat-sub {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.55;
+  margin: 0;
+  padding-top: 4px;
+}
+
+/* ── Insight card (top-right, fills remaining column height) ── */
+.about-bento-insight {
+  flex: 1;
+  min-height: 0;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  transition: border-color var(--dur-fast), transform var(--dur) var(--ease);
+}
+
+.about-bento-insight:hover {
+  border-color: var(--color-border-h);
+  transform: translateY(-4px);
+}
+
+.about-insight-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.about-insight-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-accent);
+  margin: 0;
+  line-height: 1;
+}
+
+.about-insight-sub {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  line-height: 1.55;
+  margin: 0;
+  padding-top: 4px;
+}
+
+
+/* Mobile: stack all four cells in reading order */
+@media (max-width: 680px) {
+  .about-bento {
+    flex-direction: column;
+  }
+
+  .about-bento-img,
+  .about-bento-img-right {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+
+
+
+
 
 /* ══════════════════════════════════════
    SERVICES
@@ -840,20 +971,23 @@ footer,
 }
 
 .service-accordion-item {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-lg);
   padding: 24px 28px;
   cursor: pointer;
-  transition: border-color var(--dur-fast), background var(--dur-fast);
+  transition: border-color var(--dur-fast), background var(--dur-fast), box-shadow var(--dur-fast);
 }
 
 .service-accordion-item:hover {
-  background: var(--color-surface);
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
 }
 
 .service-accordion-item.active {
-  border-color: var(--color-border);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .service-accordion-header {
@@ -868,7 +1002,7 @@ footer,
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--color-text-muted);
+  color: #999999;
 }
 
 .service-accordion-icon {
@@ -896,7 +1030,7 @@ footer,
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--color-text);
+  color: #141414;
   margin: 0;
   flex: 1;
 }
@@ -904,7 +1038,7 @@ footer,
 .service-accordion-arrow {
   width: 20px;
   height: 20px;
-  color: var(--color-text-muted);
+  color: #aaaaaa;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -937,7 +1071,7 @@ footer,
 
 .service-accordion-body {
   font-size: 0.92rem;
-  color: var(--color-text-soft);
+  color: #555555;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -954,9 +1088,9 @@ footer,
   font-weight: 500;
   padding: 4px 12px;
   border-radius: 100px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #777777;
 }
 
 .service-accordion-link {
@@ -968,7 +1102,7 @@ footer,
   gap: 6px;
   transition: gap var(--dur-fast);
   padding-block-start: 12px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   width: 100%;
 }
 
