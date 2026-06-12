@@ -197,6 +197,18 @@ footer,
   padding: 18px 36px;
 }
 
+.btn-primary.btn-primary--lg {
+  font-size: 1.1rem;
+  padding: 20px 44px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 24px rgba(93, 34, 254, 0.3);
+}
+
+.btn-primary.btn-primary--lg:hover {
+  box-shadow: 0 10px 40px rgba(93, 34, 254, 0.5);
+  transform: translateY(-3px);
+}
+
 .btn-primary.btn-full {
   width: 100%;
   justify-content: center;
@@ -2966,4 +2978,60 @@ main {
   .ticker-wrap {
     display: none;
   }
+}
+
+/* ══════════════════════════════════════
+   CONTACT FORM VALIDATION & STATES
+   ══════════════════════════════════════ */
+.form-group.has-error input {
+  border-color: #ff4d4d !important;
+}
+
+.form-group.has-error input:focus {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15) !important;
+}
+
+.form-error-text {
+  color: #ff4d4d;
+  font-size: 0.75rem;
+  margin-top: 6px;
+  font-weight: 500;
+  display: block;
+}
+
+.form-status-msg {
+  display: none;
+  font-size: 0.875rem;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.form-status-msg.success {
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  color: #4caf50;
+}
+
+.form-status-msg.error {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  color: #f44336;
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled,
+.form-group select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-bg-2);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
 }

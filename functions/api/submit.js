@@ -15,26 +15,30 @@ export async function onRequestPost(context) {
     // ---------------------------------------------------------
     const turnstileToken = data['cf-turnstile-response'];
     const ip = context.request.headers.get('CF-Connecting-IP');
+    const turnstileSecret = context.env.TURNSTILE_SECRET_KEY;
 
-    if (!turnstileToken) {
-      return new Response("Turnstile token missing. Please verify you are human.", { status: 400 });
-    }
+    if (turnstileSecret) {
+      if (!turnstileToken) {
+        return new Response("Turnstile token missing. Please verify you are human.", { status: 400 });
+      }
 
-    let verificationBody = new FormData();
-    // Ensure you added TURNSTILE_SECRET_KEY to your Cloudflare Pages environment variables
-    verificationBody.append('secret', context.env.TURNSTILE_SECRET_KEY);
-    verificationBody.append('response', turnstileToken);
-    verificationBody.append('remoteip', ip);
+      let verificationBody = new FormData();
+      verificationBody.append('secret', turnstileSecret);
+      verificationBody.append('response', turnstileToken);
+      verificationBody.append('remoteip', ip);
 
-    const verificationResult = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-      body: verificationBody,
-      method: 'POST',
-    });
+      const verificationResult = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        body: verificationBody,
+        method: 'POST',
+      });
 
-    const outcome = await verificationResult.json();
+      const outcome = await verificationResult.json();
 
-    if (!outcome.success) {
-      return new Response("Turnstile verification failed. Spam detected.", { status: 403 });
+      if (!outcome.success) {
+        return new Response("Turnstile verification failed. Spam detected.", { status: 403 });
+      }
+    } else {
+      console.log("TURNSTILE_SECRET_KEY not defined in environment variables. Skipping Turnstile verification.");
     }
     // ---------------------------------------------------------
     // END Turnstile Verification
