@@ -7,9 +7,10 @@
     <div class="nav-links" id="nav-links">
       <a href="#hero" class="nav-link">Home</a>
       <a href="#services" class="nav-link">Services</a>
-      <a href="#process" class="nav-link">Process</a>
-      <a href="#pricing" class="nav-link">Pricing</a>
-      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#process" class="nav-link">Capabilities</a>
+      <a href="#rentals" class="nav-link">Rentals</a>
+      <!-- <a href="#pricing" class="nav-link">Pricing</a> -->
+      <!-- <a href="#reviews" class="nav-link">Reviews</a> -->
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="#contact" class="nav-cta">Get Emergency Help</a>
     </div>
@@ -239,5 +240,94 @@
       
       peaceObserver.observe(peaceSection);
     }
+
+    /* ─── Rentals Mobile Carousel ─── */
+    (function initRentalsCarousel() {
+      const track    = document.querySelector('.rentals-track');
+      const dotsWrap = document.getElementById('rentals-dots');
+      const prevBtn  = document.getElementById('rentals-prev');
+      const nextBtn  = document.getElementById('rentals-next');
+      if (!track || !dotsWrap || !prevBtn || !nextBtn) return;
+
+      const cards = Array.from(track.querySelectorAll('.rental-card'));
+      if (!cards.length) return;
+
+      let idx = 0;
+
+      // Build dots
+      cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'rentals-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to item ' + (i + 1));
+        dot.addEventListener('click', () => slideTo(i));
+        dotsWrap.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsWrap.querySelectorAll('.rentals-dot'));
+
+      function slideTo(n) {
+        // Only active on mobile — no-op on desktop
+        if (window.innerWidth > 760) return;
+        idx = Math.max(0, Math.min(n, cards.length - 1));
+        const w = cards[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${idx * w}px)`;
+        // Update dots
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx === cards.length - 1;
+      }
+
+      prevBtn.addEventListener('click', () => slideTo(idx - 1));
+      nextBtn.addEventListener('click', () => slideTo(idx + 1));
+
+      // Swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener('touchstart', (e) => {
+        if (window.innerWidth > 760) return;
+        touchStartX = e.changedTouches[0].clientX;
+      }, { passive: true });
+
+      track.addEventListener('touchend', (e) => {
+        if (window.innerWidth > 760) return;
+        touchEndX = e.changedTouches[0].clientX;
+        const threshold = 50; // swipe threshold in px
+        if (touchEndX < touchStartX - threshold) {
+          slideTo(idx + 1); // Swipe left (next card)
+        } else if (touchEndX > touchStartX + threshold) {
+          slideTo(idx - 1); // Swipe right (prev card)
+        }
+      }, { passive: true });
+
+      // Recalculate on resize (e.g. orientation change)
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 760) {
+          // Reset transform on desktop so grid layout works
+          track.style.transform = '';
+          idx = 0;
+        } else {
+          slideTo(idx);
+        }
+      });
+
+      // Init
+      slideTo(0);
+    })();
+
+    /* ─── Deep-linking for services accordion ─── */
+    function checkHash() {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#service-')) {
+        const item = document.querySelector(hash);
+        if (item && !item.classList.contains('active')) {
+          const header = item.querySelector('.service-accordion-header');
+          if (header) header.click();
+        }
+      }
+    }
+    window.addEventListener('hashchange', checkHash);
+    window.addEventListener('load', () => setTimeout(checkHash, 300));
+    checkHash();
   });
 </script>
