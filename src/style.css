@@ -1537,10 +1537,40 @@ footer,
    PROCESS
 ══════════════════════════════════════ */
 .escalation-section {
-  padding-block: 100px;
-  background: var(--color-bg);
+  padding-block: 110px 100px;
+  background-color: var(--color-bg-1);
   position: relative;
+  z-index: 1;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .escalation-section {
+    padding-block: 80px 60px;
+  }
+}
+
+/* Subtle glow behind the section */
+.capabilities-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.escalation-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.escalation-section>.container {
+  z-index: 3;
+  /* Places the top arrows/text container above the orbit animation wrapper */
 }
 
 .escalation-bg {
@@ -1550,18 +1580,13 @@ footer,
   pointer-events: none;
 }
 
-.escalation-section .container {
-  position: relative;
-  z-index: 2;
-}
-
 /* Concentric Orbit Rings */
 .orbit-ring {
   position: absolute;
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
   transform: translate(-50%, -50%);
   will-change: transform;
 }
@@ -1587,8 +1612,8 @@ footer,
 /* Orbit Nodes */
 .orbit-node {
   position: absolute;
-  width: 42px;
-  height: 42px;
+  width: 50px;
+  height: 50px;
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 50%;
@@ -1599,8 +1624,8 @@ footer,
 }
 
 .orbit-node svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   color: var(--color-text-muted);
   transition: color var(--dur-fast);
 }
@@ -1706,8 +1731,6 @@ footer,
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
-
-  /* counteracts reverse ring rotation */
 }
 
 @keyframes counter-rotate-node-3 {
@@ -1737,20 +1760,283 @@ footer,
   }
 }
 
-@media (max-width: 480px) {
-  .orbit-ring-1 {
-    width: 240px;
-    height: 240px;
-  }
 
-  .orbit-ring-2 {
-    width: 380px;
-    height: 380px;
-  }
+/* ─── Capabilities Overlapping Arrows Section (FindRealEstate.com inspiration) ─── */
+.capabilities-arrows-root {
+  padding-top: 0;
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 3;
+}
 
-  .orbit-ring-3 {
-    width: 520px;
-    height: 520px;
+@media (min-width: 768px) {
+  .capabilities-arrows-root {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+}
+
+.capabilities-arrows-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .capabilities-arrows-title {
+    margin-bottom: 60px;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+}
+
+.capabilities-arrows-title h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.capabilities-arrows-title h2 .em {
+  color: var(--color-text-soft);
+  font-style: normal;
+}
+
+.capabilities-arrows-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .capabilities-arrows-container {
+    gap: 24px;
+  }
+}
+
+.capabilities-arrow-card {
+  flex: 1;
+  max-width: 120px;
+  aspect-ratio: 9 / 22;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  transition: transform var(--dur) var(--ease), border-color var(--dur-fast);
+}
+
+.capabilities-arrow-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (min-width: 768px) {
+  .capabilities-arrow-card {
+    max-width: 270px;
+    aspect-ratio: 9 / 16;
+  }
+}
+
+.capabilities-arrow-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur) var(--ease);
+}
+
+.capabilities-arrow-card:hover img {
+  transform: scale(1.08);
+}
+
+.capabilities-arrows-text {
+  position: relative;
+  z-index: 3;
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 768px) {
+  .capabilities-arrows-text {
+    margin-top: 50px;
+    max-width: 680px;
+    margin-inline: auto;
+    font-size: 18px;
+    line-height: 1.7;
+    text-wrap: balance;
+  }
+}
+
+/* ─── Capabilities Rewired Section (Asymmetric Columns Steps List) ─── */
+.capabilities-rewired-wrapper {
+  padding-block: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .capabilities-rewired-wrapper {
+    padding-block: 100px;
+  }
+}
+
+.capabilities-row {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .capabilities-row {
+    flex-direction: row;
+    gap: 80px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.capabilities-col {
+  flex: 1 1;
+}
+
+@media (min-width: 768px) {
+  .capabilities-left-col-wrapper {
+    flex: 0 0 35%;
+  }
+}
+
+.capabilities-rewired-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .capabilities-rewired-left {
+    gap: 40px;
+    position: sticky;
+    top: 120px;
+  }
+}
+
+.capabilities-rewired-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .capabilities-rewired-title {
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+}
+
+.capabilities-rewired-title .em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+/* Wrapper for capabilities title to center the background orbit animation */
+.capabilities-title-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Inline Spinning Orbit Animation centered on the title */
+.capabilities-inline-orbit {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 80px);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .capabilities-inline-orbit {
+    left: calc(50% - 27px);
+  }
+}
+
+.capabilities-rewired-right {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.capabilities-rewired-label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .capabilities-rewired-label {
+    font-size: 28px;
+    margin-bottom: 30px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.capabilities-rewired-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.capabilities-rewired-list-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-block: 16px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.capabilities-rewired-list-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.capabilities-rewired-list-item strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .capabilities-rewired-list-item {
+    font-size: 20px;
+    line-height: 1.6;
+    padding-block: 24px;
   }
 }
 
@@ -1865,8 +2151,13 @@ footer,
 }
 
 @keyframes laser-scan {
-  0% { left: -30%; }
-  100% { left: 110%; }
+  0% {
+    left: -30%;
+  }
+
+  100% {
+    left: 110%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1906,10 +2197,10 @@ footer,
 
 .trust-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
   margin-bottom: 20px;
 }
 
@@ -1996,11 +2287,6 @@ footer,
   color: #00b67a;
 }
 
-.trust-card-stat.text-val {
-  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
-  letter-spacing: -0.01em;
-}
-
 .trust-card-label {
   font-size: 0.86rem;
   color: rgba(255, 255, 255, 0.82);
@@ -2014,7 +2300,8 @@ footer,
 }
 
 .trust-section .service-details-list li::before {
-  color: var(--color-accent); /* use neon yellow/lime in dark theme */
+  color: var(--color-accent);
+  /* use neon yellow/lime in dark theme */
 }
 
 @media (max-width: 900px) {
@@ -2041,11 +2328,6 @@ footer,
   .trust-card-stat {
     font-size: clamp(2rem, 6vw, 2.4rem);
     margin-bottom: 4px;
-  }
-
-  .trust-card-stat.text-val {
-    font-size: 1.05rem;
-    line-height: 1.2;
   }
 
   .trust-card-label {
@@ -2596,30 +2878,44 @@ footer,
 
 @media (max-width: 760px) {
 
-  /* Slider wrapper — clips overflow like .reviews-slider */
+  /* Slider wrapper — scroll-snap enabled */
   .rentals-slider-wrap {
-    overflow: hidden;
+    overflow-x: auto;
     position: relative;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
   }
 
-  /* Track — becomes a flex row that slides via translateX */
+  .rentals-slider-wrap::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
+  }
+
+  /* Track — flex row for scroll-snap layout */
   .rentals-grid {
     display: flex;
     flex-wrap: nowrap;
-    gap: 0;
+    gap: 16px;
     margin-bottom: 0;
-    transition: transform 480ms cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: transform;
+    padding-inline: 16px;
+    width: max-content;
+    position: relative;
+    transition: none !important;
+    transform: none !important;
+    will-change: auto;
   }
 
-  /* Each card takes exactly 100% of the visible wrapper */
+  /* Each card centers and leaves a peek of adjacent cards */
   .rental-card {
-    flex: 0 0 100%;
+    flex: 0 0 calc(100vw - 48px);
+    max-width: 450px;
     width: 100%;
     border-radius: 20px;
     margin: 0;
-    /* Remove scroll-snap (not needed anymore) */
-    scroll-snap-align: unset;
+    scroll-snap-align: center;
     box-shadow: none !important;
   }
 
@@ -3000,6 +3296,8 @@ footer,
   text-align: center;
 }
 
+
+
 .cta-section::before {
   content: '';
   position: absolute;
@@ -3013,7 +3311,7 @@ footer,
 
 .cta-inner {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .cta-badge {
