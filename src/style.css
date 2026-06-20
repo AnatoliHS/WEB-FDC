@@ -3397,7 +3397,7 @@ footer,
 ══════════════════════════════════════ */
 .cta-section {
   padding-block: 100px;
-  background: #f0f0f0;
+  background: #f9f9f6;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -3493,7 +3493,8 @@ footer,
 ══════════════════════════════════════ */
 .contact-section {
   padding-block: 100px;
-  background: var(--color-bg);
+  background: #f9f9f6;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .contact-grid {
@@ -3510,11 +3511,19 @@ footer,
   letter-spacing: -0.025em;
   line-height: 1.2;
   margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.contact-heading span {
+  background: linear-gradient(135deg, #5d22fe, #9e28ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .contact-body {
   font-size: 0.95rem;
-  color: var(--color-text-soft);
+  color: #555555;
   line-height: 1.8;
   margin-bottom: 40px;
 }
@@ -3530,14 +3539,14 @@ footer,
   align-items: flex-start;
   gap: 16px;
   padding: 20px;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius);
   transition: border-color var(--dur) var(--ease);
 }
 
 .contact-detail:hover {
-  border-color: var(--color-border-h);
+  border-color: rgba(0, 0, 0, 0.25);
 }
 
 .contact-detail-icon {
@@ -3582,18 +3591,20 @@ footer,
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 2px;
+  color: #1a1a1a;
 }
 
 .contact-detail span {
   font-size: 0.875rem;
-  color: var(--color-text-soft);
+  color: #555555;
 }
 
 .contact-form-wrap {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius-xl);
   padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 .form-row {
@@ -3612,17 +3623,17 @@ footer,
 .form-group label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-text-soft);
+  color: #555555;
   letter-spacing: 0.04em;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  color: var(--color-text);
+  color: #1a1a1a;
   font-family: var(--font-body);
   font-size: 0.9rem;
   padding: 13px 16px;
@@ -3633,7 +3644,7 @@ footer,
 }
 
 .form-group select {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23ffffff80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%231a1a1a80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-size: 16px;
@@ -3641,14 +3652,15 @@ footer,
 }
 
 .form-group select option {
-  background: var(--color-bg-card);
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(228, 254, 0, 0.08);
+  box-shadow: 0 0 0 3px rgba(158, 40, 255, 0.08);
 }
 
 .form-group textarea {
