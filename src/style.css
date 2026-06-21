@@ -468,8 +468,6 @@ footer,
     font-size: 1.25rem;
     font-weight: 600;
     color: #e5e5e5;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     border-bottom: 1px solid var(--color-border);
     border-radius: 0;
     transform: translateX(-30px);
@@ -484,8 +482,6 @@ footer,
     border-radius: 12px;
     font-size: 1.25rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     transform: translateX(-30px);
     opacity: 0;
     transition: transform 350ms var(--ease), opacity 350ms var(--ease), background var(--dur-fast) var(--ease);
