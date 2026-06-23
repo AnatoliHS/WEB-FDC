@@ -1,1336 +1,729 @@
 ---
 layout: default
-title: "MOPS INC – Restoration Services You Can Trust"
-description: "MOPS INC provides professional restoration services for homes and businesses, including water damage, fire
-and smoke recovery, mold remediation, and full rebuilds."
+title: "Family Dental Centre — Belleville, Cobourg & Frankford, ON"
+description: "Family Dental Centre provides comprehensive dental care in Belleville, Cobourg, and Frankford, Ontario. Convenient hours, direct insurance billing, and emergency appointments within 48 hours."
 ---
 
-<!-- ════════════════════════════════════════
+<!-- ═══════════════════════════════════════════
      1. HERO
-════════════════════════════════════════ -->
-<section id="hero" class="hero">
-  <!-- Fullscreen background video -->
-  <video class="hero-video" src="/assets/hero-video.mp4" autoplay muted loop playsinline preload="auto"
-    aria-hidden="true"></video>
-  <!-- Dark overlay so text stays readable -->
-  <div class="hero-video-overlay"></div>
-  <div class="container hero-container">
-    <h1 class="hero-headline reveal-up" style="--d:0ms">Restoration when you <span
-        class="hero-headline-accent">need</span> it most.</h1>
-    <p class="hero-sub reveal-up" style="--d:360ms">
-      Professional emergency response, insurance-claim support, and full rebuild services for homes and commercial
-      properties.
-    </p>
-    <div class="hero-actions reveal-up" style="--d:480ms">
-      <a href="#contact" class="btn-primary btn-primary--lg" id="hero-cta">Get Emergency Help</a>
+═══════════════════════════════════════════ -->
+<section id="hero" class="hero" aria-labelledby="hero-heading">
+  <!-- Background Image -->
+  <div class="hero-bg" aria-hidden="true">
+    <img
+      src="/assets/hero-fdc.png"
+      alt="Family Dental Centre reception area"
+      fetchpriority="high"
+      decoding="async"
+      onload="this.classList.add('loaded')"
+    />
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="container hero-content">
+    <div class="hero-eyebrow" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 40 40" fill="none"><path d="M20 4C14 4 9 8.5 9 14c0 3.5 1.5 6.5 3 9l2.5 10.5c.3 1.2 1.3 2 2.5 2s2.2-.8 2.5-2L20 28l.5 5.5c.3 1.2 1.3 2 2.5 2s2.2-.8 2.5-2L28 23c1.5-2.5 3-5.5 3-9 0-5.5-5-10-11-10z" fill="currentColor"/></svg>
+      Serving Ontario Since 2007
     </div>
 
+    <h1 id="hero-heading" class="hero-headline reveal-up" style="--d:0ms">
+      We bring <em>smiles</em><br>to life.
+    </h1>
+
+    <p class="hero-sub reveal-up" style="--d:160ms">
+      Comprehensive dental care for your whole family across three convenient Ontario locations. With modern technology and a compassionate team, your healthy smile is our priority.
+    </p>
+
+    <div class="hero-actions reveal-up" style="--d:280ms">
+      <a href="#contact" class="btn btn-primary btn-lg" id="hero-cta-primary">Book Appointment</a>
+      <a href="#treatments" class="btn btn-ghost btn-lg" id="hero-cta-secondary">Our Treatments</a>
+    </div>
+
+    <div class="hero-trust reveal-up" style="--d:400ms">
+      <div class="hero-trust-item">
+        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Convenient Extended Hours
+      </div>
+      <div class="hero-trust-item">
+        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Direct Insurance Billing
+      </div>
+      <div class="hero-trust-item">
+        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        3 Ontario Locations
+      </div>
+      <div class="hero-trust-item">
+        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        Emergency within 48h
+      </div>
+    </div>
   </div>
-  <div class="hero-scroll-indicator">
-    <div class="scroll-line"></div>
+
+  <!-- Scroll Indicator -->
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
     <span>Scroll</span>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════
-     3. INTRO / ABOUT
-════════════════════════════════════════ -->
-<section id="about" class="about-section">
-  <div class="container">
-
-    <div class="about-intro reveal-left">
-      <h2 class="about-heading"><span>Restoration</span> built on trust,<br>expertise, and community.</h2>
-      <p class="about-body">
-        MOPSINC Restoration Services has built its reputation on professionalism, technical expertise, and rapid
-        response. Our team consists of certified restoration and abatement specialists trained to meet and exceed
-        industry standards and government regulations for hazardous material handling and environmental safety.
-      </p>
-      <a href="#contact" class="btn-primary">Book a Free Assessment</a>
-    </div>
-
-    <div class="about-bento reveal-up">
-
-      <!-- Left column: image (large) + stat card (small) -->
-      <div class="about-bento-col">
-        <div class="about-bento-img">
-          <img src="/assets/document-mops.png" alt="Documenting property loss properly" loading="lazy">
-          <div class="about-bento-img-badge">
-            <span class="about-badge-icon">✓</span>
-            <span>Certified Abatement Specialists</span>
-          </div>
-        </div>
-        <div class="about-bento-stat">
-          <p class="about-stat-label">Our Mission</p>
-          <p class="about-stat-number">Uplift &amp; Build</p>
-          <p class="about-stat-sub">To deliver exceptional restoration services and build a better future for our
-            community by providing opportunities that uplift and develop individuals.</p>
-        </div>
-      </div>
-
-      <!-- Right column: info card (small) + image (large) -->
-      <div class="about-bento-col">
-        <div class="about-bento-insight">
-          <p class="about-insight-label">Our Vision</p>
-          <p class="about-insight-number">Trust &amp; Thrive</p>
-          <p class="about-insight-sub">To be the most trusted restoration company while empowering individuals to
-            thrive.</p>
-        </div>
-        <div class="about-bento-img-right">
-          <img src="/assets/damage-mops.avif" alt="Detecting hidden property damage" loading="lazy">
-          <div class="about-bento-img-badge">
-            <span class="about-badge-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" style="width:12px;height:12px">
-                <circle cx="11" cy="11" r="6" />
-                <line x1="16.5" y1="16.5" x2="21" y2="21" />
-              </svg>
-            </span>
-            <span>Exceeding Industry Standards</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
+<!-- ═══════════════════════════════════════════
      2. MARQUEE TICKER
-════════════════════════════════════════ -->
+═══════════════════════════════════════════ -->
 <div class="ticker-wrap" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item">Water Damage Restoration</span>
+    <span class="ticker-item">Classic Treatments</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Fire & Smoke Recovery</span>
+    <span class="ticker-item">Invisalign</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Mold Remediation</span>
+    <span class="ticker-item">Dental Implants</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Full Property Rebuilds</span>
+    <span class="ticker-item">Cosmetic Dentistry</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Emergency Response 24/7</span>
+    <span class="ticker-item">Dentures & Denture Lab</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Water Damage Restoration</span>
+    <span class="ticker-item">Sedation Dentistry</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Fire & Smoke Recovery</span>
+    <span class="ticker-item">Restorative Care</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Mold Remediation</span>
+    <span class="ticker-item">Emergency Appointments</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Full Property Rebuilds</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="ticker-item">Classic Treatments</span>
     <span class="ticker-dot">✦</span>
-    <span class="ticker-item">Emergency Response 24/7</span>
+    <span class="ticker-item">Invisalign</span>
+    <span class="ticker-dot">✦</span>
+    <span class="ticker-item">Dental Implants</span>
+    <span class="ticker-dot">✦</span>
+    <span class="ticker-item">Cosmetic Dentistry</span>
+    <span class="ticker-dot">✦</span>
+    <span class="ticker-item">Dentures & Denture Lab</span>
+    <span class="ticker-dot">✦</span>
+    <span class="ticker-item">Sedation Dentistry</span>
+    <span class="ticker-dot">✦</span>
+    <span class="ticker-item">Restorative Care</span>
+    <span class="ticker-dot">✦</span>
+    <span class="ticker-item">Emergency Appointments</span>
     <span class="ticker-dot">✦</span>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     4. SERVICES
-════════════════════════════════════════ -->
-<section id="services" class="services-section">
+<!-- ═══════════════════════════════════════════
+     3. WHY CHOOSE FDC — BENEFITS
+═══════════════════════════════════════════ -->
+<section id="benefits" class="benefits-section" aria-labelledby="benefits-heading">
   <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">Professional Restoration &amp; Abatement <span>Services</span></h2>
-      <p class="section-lead">MOPSINC Restoration Services has built its reputation on professionalism, technical
-        expertise, and rapid response. Our team consists of certified restoration and abatement specialists trained to
-        meet and exceed industry standards and government regulations for hazardous material handling and environmental
-        safety.</p>
+
+    <div class="benefits-header reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2 id="benefits-heading" class="benefits-heading">
+        Dental care that puts <span>your family first</span>
+      </h2>
+      <p class="benefits-lead">
+        From your very first visit, you'll feel the Family Dental Centre difference — compassionate care, modern technology, and a team that genuinely cares about your smile.
+      </p>
     </div>
 
-    <div class="services-container reveal-up">
-      <div class="services-list">
-        <!-- Service 1: Emergency Mitigation -->
-        <div class="service-accordion-item active" id="service-emergency" data-service="emergency">
-          <div class="service-accordion-header">
-            <div class="service-accordion-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
-            <h3 class="service-accordion-title">Emergency Mitigation</h3>
-            <span class="service-accordion-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
+    <div class="benefits-grid">
+
+      <article class="benefit-card reveal-up" style="--d:0ms">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="benefit-title">Convenient Hours</h3>
+        <p class="benefit-body">We're open early and late so dental care fits your schedule — not the other way around. No need to take a full day off work.</p>
+        <span class="benefit-tag">Open Early & Late</span>
+      </article>
+
+      <article class="benefit-card reveal-up" style="--d:100ms">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3 class="benefit-title">Direct Insurance Billing</h3>
+        <p class="benefit-body">We handle the insurance paperwork directly with your provider, making it easy and stress-free for you and your family.</p>
+        <span class="benefit-tag">Most Plans Accepted</span>
+      </article>
+
+      <article class="benefit-card reveal-up" style="--d:200ms">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="benefit-title">Senior & Military Discount</h3>
+        <p class="benefit-body">As a thank-you to our community's seniors and military members, we proudly offer a 10% hygiene discount on qualifying services.</p>
+        <span class="benefit-tag">10% Off Hygiene</span>
+      </article>
+
+      <article class="benefit-card reveal-up" style="--d:300ms">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        </div>
+        <h3 class="benefit-title">Emergency Appointments</h3>
+        <p class="benefit-body">Dental emergencies don't wait. We offer emergency appointments within 48 hours to give you fast relief and peace of mind.</p>
+        <span class="benefit-tag">Within 48 Hours</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     4. TREATMENTS
+═══════════════════════════════════════════ -->
+<section id="treatments" class="treatments-section" aria-labelledby="treatments-heading">
+  <div class="container">
+
+    <div class="treatments-header reveal">
+      <span class="eyebrow">What We Offer</span>
+      <h2 id="treatments-heading" class="treatments-title">
+        Comprehensive <span>dental treatments</span>
+      </h2>
+      <p class="treatments-lead">
+        From routine cleanings to full smile transformations, our skilled team has the expertise and technology to deliver exceptional results.
+      </p>
+    </div>
+
+    <div class="treatments-layout">
+      <!-- Tab List -->
+      <div class="treatment-tabs" role="tablist" aria-label="Dental treatments">
+
+        <button class="treatment-tab active" data-treatment="classic" role="tab" aria-selected="true" aria-controls="panel-classic" id="tab-classic">
+          <div class="treatment-tab-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <div class="service-accordion-content">
-            <p class="service-accordion-body">Rapid response to stabilize your property, extract standing water, clean
-              smoke residues, and secure your space immediately after a loss.</p>
-            <ul class="service-details-list">
-              <li>Water damage extraction and structural drying</li>
-              <li>Flood and sewage backup mitigation</li>
-              <li>Fire and smoke damage cleanup and deodorization</li>
-              <li>Wind and storm damage stabilization (board-up, tarping, temporary shoring)</li>
+          <div class="treatment-tab-text">
+            <span class="treatment-tab-name">Classic Treatments</span>
+            <span class="treatment-tab-desc">Cleanings, exams & X-rays</span>
+          </div>
+        </button>
+
+        <button class="treatment-tab" data-treatment="cosmetic" role="tab" aria-selected="false" aria-controls="panel-cosmetic" id="tab-cosmetic">
+          <div class="treatment-tab-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <div class="treatment-tab-text">
+            <span class="treatment-tab-name">Cosmetic Dentistry</span>
+            <span class="treatment-tab-desc">Whitening, veneers & more</span>
+          </div>
+        </button>
+
+        <button class="treatment-tab" data-treatment="invisalign" role="tab" aria-selected="false" aria-controls="panel-invisalign" id="tab-invisalign">
+          <div class="treatment-tab-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+          </div>
+          <div class="treatment-tab-text">
+            <span class="treatment-tab-name">Invisalign</span>
+            <span class="treatment-tab-desc">Clear aligner therapy</span>
+          </div>
+        </button>
+
+        <button class="treatment-tab" data-treatment="implants" role="tab" aria-selected="false" aria-controls="panel-implants" id="tab-implants">
+          <div class="treatment-tab-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M12 12v10M9 15h6"/></svg>
+          </div>
+          <div class="treatment-tab-text">
+            <span class="treatment-tab-name">Dental Implants</span>
+            <span class="treatment-tab-desc">Permanent tooth replacement</span>
+          </div>
+        </button>
+
+        <button class="treatment-tab" data-treatment="dentures" role="tab" aria-selected="false" aria-controls="panel-dentures" id="tab-dentures">
+          <div class="treatment-tab-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4C14 4 9 8.5 9 14c0 3.5 1.5 6.5 3 9l2.5 10.5c.3 1.2 1.3 2 2.5 2s2.2-.8 2.5-2L20 28l.5 5.5c.3 1.2 1.3 2 2.5 2s2.2-.8 2.5-2L28 23c1.5-2.5 3-5.5 3-9 0-5.5-5-10-11-10z"/></svg>
+          </div>
+          <div class="treatment-tab-text">
+            <span class="treatment-tab-name">Dentures</span>
+            <span class="treatment-tab-desc">On-site denture lab</span>
+          </div>
+        </button>
+
+        <button class="treatment-tab" data-treatment="sedation" role="tab" aria-selected="false" aria-controls="panel-sedation" id="tab-sedation">
+          <div class="treatment-tab-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="treatment-tab-text">
+            <span class="treatment-tab-name">Sedation Dentistry</span>
+            <span class="treatment-tab-desc">Anxiety-free dental care</span>
+          </div>
+        </button>
+
+        <button class="treatment-tab" data-treatment="restorative" role="tab" aria-selected="false" aria-controls="panel-restorative" id="tab-restorative">
+          <div class="treatment-tab-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="14 2 14 8 20 8"/><path d="M20 20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12z"/></svg>
+          </div>
+          <div class="treatment-tab-text">
+            <span class="treatment-tab-name">Restorative Care</span>
+            <span class="treatment-tab-desc">Crowns, bridges & fillings</span>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- Treatment Panels -->
+      <div class="treatment-panel-wrap">
+
+        <!-- Classic -->
+        <div class="treatment-panel active" data-treatment="classic" role="tabpanel" id="panel-classic" aria-labelledby="tab-classic" aria-hidden="false">
+          <div class="treatment-panel-img">
+            <img src="/assets/smile-fdc.png" alt="Classic dental treatments — cleanings and exams" loading="lazy">
+            <div class="treatment-panel-badge">Preventive Care</div>
+          </div>
+          <div class="treatment-panel-content">
+            <h3 class="treatment-panel-title">Classic Treatments</h3>
+            <p class="treatment-panel-body">The foundation of a healthy smile. Our preventive services are designed to keep your teeth and gums in top condition through regular care and early detection.</p>
+            <ul class="treatment-panel-list">
+              <li>Comprehensive dental exams</li>
+              <li>Professional teeth cleanings & scaling</li>
+              <li>Digital X-rays & imaging</li>
+              <li>Oral cancer screenings</li>
+              <li>Children's dentistry & fluoride treatments</li>
             </ul>
-            <div class="service-accordion-tags">
-              <span>24/7 Dispatch</span>
-              <span>Rapid Response</span>
-              <span>Site Stabilization</span>
-            </div>
+            <a href="#contact" class="btn btn-primary">Book a Cleaning</a>
           </div>
         </div>
 
-        <!-- Service 2: Environmental Hazard Abatement -->
-        <div class="service-accordion-item" id="service-abatement" data-service="abatement">
-          <div class="service-accordion-header">
-            <div class="service-accordion-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-            <h3 class="service-accordion-title">Environmental Hazard Abatement</h3>
-            <span class="service-accordion-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
+        <!-- Cosmetic -->
+        <div class="treatment-panel" data-treatment="cosmetic" role="tabpanel" id="panel-cosmetic" aria-labelledby="tab-cosmetic" aria-hidden="true">
+          <div class="treatment-panel-img">
+            <img src="/assets/smile-fdc.png" alt="Cosmetic dentistry — whitening and veneers" loading="lazy">
+            <div class="treatment-panel-badge">Smile Transformation</div>
           </div>
-          <div class="service-accordion-content">
-            <p class="service-accordion-body">Safe, compliant removal and containment of hazardous materials, mould
-              spores, and biological contaminants under strict industry standards.</p>
-            <ul class="service-details-list">
-              <li>Asbestos Abatement (Type 1, 2) in accordance with O. Reg. 278/05 and IICRC S520</li>
-              <li>Lead Paint Removal and Encapsulation</li>
-              <li>Mould Remediation following IICRC S520 Standards</li>
-              <li>Biohazard and Trauma Scene Cleanup</li>
-              <li>Infectious Disease Control / Decontamination Cleaning</li>
+          <div class="treatment-panel-content">
+            <h3 class="treatment-panel-title">Cosmetic Dentistry</h3>
+            <p class="treatment-panel-body">Transform your smile with our cosmetic services. Whether you want a brighter smile or a complete smile makeover, we have the expertise to make it happen.</p>
+            <ul class="treatment-panel-list">
+              <li>Professional teeth whitening</li>
+              <li>Porcelain veneers</li>
+              <li>Tooth bonding & contouring</li>
+              <li>Smile design consultations</li>
             </ul>
-            <div class="service-accordion-tags">
-              <span>Asbestos Certified</span>
-              <span>Mould Remediation</span>
-              <span>O. Reg. 278/05</span>
-            </div>
+            <a href="#contact" class="btn btn-primary">Book Consultation</a>
           </div>
         </div>
 
-        <!-- Service 3: Structural Restoration & Reconstruction -->
-        <div class="service-accordion-item" id="service-reconstruction" data-service="reconstruction">
-          <div class="service-accordion-header">
-            <div class="service-accordion-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-            </div>
-            <h3 class="service-accordion-title">Structural Restoration &amp; Reconstruction</h3>
-            <span class="service-accordion-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
+        <!-- Invisalign -->
+        <div class="treatment-panel" data-treatment="invisalign" role="tabpanel" id="panel-invisalign" aria-labelledby="tab-invisalign" aria-hidden="true">
+          <div class="treatment-panel-img">
+            <img src="/assets/smile-fdc.png" alt="Invisalign clear aligners" loading="lazy">
+            <div class="treatment-panel-badge">Certified Provider</div>
           </div>
-          <div class="service-accordion-content">
-            <p class="service-accordion-body">From structural cleanup and debris removal to complete rebuilds and final
-              finishes, we return your property to pre-loss condition.</p>
-            <ul class="service-details-list">
-              <li>Demolition and debris removal</li>
-              <li>Structural drying, cleaning, and repair</li>
-              <li>Contents restoration and pack-out</li>
-              <li>Full reconstruction and finishing</li>
+          <div class="treatment-panel-content">
+            <h3 class="treatment-panel-title">Invisalign</h3>
+            <p class="treatment-panel-body">Straighten your teeth discreetly with clear aligner technology. Invisalign is comfortable, removable, and virtually invisible — perfect for adults and teens.</p>
+            <ul class="treatment-panel-list">
+              <li>Free Invisalign consultations</li>
+              <li>Custom aligner trays</li>
+              <li>Digital treatment planning</li>
+              <li>Flexible payment options</li>
             </ul>
-            <div class="service-accordion-tags">
-              <span>Structural Repair</span>
-              <span>Reconstruction</span>
-              <span>Turnkey Delivery</span>
-            </div>
+            <a href="#contact" class="btn btn-primary">Free Consultation</a>
           </div>
         </div>
 
-        <!-- Service 4: Contents Management -->
-        <div class="service-accordion-item" id="service-contents" data-service="contents">
-          <div class="service-accordion-header">
-            <div class="service-accordion-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="21 8 21 21 3 21 3 8" />
-                <rect x="1" y="3" width="22" height="5" />
-                <line x1="10" y1="12" x2="14" y2="12" />
-              </svg>
-            </div>
-            <h3 class="service-accordion-title">Contents Management</h3>
-            <span class="service-accordion-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
+        <!-- Implants -->
+        <div class="treatment-panel" data-treatment="implants" role="tabpanel" id="panel-implants" aria-labelledby="tab-implants" aria-hidden="true">
+          <div class="treatment-panel-img">
+            <img src="/assets/treatment-fdc.png" alt="Dental implants procedure room" loading="lazy">
+            <div class="treatment-panel-badge">Permanent Solution</div>
           </div>
-          <div class="service-accordion-content">
-            <p class="service-accordion-body">Careful documenting, packing, cleaning, and climate-controlled storage of
-              your personal belongings and business assets during restoration.</p>
-            <ul class="service-details-list">
-              <li>On-site and off-site contents cleaning</li>
-              <li>Pack-out inventory and documentation</li>
-              <li>Secure climate-controlled storage</li>
-              <li>Electronics and textiles restoration</li>
+          <div class="treatment-panel-content">
+            <h3 class="treatment-panel-title">Dental Implants</h3>
+            <p class="treatment-panel-body">Replace missing teeth with natural-looking implants that feel and function just like your own teeth — a permanent investment in your confidence.</p>
+            <ul class="treatment-panel-list">
+              <li>Single & multiple tooth implants</li>
+              <li>Implant-supported dentures</li>
+              <li>All-on-4 solutions</li>
+              <li>Bone grafting if required</li>
             </ul>
-            <div class="service-accordion-tags">
-              <span>Inventory Tracking</span>
-              <span>Secure Storage</span>
-              <span>Textiles &amp; Electronics</span>
-            </div>
+            <a href="#contact" class="btn btn-primary">Learn More</a>
           </div>
         </div>
-      </div>
 
-      <div class="services-images-panel">
-        <div class="service-image-wrapper active" data-service="emergency">
-          <img src="/assets/emergency-mops.png" alt="Emergency property response service" loading="lazy">
+        <!-- Dentures -->
+        <div class="treatment-panel" data-treatment="dentures" role="tabpanel" id="panel-dentures" aria-labelledby="tab-dentures" aria-hidden="true">
+          <div class="treatment-panel-img">
+            <img src="/assets/treatment-fdc.png" alt="On-site denture lab" loading="lazy">
+            <div class="treatment-panel-badge">On-Site Lab</div>
+          </div>
+          <div class="treatment-panel-content">
+            <h3 class="treatment-panel-title">Dentures</h3>
+            <p class="treatment-panel-body">We have an on-site denturist and denture lab — no need to visit another office. Get custom-fitted dentures with the convenience of one-stop care.</p>
+            <ul class="treatment-panel-list">
+              <li>Complete & partial dentures</li>
+              <li>Immediate dentures</li>
+              <li>Implant-supported dentures</li>
+              <li>Denture relining & repairs</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Book Fitting</a>
+          </div>
         </div>
-        <div class="service-image-wrapper" data-service="abatement">
-          <img src="/assets/mold-mops.png" alt="Environmental Hazard Abatement and Mould Remediation" loading="lazy">
+
+        <!-- Sedation -->
+        <div class="treatment-panel" data-treatment="sedation" role="tabpanel" id="panel-sedation" aria-labelledby="tab-sedation" aria-hidden="true">
+          <div class="treatment-panel-img">
+            <img src="/assets/treatment-fdc.png" alt="Calm and comfortable dental treatment room" loading="lazy">
+            <div class="treatment-panel-badge">Anxiety-Free Care</div>
+          </div>
+          <div class="treatment-panel-content">
+            <h3 class="treatment-panel-title">Sedation Dentistry</h3>
+            <p class="treatment-panel-body">Dental anxiety is real — and we're here to help. Our sedation options ensure a calm, comfortable experience so you get the care you need without fear.</p>
+            <ul class="treatment-panel-list">
+              <li>Nitrous oxide (laughing gas)</li>
+              <li>Oral conscious sedation</li>
+              <li>Safe for children & adults</li>
+              <li>Pre-treatment consultations</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Learn More</a>
+          </div>
         </div>
-        <div class="service-image-wrapper" data-service="reconstruction">
-          <img src="/assets/rebuild-mops.png" alt="Structural Reconstruction and Restoration" loading="lazy">
+
+        <!-- Restorative -->
+        <div class="treatment-panel" data-treatment="restorative" role="tabpanel" id="panel-restorative" aria-labelledby="tab-restorative" aria-hidden="true">
+          <div class="treatment-panel-img">
+            <img src="/assets/smile-fdc.png" alt="Restorative dental treatments" loading="lazy">
+            <div class="treatment-panel-badge">Restore & Repair</div>
+          </div>
+          <div class="treatment-panel-content">
+            <h3 class="treatment-panel-title">Restorative Care</h3>
+            <p class="treatment-panel-body">Rebuild damaged or missing teeth with durable, natural-looking restorations. Our restorative treatments bring back full function and aesthetics to your smile.</p>
+            <ul class="treatment-panel-list">
+              <li>Porcelain crowns & bridges</li>
+              <li>Tooth-coloured composite fillings</li>
+              <li>Root canal therapy</li>
+              <li>Oral surgery & wisdom teeth removal</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Book Assessment</a>
+          </div>
         </div>
-        <div class="service-image-wrapper" data-service="contents">
-          <img src="/assets/document-mops.png" alt="Contents Management and Documenting" loading="lazy">
-        </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════
-     4.5 PEACE OF MIND / STRESS RELIEF
-════════════════════════════════════════ -->
-<section id="peace-of-mind" class="stress-section">
+<!-- ═══════════════════════════════════════════
+     5. STATS BAR
+═══════════════════════════════════════════ -->
+<div class="stats-section" aria-label="Practice statistics">
   <div class="container">
-    <div class="stress-grid">
-      <div class="stress-content reveal-left">
-        <h2 class="stress-heading">Remove the stress and regain <span>control</span> of your space.</h2>
-        <p class="stress-body">When damage disrupts your home or business, we step in fast with clear guidance, proper
-          documentation, and a restoration plan that puts you back on solid ground.</p>
-        <a href="#contact" class="btn-primary">Get Started Today</a>
+    <div class="stats-grid">
+      <div class="stat-item reveal-up" style="--d:0ms">
+        <div class="stat-number"><span class="counter-number" data-target="17">17</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">Years of Care</div>
       </div>
-      <div class="stress-image-wrap reveal-right">
-        <img src="/assets/couple-mops.avif" alt="Family at ease after restoration work" loading="lazy">
-
-        <!-- Speech Bubbles -->
-        <div class="bubble-group bubble-group-aaron">
-          <div class="bubble-name-tag">Aaron</div>
-          <div class="bubble bubble-aaron">
-            <div class="bubble-avatar">A</div>
-            <p class="bubble-message">Good news, we've got you covered</p>
-          </div>
-        </div>
-
-        <div class="bubble-group bubble-group-steph">
-          <div class="bubble-name-tag">Steph</div>
-          <div class="bubble bubble-steph">
-            <div class="bubble-avatar">S</div>
-            <p class="bubble-message">Amazing!! TY so much!</p>
-          </div>
-        </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item reveal-up" style="--d:100ms">
+        <div class="stat-number"><span class="counter-number" data-target="3">3</span></div>
+        <div class="stat-label">Locations</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item reveal-up" style="--d:200ms">
+        <div class="stat-number"><span class="counter-number" data-target="15000">15,000</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">Happy Patients</div>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item reveal-up" style="--d:300ms">
+        <div class="stat-number"><span class="counter-number" data-target="48">48</span><span class="stat-suffix">h</span></div>
+        <div class="stat-label">Emergency Response</div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-
-<!-- ════════════════════════════════════════
-     5. CAPABILITIES (replaces Process)
-════════════════════════════════════════ -->
-<section id="process" class="escalation-section">
-  <!-- Subtle gradient glow overlays -->
-  <div class="capabilities-glow" aria-hidden="true"></div>
-
+<!-- ═══════════════════════════════════════════
+     6. ABOUT / TEAM
+═══════════════════════════════════════════ -->
+<section id="about" class="about-section" aria-labelledby="about-heading">
   <div class="container">
-    <!-- Capabilities Arrows Section -->
-    <div class="capabilities-arrows-root">
-      <div class="capabilities-arrows-title reveal-up">
-        <h2>Emergency Response <span>Capabilities</span></h2>
-      </div>
-      <div class="capabilities-arrows-container reveal-up" style="--d: 100ms">
-        <div class="capabilities-arrow-card">
-          <img src="/assets/emergency-mops.png" alt="Emergency property response service" loading="lazy">
-        </div>
-        <div class="capabilities-arrow-card">
-          <img src="/assets/mold-mops.png" alt="Environmental Hazard Abatement and Mould Remediation" loading="lazy">
-        </div>
-        <div class="capabilities-arrow-card">
-          <img src="/assets/rebuild-mops.png" alt="Structural Reconstruction and Restoration" loading="lazy">
-        </div>
-        <div class="capabilities-arrow-card">
-          <img src="/assets/document-mops.png" alt="Contents Management and Documenting" loading="lazy">
-        </div>
-      </div>
-      <div class="capabilities-arrows-text reveal-up" style="--d: 200ms">
-        <p>MOPSINC Restoration Services is structured for immediate response and high-performance mitigation. Our
-          infrastructure ensures rapid containment and precise restoration under any emergency conditions.</p>
-      </div>
-    </div>
-  </div>
+    <div class="about-grid">
 
-  <!-- Capabilities Rewired (Restoration Redefined) Section -->
-  <div class="capabilities-rewired-wrapper">
-    <div class="container">
-      <div class="capabilities-row">
-        <div class="capabilities-col capabilities-left-col-wrapper reveal-left">
-          <div class="capabilities-rewired-left">
-            <div class="capabilities-title-wrap">
-              <h2 class="capabilities-rewired-title">
-                <div>Restoration,</div>
-                <div class="em">Redefined.</div>
-              </h2>
-              <!-- Inline Spinning Orbit Animation -->
-              <div class="capabilities-inline-orbit" aria-hidden="true">
-                <div class="orbit-ring orbit-ring-1">
-                  <div class="orbit-node node-droplet">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13S5 10.7 5 15a7 7 0 0 0 7 7z" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-flame">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path
-                        d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-thermometer">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-smoke">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="orbit-ring orbit-ring-2">
-                  <div class="orbit-node node-alert">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path
-                        d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-                      <line x1="12" y1="9" x2="12" y2="13" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-wind">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path
-                        d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-lightning">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-home">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="orbit-ring orbit-ring-3">
-                  <div class="orbit-node node-shield">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-clock">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-umbrella">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M23 12a11.02 11.02 0 0 0-22 0zm-11 0v9a2 2 0 0 0 4 0" />
-                    </svg>
-                  </div>
-                  <div class="orbit-node node-activity">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="capabilities-col reveal-right">
-          <div class="capabilities-rewired-right">
-            <div class="capabilities-rewired-label">Service Standards:</div>
-            <div class="capabilities-rewired-list">
-              <div class="capabilities-rewired-list-item">
-                <span><strong>24/7 Dispatch &amp; Rapid Mobilization.</strong> On-site within 60–90 minutes to stabilize
-                  and secure.</span>
-              </div>
-              <div class="capabilities-rewired-list-item">
-                <span><strong>Certified Specialists &amp; Fleet.</strong> Equipped to handle complex water, mold, and
-                  environmental hazards.</span>
-              </div>
-              <div class="capabilities-rewired-list-item">
-                <span><strong>Industrial Mitigation Power.</strong> Commercial LGR dehumidifiers, HEPA scrubbers, and
-                  hydroxyl units.</span>
-              </div>
-              <div class="capabilities-rewired-list-item">
-                <span><strong>Insurance-Compliant Logging.</strong> Moisture mapping, logs, and thermal audits ready for
-                  claims.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════════
-     6. TRUST / WHY US
-════════════════════════════════════════ -->
-<section id="trust" class="trust-section">
-  <div class="container">
-    <div class="trust-grid">
-      <div class="trust-left reveal-left">
-        <h2 class="trust-heading">Certifications &amp; Compliance</h2>
-        <p class="trust-body" style="margin-bottom: 20px;">MOPSINC and its technicians maintain up-to-date industry
-          certifications, specialized licensing, and comprehensive pollution insurance coverage:</p>
-        <ul class="service-details-list" style="margin-bottom: 24px;">
-          <li>Asbestos Abatement Supervisor/Worker Certification (Type 1, 2)</li>
-          <li>Lead Safe Work &amp; WHMIS Certification</li>
-          <li>Confined Space &amp; Fall Protection Certification</li>
-          <li>Biohazard &amp; Trauma Scene Cleaning Certification</li>
-          <li>Environmental Liability &amp; Pollution Insurance Coverage</li>
-        </ul>
-
-        <p class="trust-body" style="margin-bottom: 12px; font-weight: 600; color: var(--color-text);">Advanced
-          Mitigation Standards:</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px;">
-          <ul class="service-details-list" style="margin-bottom: 0;">
-            <li>Water Damage Restoration</li>
-            <li>Applied Structural Drying (ASD)</li>
-          </ul>
-          <ul class="service-details-list" style="margin-bottom: 0;">
-            <li>Applied Microbial Remediation</li>
-            <li>Fire &amp; Smoke Restoration</li>
-          </ul>
-        </div>
-      </div>
-      <div class="trust-right reveal-right">
-        <div class="trust-cards">
-          <!-- Card 1: IICRC -->
-          <div class="trust-card">
-            <span class="trust-card-stat">IICRC</span>
-            <span class="trust-card-label">All restoration, microbial remediation, and drying work is completed to IICRC
-              S500, S520, and S540 standards.</span>
-          </div>
-          <!-- Card 2: OH&S -->
-          <div class="trust-card">
-            <span class="trust-card-stat">OH&amp;S</span>
-            <span class="trust-card-label">Full compliance with provincial and federal Occupational Health and Safety
-              regulations.</span>
-          </div>
-          <!-- Card 3: MOL -->
-          <div class="trust-card">
-            <span class="trust-card-stat">MOL</span>
-            <span class="trust-card-label">Strict adherence to Ministry of Labour guidelines and workplace hazardous
-              material safety protocols.</span>
-          </div>
-          <!-- Card 4: CSA / Health Canada -->
-          <div class="trust-card">
-            <span class="trust-card-stat">CSA / IEQ</span>
-            <span class="trust-card-label">Compliance with Health Canada and CSA standards for Indoor Environmental
-              Quality (IEQ).</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     6.5. PLANS & PRICING
-════════════════════════════════════════ -->
-<!-- <section id="pricing" class="pricing-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">Transparent Pricing for Every Scale</h2>
-      <p class="section-lead">Choose the perfect plan to streamline your property restoration, tracking, and claims
-        workflow.</p>
-
-      <div class="pricing-toggle-wrap">
-        <button id="toggle-monthly" class="pricing-toggle-btn active">Monthly Billing</button>
-        <button id="toggle-yearly" class="pricing-toggle-btn">Yearly Billing (Save 20%)</button>
-      </div>
-    </div>
-
-    <div id="pricing-container" class="pricing-grid">
-      <div class="pricing-card pricing-card-free reveal-up" style="--d:0ms">
-        <div class="pricing-card-header">
-          <div class="pricing-plan-header-row">
-            <span class="pricing-logo-text">MOPS</span>
-            <span class="pricing-badge-pill">Emergency</span>
-          </div>
-          <p class="pricing-plan-desc">For property owners who only need basic emergency response on-demand with no
-            monthly fees.</p>
-
-          <div class="pricing-price-wrap">
-            <span class="price-val price-monthly">Starts with $150</span>
-            <span class="price-sub price-monthly">Determined by scope & severity</span>
-
-            <span class="price-val price-yearly" style="display: none;">Starts with $150</span>
-            <span class="price-sub price-yearly" style="display: none;">Determined by scope & severity</span>
-          </div>
-        </div>
-
-        <div class="pricing-card-body">
-          <h4 class="pricing-features-title">Product Features</h4>
-          <ul class="pricing-features">
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Standard emergency dispatch</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Pay-per-job billing</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Basic restoration reporting</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Manual photo & document uploads</span>
-            </li>
-          </ul>
-
-          <h4 class="pricing-features-title">Support</h4>
-          <ul class="pricing-features">
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Email support</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Access to the knowledge center</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="pricing-card-footer">
-          <a href="#contact" class="pricing-btn-pill w-100 text-center">Get Help Now</a>
-        </div>
-      </div>
-
-      <div class="pricing-card pricing-card-pro featured reveal-up" style="--d:120ms">
-        <div class="pricing-card-header">
-          <div class="pricing-plan-header-row">
-            <span class="pricing-logo-text">MOPS</span>
-            <span class="pricing-badge-pill">Basic</span>
-          </div>
-          <p class="pricing-plan-desc">For growing landlords and businesses who want fast support and real-time project
-            tracking.</p>
-
-          <div class="pricing-price-wrap">
-            <span class="price-val price-monthly">$249</span>
-            <span class="price-sub price-monthly">/ month</span>
-
-            <span class="price-val price-yearly" style="display: none;">$199</span>
-            <span class="price-sub price-yearly" style="display: none;">/ month (billed annually as $2,388)</span>
-          </div>
-        </div>
-
-        <div class="pricing-card-body">
-          <h4 class="pricing-features-title">Product Features</h4>
-          <ul class="pricing-features">
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Unlimited job assessments</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Real-time project tracking</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Basic restoration reporting</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Insurance-ready photo & document uploads</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Team access controls</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Slack & QuickBooks integrations</span>
-            </li>
-          </ul>
-
-          <h4 class="pricing-features-title">Support</h4>
-          <ul class="pricing-features">
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>24/7 chat & email support</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Access to the knowledge center</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Community updates and new tool releases</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="pricing-card-footer">
-          <a href="#contact" class="pricing-btn-pill w-100 text-center">Get Help Now</a>
-        </div>
-      </div>
-
-      <div class="pricing-card pricing-card-pro-plus reveal-up" style="--d:240ms">
-        <div class="pricing-card-header">
-          <div class="pricing-plan-header-row">
-            <span class="pricing-logo-text">MOPS</span>
-            <span class="pricing-badge-pill">Pro</span>
-          </div>
-          <p class="pricing-plan-desc">For large property managers and enterprises requiring custom workflows and
-            priority response.</p>
-
-          <div class="pricing-price-wrap">
-            <span class="price-val price-monthly">$429</span>
-            <span class="price-sub price-monthly">/ month</span>
-
-            <span class="price-val price-yearly" style="display: none;">$349</span>
-            <span class="price-sub price-yearly" style="display: none;">/ month (billed annually as $4,188)</span>
-          </div>
-        </div>
-
-        <div class="pricing-card-body">
-          <h4 class="pricing-features-title">Product Features</h4>
-          <ul class="pricing-features">
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Everything in Basic</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Unlimited virtual & on-site job reports</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Advanced budgeting & cost-tracking tools</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Custom approval workflows for adjusters</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Multi-property & contractor management</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Smart alerts for recurring issues (mold, leaks, fire risk)</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Live performance dashboards</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Zapier, Slack, and full accounting integrations</span>
-            </li>
-          </ul>
-
-          <h4 class="pricing-features-title">Support</h4>
-          <ul class="pricing-features">
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Priority support with faster response times</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <span>Dedicated project success manager</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Guided onboarding for your whole team</span>
-            </li>
-            <li>
-              <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span>Early access to advanced restoration tools</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="pricing-card-footer">
-          <a href="#contact" class="pricing-btn-pill w-100 text-center">Get Help Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<!-- ════════════════════════════════════════
-     6.6. RENTALS
-════════════════════════════════════════ -->
-<section id="rentals" class="rentals-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title rentals-title">Restoration Tools for <span>Rental</span> Property Owners</h2>
-      <p class="section-lead rentals-lead">Professional-grade equipment and kits designed specifically for landlords,
-        property managers, and rental investors. Handle damage fast — before it costs you more.</p>
-    </div>
-
-    <div class="rentals-slider-wrap">
-      <div class="rentals-grid rentals-track">
-
-        <!-- Product 1: Air Movers -->
-        <div class="rental-card reveal-up" style="--d:0ms">
-          <div class="rental-card-img-wrap">
-            <img src="/assets/equip-air-movers.png" alt="Air Movers for Restoration" class="rental-card-img"
-              loading="lazy">
-            <span class="rental-badge rental-badge--yellow">Drying</span>
-          </div>
-          <div class="rental-card-body">
-            <h3 class="rental-card-title">Air Movers</h3>
-            <p class="rental-card-desc">Various types of professional air movers — axial and centrifugal — for rapid
-              structural drying after water damage. Create the airflow needed to dry floors, walls, and cavities fast.
-            </p>
-            <div class="rental-card-footer">
-              <a href="#contact" class="rental-btn">Inquire About Rental</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 2: Dehumidifiers -->
-        <div class="rental-card reveal-up" style="--d:80ms">
-          <div class="rental-card-img-wrap">
-            <img src="/assets/equip-dehumidifiers.png" alt="Medium and Large Dehumidifiers" class="rental-card-img"
-              loading="lazy">
-            <span class="rental-badge">Dehumidification</span>
-          </div>
-          <div class="rental-card-body">
-            <h3 class="rental-card-title">Medium &amp; Large Dehumidifiers</h3>
-            <p class="rental-card-desc">Commercial-grade dehumidifiers in medium and large capacities with digital
-              humidity controls and wheels for easy repositioning. Essential for multi-room and large-scale drying
-              projects.</p>
-            <div class="rental-card-footer">
-              <a href="#contact" class="rental-btn">Inquire About Rental</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 3: Air Scrubbers -->
-        <div class="rental-card reveal-up" style="--d:160ms">
-          <div class="rental-card-img-wrap">
-            <img src="/assets/equip-air-scrubbers.png" alt="HEPA Air Scrubbers" class="rental-card-img" loading="lazy">
-            <span class="rental-badge rental-badge--green">Air Quality</span>
-          </div>
-          <div class="rental-card-body">
-            <h3 class="rental-card-title">Air Scrubbers</h3>
-            <p class="rental-card-desc">Industrial HEPA air scrubbers that capture mold spores, dust, and airborne
-              contaminants during remediation. Stackable and portable — ideal for confined or multi-zone job sites.</p>
-            <div class="rental-card-footer">
-              <a href="#contact" class="rental-btn">Inquire About Rental</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 4: Hydroxyl Units -->
-        <div class="rental-card reveal-up" style="--d:240ms">
-          <div class="rental-card-img-wrap">
-            <img src="/assets/equip-hydroxyl.png" alt="Hydroxyl Generator Units" class="rental-card-img" loading="lazy">
-            <span class="rental-badge rental-badge--blue">Odour Control</span>
-          </div>
-          <div class="rental-card-body">
-            <h3 class="rental-card-title">Hydroxyl Units</h3>
-            <p class="rental-card-desc">UV-based hydroxyl generators that safely eliminate smoke, sewage, and mold
-              odours without chemicals — safe to run while occupants are present. Ideal for fire and water damage jobs.
-            </p>
-            <div class="rental-card-footer">
-              <a href="#contact" class="rental-btn">Inquire About Rental</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 5: Sewage Pumps & Water Extractors -->
-        <div class="rental-card reveal-up" style="--d:320ms">
-          <div class="rental-card-img-wrap">
-            <img src="/assets/equip-sewage-pumps.png" alt="Sewage Pumps and Water Extractors" class="rental-card-img"
-              loading="lazy">
-            <span class="rental-badge rental-badge--orange">Extraction</span>
-          </div>
-          <div class="rental-card-body">
-            <h3 class="rental-card-title">Sewage Pumps &amp; Water Extractors</h3>
-            <p class="rental-card-desc">Heavy-duty submersible sewage pumps and portable water extractors for rapid
-              standing water removal from basements, crawlspaces, and flooded structures. Built for Category 2 &amp; 3
-              water loss.</p>
-            <div class="rental-card-footer">
-              <a href="#contact" class="rental-btn">Inquire About Rental</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 6: Carpet Cleaners & Esporta -->
-        <div class="rental-card reveal-up" style="--d:400ms">
-          <div class="rental-card-img-wrap">
-            <img src="/assets/equip-carpet-cleaners.png" alt="Carpet Cleaners and Esporta Machine"
-              class="rental-card-img" loading="lazy">
-            <span class="rental-badge rental-badge--red">Cleaning</span>
-          </div>
-          <div class="rental-card-body">
-            <h3 class="rental-card-title">Carpet Cleaners &amp; Esporta Machine</h3>
-            <p class="rental-card-desc">Professional carpet extraction machines paired with the Esporta Soft Contents
-              Washing System — restoring fire- and water-damaged fabrics, textiles, and soft goods to pre-loss
-              condition.</p>
-            <div class="rental-card-footer">
-              <a href="#contact" class="rental-btn">Inquire About Rental</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 7: Commercial Dryers -->
-        <div class="rental-card reveal-up" style="--d:480ms">
-          <div class="rental-card-img-wrap">
-            <img src="/assets/equip-commercial-dryers.png" alt="Commercial Dryers" class="rental-card-img"
-              loading="lazy">
-            <span class="rental-badge">Contents Drying</span>
-          </div>
-          <div class="rental-card-body">
-            <h3 class="rental-card-title">Commercial Dryers</h3>
-            <p class="rental-card-desc">Large-capacity commercial restoration dryers for thoroughly drying clothing,
-              linens, and soft contents after water or fire damage — a key part of any complete contents restoration
-              process.</p>
-            <div class="rental-card-footer">
-              <a href="#contact" class="rental-btn">Inquire About Rental</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 8: Negative Air Machines -->
-        <div class="rental-card reveal-up" style="--d:560ms">
-          <div class="rental-card-img-wrap">
-            <img src="/assets/equip-negative-air.png" alt="Negative Air Machines" class="rental-card-img"
-              loading="lazy">
-            <span class="rental-badge rental-badge--teal">Containment</span>
-          </div>
-          <div class="rental-card-body">
-            <h3 class="rental-card-title">Negative Air Machines</h3>
-            <p class="rental-card-desc">HEPA-filtered negative air machines with flexible ducting for mold containment
-              zones — maintain negative pressure to prevent cross-contamination during remediation. Multiple filter
-              stages for superior air cleaning.</p>
-            <div class="rental-card-footer">
-              <a href="#contact" class="rental-btn">Inquire About Rental</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div><!-- /.rentals-slider-wrap -->
-
-    <!-- Mobile carousel nav (hidden on desktop) -->
-    <div class="rentals-carousel-nav" id="rentals-carousel-nav" aria-hidden="true">
-      <button class="rentals-carousel-prev" id="rentals-prev" aria-label="Previous equipment">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-      <div class="rentals-dots" id="rentals-dots"></div>
-      <button class="rentals-carousel-next" id="rentals-next" aria-label="Next equipment">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="9 6 15 12 9 18" />
-        </svg>
-      </button>
-    </div>
-
-    <div class="rentals-cta reveal">
-      <p class="rentals-cta-text">Not sure which kit is right for your property? Our specialists will guide you.</p>
-      <a href="#contact" class="btn-primary">Talk to a Specialist</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════
-     7. REVIEWS
-════════════════════════════════════════ -->
-<!-- <section id="reviews" class="reviews-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">Trusted by Homeowners<br>& Property Managers</h2>
-    </div>
-    <div class="reviews-slider">
-      <div class="reviews-track">
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"MOPS INC responded within 45 minutes of our basement flooding. They extracted water,
-            set up drying equipment, and handled everything with our insurance company. Could not be happier."</p>
-          <div class="review-author">
-            <div class="review-avatar">SJ</div>
-            <div>
-              <strong>Sarah Jenkins</strong>
-              <span>Homeowner, Belleville</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"After a kitchen fire, we thought we'd lost everything. The MOPS team did an incredible
-            job removing smoke odor and rebuilding the kitchen. It looks better than before!"</p>
-          <div class="review-author">
-            <div class="review-avatar">DR</div>
-            <div>
-              <strong>David Ross</strong>
-              <span>Property Owner, Quinte West</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Professional, certified, and honest. They found mold behind our bathroom tiles we
-            didn't even know existed, contained it properly, and cleared air quality tests. Excellent service."</p>
-          <div class="review-author">
-            <div class="review-avatar">MV</div>
-            <div>
-              <strong>Marcus Vance</strong>
-              <span>Facilities Manager, Prince Edward County</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"We manage 12 rental properties and MOPS INC is our go-to for any damage event. Their
-            insurance coordination saves us enormous time and their work is consistently top quality."</p>
-          <div class="review-author">
-            <div class="review-avatar">EC</div>
-            <div>
-              <strong>Emily Chen</strong>
-              <span>Property Manager, Bayview Rentals</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"From the assessment call to the final walk-through, every step was explained clearly.
-            The team was professional, tidy, and genuinely cared about the outcome. Highly recommend."</p>
-          <div class="review-author">
-            <div class="review-avatar">RC</div>
-            <div>
-              <strong>Robert Cole</strong>
-              <span>Homeowner, Trenton</span>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Their 24/7 response is real — not just a claim. Our sump pump failed at 2 AM and they
-            were on site by 3 AM. The quick response prevented tens of thousands in additional damage."</p>
-          <div class="review-author">
-            <div class="review-avatar">AF</div>
-            <div>
-              <strong>Amanda Foster</strong>
-              <span>Commercial Property Owner</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reviews-controls">
-        <button class="reviews-prev" aria-label="Previous reviews">←</button>
-        <button class="reviews-next" aria-label="Next reviews">→</button>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<!-- ════════════════════════════════════════
-     8. FAQ
-════════════════════════════════════════ -->
-<section id="faq" class="faq-section">
-  <div class="container">
-    <div class="faq-grid">
-      <div class="faq-left reveal-left">
-        <h2 class="faq-heading">Questions &<br>Answers</h2>
-        <p class="faq-intro">Can't find what you're looking for? Contact us directly and we'll respond within the hour.
+      <!-- Left: Copy -->
+      <div class="about-copy">
+        <span class="eyebrow about-eyebrow">Our Story</span>
+        <h2 id="about-heading" class="about-heading reveal-left">
+          Highly qualified care with a <span>personal touch</span>
+        </h2>
+        <p class="about-body reveal-left" style="--d:100ms">
+          With highly qualified dental professionals and modern technology and materials, we strive to make a difference in every patient's life and assist them in living with a healthy, happy smile.
         </p>
-        <a href="#contact" class="btn-primary">Contact Us</a>
-      </div>
-      <div class="faq-right reveal-right">
-        <div class="faq-list">
-          <div class="faq-item open">
-            <button class="faq-question">
-              <span>What types of restoration do you offer?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            <div class="faq-answer" style="max-height: 200px;">
-              <div class="faq-answer-inner">
-                <p>We offer water damage restoration, fire and smoke recovery, mold remediation, and full property
-                  rebuilds. We handle residential and commercial properties of all sizes throughout the Quinte region.
-                </p>
-              </div>
+        <p class="about-body reveal-left" style="--d:180ms">
+          Our friendly team at Family Dental Centre offers high quality dental services including routine dental hygiene, restorative care, oral surgery, Invisalign, implants, dentures, and more — all under one roof.
+        </p>
+
+        <div class="about-features reveal-left" style="--d:260ms">
+          <div class="about-feature">
+            <div class="about-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="about-feature-text">
+              <strong>Modern Technology</strong>
+              <span>Digital X-rays, 3D imaging, and the latest dental equipment for precision care</span>
             </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Do you work directly with insurance companies?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>Yes. We provide direct insurance billing and will coordinate with your adjuster from assessment
-                  through final sign-off. Our detailed documentation helps ensure your claim is processed smoothly and
-                  fairly.</p>
-              </div>
+          <div class="about-feature">
+            <div class="about-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="about-feature-text">
+              <strong>Family-Centred Team</strong>
+              <span>Caring, compassionate professionals dedicated to your comfort and health</span>
             </div>
           </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>How quickly can you respond to an emergency?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>Our emergency line is staffed 24 hours a day, 7 days a week. In most cases we can have a crew on-site
-                  within 1–2 hours of your call. Rapid response is critical to preventing secondary damage and reducing
-                  overall restoration costs.</p>
-              </div>
+          <div class="about-feature">
+            <div class="about-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Are your technicians certified?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>All MOPS INC technicians hold IICRC (Institute of Inspection Cleaning and Restoration Certification)
-                  credentials. We are fully licensed, bonded, and insured, and our team undergoes ongoing training to
-                  stay current with industry best practices.</p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What areas do you serve?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>We serve Belleville, Quinte West, Prince Edward County, and surrounding communities in Eastern
-                  Ontario. If you're unsure whether we cover your area, call us and we'll confirm within minutes.</p>
-              </div>
+            <div class="about-feature-text">
+              <strong>Community Roots</strong>
+              <span>Proudly serving Belleville, Cobourg, and Frankford since 2007</span>
             </div>
           </div>
         </div>
+
+        <a href="#contact" class="btn btn-primary reveal-left" style="--d:340ms">Meet Our Team</a>
       </div>
+
+      <!-- Right: Visuals -->
+      <div class="about-visuals reveal-right">
+        <div class="about-img-main">
+          <img src="/assets/team-fdc.png" alt="The Family Dental Centre team" loading="lazy">
+        </div>
+        <div class="about-img-float">
+          <img src="/assets/treatment-fdc.png" alt="Modern dental treatment room" loading="lazy">
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-number">17+</div>
+          <div class="about-badge-label">Years serving Ontario</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════
-     9. CTA BANNER
-════════════════════════════════════════ -->
-<section id="cta" class="cta-section">
-  <div class="cta-bg"></div>
+<!-- ═══════════════════════════════════════════
+     7. LOCATIONS
+═══════════════════════════════════════════ -->
+<section id="locations" class="locations-section" aria-labelledby="locations-heading">
   <div class="container">
-    <div class="cta-inner reveal">
-      <div class="cta-badge">Emergency? Call Now</div>
-      <h2 class="cta-heading">Don't Wait.<br><span>Damage</span> Gets Worse.</h2>
-      <p class="cta-body">Built for homeowners, landlords, and businesses who need restoration done right, from first
-        response to full rebuild.</p>
-      <p class="cta-phone">{{ site.phone }}</p>
-      <div class="cta-actions">
-        <a href="#contact" class="btn-primary btn-large">Send Us a Message</a>
-      </div>
+
+    <div class="locations-header reveal">
+      <span class="eyebrow">Find Us</span>
+      <h2 id="locations-heading" class="locations-title">
+        Three convenient <span>Ontario locations</span>
+      </h2>
+      <p class="locations-lead">
+        Whether you're in Belleville, Cobourg, or Frankford, a Family Dental Centre is close to home.
+      </p>
+    </div>
+
+    <div class="locations-grid">
+
+      <!-- Belleville -->
+      <article class="location-card reveal-up" style="--d:0ms">
+        <div class="location-name">Belleville</div>
+        <div class="location-details">
+          <div class="location-detail">
+            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>110 North Front Street, Belleville, ON</span>
+          </div>
+          <div class="location-detail">
+            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:belleville@familydentalcentre.com">belleville@familydentalcentre.com</a>
+          </div>
+        </div>
+        <a href="tel:6139617050" class="location-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          (613) 961-7050
+        </a>
+        <button class="location-cta" onclick="this.nextElementSibling.classList.toggle('is-open'); this.textContent = this.nextElementSibling.classList.contains('is-open') ? '▲ Hide Hours' : '▼ View Hours';">
+          ▼ View Hours
+        </button>
+        <div class="hours-list" aria-label="Belleville office hours">
+          <div class="hours-row"><span>Monday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Tuesday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Wednesday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Thursday</span><span>8:00am – 7:00pm</span></div>
+          <div class="hours-row"><span>Friday</span><span>8:00am – 4:00pm</span></div>
+          <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </article>
+
+      <!-- Cobourg -->
+      <article class="location-card reveal-up" style="--d:120ms">
+        <div class="location-name">Cobourg</div>
+        <div class="location-details">
+          <div class="location-detail">
+            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>1060 Burnham Street, Cobourg, ON</span>
+          </div>
+          <div class="location-detail">
+            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:cobourg@familydentalcentre.com">cobourg@familydentalcentre.com</a>
+          </div>
+        </div>
+        <a href="tel:9053727400" class="location-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          (905) 372-7400
+        </a>
+        <button class="location-cta" onclick="this.nextElementSibling.classList.toggle('is-open'); this.textContent = this.nextElementSibling.classList.contains('is-open') ? '▲ Hide Hours' : '▼ View Hours';">
+          ▼ View Hours
+        </button>
+        <div class="hours-list" aria-label="Cobourg office hours">
+          <div class="hours-row"><span>Monday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Tuesday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Wednesday</span><span>8:00am – 7:00pm</span></div>
+          <div class="hours-row"><span>Thursday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Friday</span><span>8:00am – 4:00pm</span></div>
+          <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </article>
+
+      <!-- Frankford -->
+      <article class="location-card reveal-up" style="--d:240ms">
+        <div class="location-name">Frankford</div>
+        <div class="location-details">
+          <div class="location-detail">
+            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>44 Trent Street South, Frankford, ON</span>
+          </div>
+          <div class="location-detail">
+            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:frankford@familydentalcentre.com">frankford@familydentalcentre.com</a>
+          </div>
+        </div>
+        <a href="tel:6133988888" class="location-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          (613) 398-8888
+        </a>
+        <button class="location-cta" onclick="this.nextElementSibling.classList.toggle('is-open'); this.textContent = this.nextElementSibling.classList.contains('is-open') ? '▲ Hide Hours' : '▼ View Hours';">
+          ▼ View Hours
+        </button>
+        <div class="hours-list" aria-label="Frankford office hours">
+          <div class="hours-row"><span>Monday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Tuesday</span><span>8:00am – 7:00pm</span></div>
+          <div class="hours-row"><span>Wednesday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Thursday</span><span>8:00am – 5:00pm</span></div>
+          <div class="hours-row"><span>Friday</span><span>8:00am – 4:00pm</span></div>
+          <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════
-     10. CONTACT FORM
-════════════════════════════════════════ -->
-<section id="contact" class="contact-section">
+<!-- ═══════════════════════════════════════════
+     8. TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
   <div class="container">
-    <!-- SVG Gradient Definitions -->
-    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="contact-icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#5d22fe" />
-          <stop offset="100%" stop-color="#9e28ff" />
-        </linearGradient>
-      </defs>
-    </svg>
-    <div class="contact-grid">
-      <!-- Info Side -->
-      <div class="contact-info reveal-left">
-        <h2 class="contact-heading"><span>Ready</span> to Restore?<br>We're Here to Help.</h2>
-        <p class="contact-body">Tell us about your situation and we'll respond quickly with a plan. Emergency calls are
-          always answered immediately.</p>
-        <div class="contact-details">
-          <div class="contact-detail">
-            <div class="contact-detail-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="url(#contact-icon-grad)" stroke-width="2">
-                <path
-                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12.5 19.79 19.79 0 01.01 3.9 2 2 0 012 1.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-              </svg>
-            </div>
-            <div>
-              <strong>Phone (24/7)</strong>
-              <span>{{ site.phone }}</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="url(#contact-icon-grad)" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            </div>
-            <div>
-              <strong>Email</strong>
-              <span>{{ site.email }}</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="url(#contact-icon-grad)" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            </div>
-            <div>
-              <strong>Service Area</strong>
-              <span>Belleville, Quinte West, PEC & Area</span>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="url(#contact-icon-grad)" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
-            <div>
-              <strong>Availability</strong>
-              <span>24 Hours / 7 Days a Week</span>
-            </div>
+
+    <div class="testimonials-header reveal">
+      <span class="eyebrow">Patient Reviews</span>
+      <h2 id="testimonials-heading" class="testimonials-title">
+        What our patients <span>are saying</span>
+      </h2>
+    </div>
+
+    <div class="testimonials-track" role="list">
+
+      <article class="testimonial-card" role="listitem">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"The team at FDC Belleville made my whole family feel so comfortable. My kids actually look forward to their dental appointments now — that says everything!"</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">S</div>
+          <div>
+            <div class="testimonial-name">Sarah M.</div>
+            <div class="testimonial-meta">Belleville · Family Patient</div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Form Side -->
-      <div class="contact-form-wrap reveal-right">
-        <form class="contact-form" action="/api/submit" method="POST" id="contact-form">
-          <!-- Honeypot -->
-          <input type="text" name="website" style="display:none !important" tabindex="-1" autocomplete="off">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contact-name">Your Name</label>
-              <input type="text" id="contact-name" name="name" required placeholder="Jane Doe" autocomplete="name">
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Email Address</label>
-              <input type="email" id="contact-email" name="email" required placeholder="jane@example.com"
-                autocomplete="email">
-              <div class="form-error-text" id="email-error-msg" style="display: none;"></div>
-            </div>
+      <article class="testimonial-card" role="listitem">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"I was terrified of the dentist for years. The sedation option at FDC changed everything. Professional, gentle, and the results were incredible. Highly recommend!"</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">J</div>
+          <div>
+            <div class="testimonial-name">James T.</div>
+            <div class="testimonial-meta">Cobourg · Sedation Patient</div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contact-phone">Phone Number</label>
-              <input type="tel" id="contact-phone" name="phone" placeholder="(613) 555-0100" autocomplete="tel">
-            </div>
-            <div class="form-group">
-              <label for="contact-service">Type of Damage</label>
-              <select id="contact-service" name="service" required>
-                <option value="" disabled selected>Select damage type...</option>
-                <option value="water">Water Damage</option>
-                <option value="fire">Fire & Smoke</option>
-                <option value="mold">Mold Remediation</option>
-                <option value="rebuild">Full Rebuild</option>
-                <option value="other">Other / Not Sure</option>
-              </select>
-            </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card" role="listitem">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"Got my Invisalign done at Frankford and couldn't be happier. The team was so supportive throughout the entire process, and my smile transformation is beyond what I expected."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">L</div>
+          <div>
+            <div class="testimonial-name">Lisa R.</div>
+            <div class="testimonial-meta">Frankford · Invisalign Patient</div>
           </div>
-          <div class="form-group">
-            <label for="contact-message">Describe the Situation</label>
-            <textarea id="contact-message" name="message" rows="4" required
-              placeholder="Please describe what happened, the approximate size of the affected area, and when the damage occurred..."></textarea>
+        </div>
+      </article>
+
+      <article class="testimonial-card" role="listitem">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"As a senior, the 10% discount is wonderful, but honestly it's the care and respect I receive at every appointment that keeps me coming back. Wonderful practice."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">R</div>
+          <div>
+            <div class="testimonial-name">Robert D.</div>
+            <div class="testimonial-meta">Belleville · Long-term Patient</div>
           </div>
-          <!-- Cloudflare Turnstile spam protection -->
-          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"
-            style="margin-bottom: 20px;"></div>
-          <!-- Form Status / General Error Container -->
-          <div class="form-status-msg" id="form-status-msg"
-            style="display: none; font-size: 0.9rem; padding: 12px; border-radius: 8px; margin-bottom: 20px;"></div>
-          <button type="submit" class="btn-primary btn-full" id="form-submit">Send Message</button>
-        </form>
-      </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     9. BOOKING / CONTACT CTA
+═══════════════════════════════════════════ -->
+<section id="book" class="booking-section" aria-labelledby="booking-heading">
+  <div class="container" style="position: relative; z-index: 2;">
+    <span class="eyebrow booking-eyebrow">Ready to Start?</span>
+    <h2 id="booking-heading" class="booking-title reveal-up">
+      Book your appointment <em>today</em>
+    </h2>
+    <p class="booking-sub reveal-up" style="--d:120ms">
+      New patients are always welcome. Contact your nearest location or fill out our online request form — we'll be in touch within one business day.
+    </p>
+    <div class="booking-actions reveal-up" style="--d:240ms">
+      <a href="https://familydentalcentre.com/request-appointment/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" id="booking-cta">Request Appointment Online</a>
+      <a href="tel:6139617050" class="booking-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        (613) 961-7050
+      </a>
     </div>
   </div>
 </section>

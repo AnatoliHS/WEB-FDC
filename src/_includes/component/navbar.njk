@@ -1,349 +1,59 @@
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-brand" aria-label="{{ site.name }} Home">
-      <img class="nav-logo" src="/assets/rest-logo.webp" alt="MOPS INC Logo">
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-container">
+
+    <!-- Logo -->
+    <a href="/" class="navbar-logo" aria-label="Family Dental Centre — Home">
+      <img src="/assets/fdc-logo-light.png" alt="Family Dental Centre" class="navbar-logo-img">
     </a>
 
-    <div class="nav-links" id="nav-links">
-      <a href="#hero" class="nav-link">Home</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#process" class="nav-link">Capabilities</a>
-      <a href="#trust" class="nav-link">Certifications</a>
-      <a href="#rentals" class="nav-link">Rentals</a>
-      <!-- <a href="#pricing" class="nav-link">Pricing</a> -->
-      <!-- <a href="#reviews" class="nav-link">Reviews</a> -->
-      <a href="#faq" class="nav-link">FAQ</a>
-      <a href="#contact" class="nav-cta">Get Emergency Help</a>
-    </div>
+    <!-- Desktop Nav Links -->
+    <ul class="navbar-links" role="list">
+      <li><a href="/" class="navbar-link">Home</a></li>
+      <li class="navbar-has-dropdown">
+        <a href="#treatments" class="navbar-link navbar-link--dropdown">
+          Treatments
+          <svg class="navbar-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="4 6 8 10 12 6"/></svg>
+        </a>
+        <ul class="navbar-dropdown" role="list">
+          <li><a href="#treatments" class="navbar-dropdown-link">Classic Treatments</a></li>
+          <li><a href="#treatments" class="navbar-dropdown-link">Cosmetic Dentistry</a></li>
+          <li><a href="#treatments" class="navbar-dropdown-link">Invisalign</a></li>
+          <li><a href="#treatments" class="navbar-dropdown-link">Dental Implants</a></li>
+          <li><a href="#treatments" class="navbar-dropdown-link">Dentures</a></li>
+          <li><a href="#treatments" class="navbar-dropdown-link">Sedation Dentistry</a></li>
+          <li><a href="#treatments" class="navbar-dropdown-link">Restorative Care</a></li>
+        </ul>
+      </li>
+      <li><a href="#about" class="navbar-link">About Us</a></li>
+      <li><a href="#locations" class="navbar-link">Locations</a></li>
+      <li><a href="#contact" class="navbar-link">Contact</a></li>
+    </ul>
 
-    <button class="mobile-toggle" id="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <!-- CTA + Mobile Toggle -->
+    <div class="navbar-actions">
+      <a href="#contact" class="navbar-cta" id="navbar-book-btn">Book Appointment</a>
+      <button class="navbar-hamburger" id="navbar-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="/" class="mobile-nav-link">Home</a></li>
+        <li><a href="#treatments" class="mobile-nav-link">Treatments</a></li>
+        <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+        <li><a href="#locations" class="mobile-nav-link">Locations</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-footer">
+        <a href="tel:6139617050" class="mobile-nav-phone">📞 (613) 961-7050</a>
+        <a href="#contact" class="navbar-cta mobile-cta">Book Appointment</a>
+      </div>
+    </div>
   </div>
 </nav>
-
-<script>
-  /* ─── Navbar scroll state ─── */
-  window.addEventListener('scroll', () => {
-    const nb = document.getElementById('navbar');
-    nb.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  /* ─── Mobile menu toggle ─── */
-  function toggleMenu() {
-    const navbar  = document.getElementById('navbar');
-    const links   = document.getElementById('nav-links');
-    const btn     = document.getElementById('mobile-toggle');
-    const isOpen  = navbar.classList.toggle('menu-open');
-    links.classList.toggle('open');
-    btn.setAttribute('aria-expanded', isOpen);
-  }
-
-  /* ─── Smooth-scroll + auto-close ─── */
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        document.getElementById('navbar').classList.remove('menu-open');
-        document.getElementById('nav-links').classList.remove('open');
-        document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false');
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    /* ─── IntersectionObserver for scroll-reveal ─── */
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right').forEach(el => io.observe(el));
-
-    /* ─── Count-up numbers ─── */
-    const countIO = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = parseInt(el.dataset.target, 10);
-        const suffix = el.dataset.suffix || '';
-        const formatComma = el.dataset.format === 'comma';
-        const dur = 1500;
-        const start = performance.now();
-        (function tick(now) {
-          const p = Math.min((now - start) / dur, 1);
-          const val = Math.floor(p * (2 - p) * target);
-          el.textContent = (formatComma ? val.toLocaleString() : val) + suffix;
-          if (p < 1) requestAnimationFrame(tick);
-          else el.textContent = (formatComma ? target.toLocaleString() : target) + suffix;
-        })(start);
-        obs.unobserve(el);
-      });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('[data-target]').forEach(el => countIO.observe(el));
-
-    /* ─── FAQ accordion ─── */
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const btn = item.querySelector('.faq-question');
-      const body = item.querySelector('.faq-answer');
-      if (!btn || !body) return;
-      btn.addEventListener('click', () => {
-        const open = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-answer').style.maxHeight = null;
-        });
-        if (!open) {
-          item.classList.add('open');
-          body.style.maxHeight = body.scrollHeight + 'px';
-        }
-      });
-    });
-
-    /* ─── Reviews slider ─── */
-    const track = document.querySelector('.reviews-track');
-    const cards = document.querySelectorAll('.review-card');
-    const prevBtn = document.querySelector('.reviews-prev');
-    const nextBtn = document.querySelector('.reviews-next');
-    if (track && cards.length) {
-      let idx = 0;
-      function getVisible() {
-        return window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
-      }
-      function slideTo(n) {
-        const vis = getVisible();
-        idx = Math.max(0, Math.min(n, cards.length - vis));
-        const w = cards[0].getBoundingClientRect().width;
-        const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
-        track.style.transform = `translateX(-${idx * (w + gap)}px)`;
-      }
-      if (prevBtn) prevBtn.addEventListener('click', () => slideTo(idx - 1));
-      if (nextBtn) nextBtn.addEventListener('click', () => slideTo(idx + 1));
-      window.addEventListener('resize', () => slideTo(idx));
-
-      /* Autoplay */
-      let auto = setInterval(() => slideTo(idx + 1 > cards.length - getVisible() ? 0 : idx + 1), 5000);
-      track.closest('.reviews-slider')?.addEventListener('mouseenter', () => clearInterval(auto));
-      track.closest('.reviews-slider')?.addEventListener('mouseleave', () => {
-        auto = setInterval(() => slideTo(idx + 1 > cards.length - getVisible() ? 0 : idx + 1), 5000);
-      });
-    }
-
-    /* ─── Services Accordion + Images sync ─── */
-    const firstAccordionItem = document.querySelector('.service-accordion-item');
-    if (firstAccordionItem) {
-      const firstContent = firstAccordionItem.querySelector('.service-accordion-content');
-      if (firstContent) {
-        // Timeout to make sure render/reflow occurs before setting initial height
-        setTimeout(() => {
-          firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
-        }, 100);
-      }
-    }
-
-    document.querySelectorAll('.service-accordion-item').forEach(item => {
-      const header = item.querySelector('.service-accordion-header');
-      const content = item.querySelector('.service-accordion-content');
-      if (!header || !content) return;
-
-      header.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        if (isActive) return;
-
-        // Close any currently active accordion item
-        document.querySelectorAll('.service-accordion-item.active').forEach(activeItem => {
-          activeItem.classList.remove('active');
-          const activeContent = activeItem.querySelector('.service-accordion-content');
-          if (activeContent) {
-            activeContent.style.maxHeight = null;
-          }
-        });
-
-        // Open this accordion item
-        item.classList.add('active');
-        content.style.maxHeight = content.scrollHeight + 'px';
-
-        // Update active image
-        const serviceId = item.dataset.service;
-        document.querySelectorAll('.service-image-wrapper').forEach(imgWrap => {
-          if (imgWrap.dataset.service === serviceId) {
-            imgWrap.classList.add('active');
-          } else {
-            imgWrap.classList.remove('active');
-          }
-        });
-      });
-    });
-    /* ─── Pricing Plan Toggle ─── */
-    const toggleMonthly = document.getElementById('toggle-monthly');
-    const toggleYearly = document.getElementById('toggle-yearly');
-    const pricingContainer = document.getElementById('pricing-container');
-    
-    if (toggleMonthly && toggleYearly && pricingContainer) {
-      const monthlyEls = document.querySelectorAll('.price-monthly');
-      const yearlyEls = document.querySelectorAll('.price-yearly');
-      
-      toggleMonthly.addEventListener('click', () => {
-        toggleMonthly.classList.add('active');
-        toggleYearly.classList.remove('active');
-        
-        monthlyEls.forEach(el => el.style.display = '');
-        yearlyEls.forEach(el => el.style.display = 'none');
-      });
-      
-      toggleYearly.addEventListener('click', () => {
-        toggleYearly.classList.add('active');
-        toggleMonthly.classList.remove('active');
-        
-        monthlyEls.forEach(el => el.style.display = 'none');
-        yearlyEls.forEach(el => el.style.display = '');
-      });
-    }
-    
-    /* ─── Sequential Bounce Reveal for Peace of Mind Speech Bubbles ─── */
-    const peaceSection = document.getElementById('peace-of-mind');
-    const bubbles = document.querySelectorAll('.bubble-group');
-    
-    if (peaceSection && bubbles.length) {
-      // Setup animationend listener to transition to float loop
-      bubbles.forEach(group => {
-        group.addEventListener('animationend', (e) => {
-          if (e.animationName === 'bubble-bounce') {
-            group.classList.remove('bubble-visible');
-            group.style.opacity = '0.9';
-            group.style.transform = 'scale(1) translateY(0)';
-            group.classList.add('float-active');
-          }
-        });
-      });
-
-      let animated = false;
-      const peaceObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !animated) {
-            animated = true;
-            peaceObserver.unobserve(peaceSection);
-            
-            // Pop in Aaron's bubble after a brief delay
-            setTimeout(() => {
-              const aaronGroup = document.querySelector('.bubble-group-aaron');
-              if (aaronGroup) aaronGroup.classList.add('bubble-visible');
-            }, 300);
-            
-            // Pop in Steph's bubble 900ms after
-            setTimeout(() => {
-              const stephGroup = document.querySelector('.bubble-group-steph');
-              if (stephGroup) stephGroup.classList.add('bubble-visible');
-            }, 1200);
-          }
-        });
-      }, { threshold: 0.25 });
-      
-      peaceObserver.observe(peaceSection);
-    }
-
-    /* ─── Rentals Mobile Carousel ─── */
-    (function initRentalsCarousel() {
-      const track    = document.querySelector('.rentals-track');
-      const dotsWrap = document.getElementById('rentals-dots');
-      const prevBtn  = document.getElementById('rentals-prev');
-      const nextBtn  = document.getElementById('rentals-next');
-      if (!track || !dotsWrap || !prevBtn || !nextBtn) return;
-
-      const wrapper = track.closest('.rentals-slider-wrap');
-      if (!wrapper) return;
-
-      const cards = Array.from(track.querySelectorAll('.rental-card'));
-      if (!cards.length) return;
-
-      let idx = 0;
-
-      // Build dots
-      cards.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'rentals-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Go to item ' + (i + 1));
-        dot.addEventListener('click', () => slideTo(i));
-        dotsWrap.appendChild(dot);
-      });
-
-      const dots = Array.from(dotsWrap.querySelectorAll('.rentals-dot'));
-
-      function slideTo(n) {
-        if (window.innerWidth > 760) return;
-        idx = Math.max(0, Math.min(n, cards.length - 1));
-        const card = cards[idx];
-        if (card) {
-          const scrollLeftTarget = card.offsetLeft - (wrapper.clientWidth - card.clientWidth) / 2;
-          wrapper.scrollTo({
-            left: scrollLeftTarget,
-            behavior: 'smooth'
-          });
-        }
-      }
-
-      function updateActiveState() {
-        if (window.innerWidth > 760) return;
-        const wrapperRect = wrapper.getBoundingClientRect();
-        const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
-
-        let closestIdx = 0;
-        let minDiff = Infinity;
-
-        cards.forEach((card, i) => {
-          const cardRect = card.getBoundingClientRect();
-          const cardCenter = cardRect.left + cardRect.width / 2;
-          const diff = Math.abs(cardCenter - wrapperCenter);
-          if (diff < minDiff) {
-            minDiff = diff;
-            closestIdx = i;
-          }
-        });
-
-        idx = closestIdx;
-        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-        prevBtn.disabled = idx === 0;
-        nextBtn.disabled = idx === cards.length - 1;
-      }
-
-      prevBtn.addEventListener('click', () => slideTo(idx - 1));
-      nextBtn.addEventListener('click', () => slideTo(idx + 1));
-
-      // Synchronize dots and arrows when user swipes natively
-      let scrollTimeout;
-      wrapper.addEventListener('scroll', () => {
-        if (window.innerWidth > 760) return;
-        if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
-        scrollTimeout = requestAnimationFrame(updateActiveState);
-      }, { passive: true });
-
-      // Recalculate on resize (e.g. orientation change)
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 760) {
-          wrapper.scrollLeft = 0;
-          idx = 0;
-        } else {
-          slideTo(idx);
-        }
-      });
-
-      // Init
-      updateActiveState();
-    })();
-
-    /* ─── Deep-linking for services accordion ─── */
-    function checkHash() {
-      const hash = window.location.hash;
-      if (hash && hash.startsWith('#service-')) {
-        const item = document.querySelector(hash);
-        if (item && !item.classList.contains('active')) {
-          const header = item.querySelector('.service-accordion-header');
-          if (header) header.click();
-        }
-      }
-    }
-    window.addEventListener('hashchange', checkHash);
-    window.addEventListener('load', () => setTimeout(checkHash, 300));
-    checkHash();
-  });
-</script>

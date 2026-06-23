@@ -1,1 +1,151 @@
-<script src="/assets/script.js"></script>
+<script>
+/* ═══════════════════════════════════════════
+   FDC — Scripts
+   ═══════════════════════════════════════════ */
+
+// ── Footer Year ──────────────────────────────
+const yearEl = document.getElementById('footer-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ── Navbar Scroll Behavior ────────────────────
+const navbar = document.getElementById('navbar');
+if (navbar) {
+  const SCROLL_THRESHOLD = 60;
+  let lastScroll = 0;
+
+  const updateNavbar = () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > SCROLL_THRESHOLD) {
+      navbar.classList.add('navbar--scrolled');
+    } else {
+      navbar.classList.remove('navbar--scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+}
+
+// ── Mobile Menu ───────────────────────────────
+const hamburger = document.getElementById('navbar-hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (hamburger && mobileMenu) {
+  const openMenu = () => {
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    hamburger.classList.add('is-open');
+    mobileMenu.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    hamburger.classList.remove('is-open');
+    mobileMenu.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  hamburger.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('is-open')) closeMenu();
+    else openMenu();
+  });
+
+  // Close on mobile link click
+  mobileMenu.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close on ESC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMenu();
+  });
+}
+
+// ── Scroll Reveal (IntersectionObserver) ─────
+const revealEls = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right');
+
+if (revealEls.length > 0) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+}
+
+// ── Treatments Tab/Accordion ─────────────────
+const treatmentItems = document.querySelectorAll('.treatment-tab');
+const treatmentPanels = document.querySelectorAll('.treatment-panel');
+
+if (treatmentItems.length > 0) {
+  treatmentItems.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.treatment;
+
+      // Update tabs
+      treatmentItems.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Update panels
+      treatmentPanels.forEach(panel => {
+        panel.classList.remove('active');
+        panel.setAttribute('aria-hidden', 'true');
+      });
+      const activePanel = document.querySelector(`.treatment-panel[data-treatment="${target}"]`);
+      if (activePanel) {
+        activePanel.classList.add('active');
+        activePanel.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+}
+
+// ── Counter Animation ────────────────────────
+const counters = document.querySelectorAll('.counter-number');
+if (counters.length > 0) {
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 1800;
+        const step = target / (duration / 16);
+        let current = 0;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            el.textContent = target.toLocaleString();
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.floor(current).toLocaleString();
+          }
+        }, 16);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => counterObserver.observe(c));
+}
+
+// ── Smooth Scroll ────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
