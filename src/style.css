@@ -1619,7 +1619,7 @@ h4 {
 }
 
 .location-cta {
-  display: inline-flex;
+  display: none; /* Hide on desktop */
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
@@ -1642,17 +1642,12 @@ h4 {
 
 /* Hours Accordion */
 .hours-list {
-  display: none;
+  display: flex; /* Expose on desktop */
   flex-direction: column;
   gap: var(--space-2);
   margin-block-start: var(--space-3);
   padding-block-start: var(--space-3);
   border-top: 1px solid hsl(0 0% 100% / 0.06);
-  animation: fadeDown 250ms var(--ease-out);
-}
-
-.hours-list.is-open {
-  display: flex;
 }
 
 .hours-row {
@@ -2217,6 +2212,19 @@ h4 {
   .stats-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-6);
+  }
+
+  .location-cta {
+    display: inline-flex; /* Show toggle button on mobile */
+  }
+
+  .hours-list {
+    display: none; /* Hide by default on mobile */
+    animation: fadeDown 250ms var(--ease-out);
+  }
+
+  .hours-list.is-open {
+    display: flex; /* Show open hours on mobile */
   }
 }
 
