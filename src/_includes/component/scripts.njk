@@ -58,6 +58,13 @@
       closeBtn.addEventListener('click', closeMenu);
     }
 
+    // Close on backdrop click (outside the panel)
+    mobileMenu.addEventListener('click', e => {
+      if (e.target === mobileMenu) {
+        closeMenu();
+      }
+    });
+
     // Close on mobile link click
     mobileMenu.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
       link.addEventListener('click', closeMenu);
@@ -106,6 +113,13 @@
           }
         });
         isMobileLayout = true;
+
+        // Initialize max-height for active panel on page load / layout switch
+        const activePanel = document.querySelector('.treatment-panel.active');
+        if (activePanel) {
+          activePanel.style.maxHeight = activePanel.scrollHeight + 'px';
+          activePanel.style.opacity = '1';
+        }
       }
     } else {
       if (isMobileLayout) {
@@ -113,6 +127,8 @@
         treatmentPanels.forEach(panel => {
           if (treatmentPanelWrap) {
             treatmentPanelWrap.appendChild(panel);
+            panel.style.maxHeight = '';
+            panel.style.opacity = '';
           }
         });
         isMobileLayout = false;
@@ -134,7 +150,20 @@
           const activePanel = document.querySelector(`.treatment-panel[data-treatment="${target}"]`);
           const isAlreadyActive = tab.classList.contains('active');
 
-          // Reset all tabs and collapse all panels
+          // Find the currently open panel and tab before classes are updated
+          const currentlyOpenPanel = document.querySelector('.treatment-panel.active');
+          const currentlyOpenTab = document.querySelector('.treatment-tab.active');
+          let heightAdjustment = 0;
+
+          if (currentlyOpenPanel && currentlyOpenTab) {
+            // If the currently open tab is situated ABOVE the clicked tab,
+            // collapsing it will shift the clicked tab up by the panel's height.
+            if (currentlyOpenTab.getBoundingClientRect().top < tab.getBoundingClientRect().top) {
+              heightAdjustment = currentlyOpenPanel.offsetHeight;
+            }
+          }
+
+          // Reset all tabs and collapse all panels smoothly
           treatmentItems.forEach(t => {
             t.classList.remove('active');
             t.setAttribute('aria-expanded', 'false');
@@ -142,6 +171,8 @@
           treatmentPanels.forEach(p => {
             p.classList.remove('active');
             p.setAttribute('aria-hidden', 'true');
+            p.style.maxHeight = '0';
+            p.style.opacity = '0';
           });
 
           // Toggle the clicked accordion item
@@ -150,6 +181,20 @@
             tab.setAttribute('aria-expanded', 'true');
             activePanel.classList.add('active');
             activePanel.setAttribute('aria-hidden', 'false');
+
+            // Set max-height to its exact scrollHeight for smooth animation
+            activePanel.style.maxHeight = activePanel.scrollHeight + 'px';
+            activePanel.style.opacity = '1';
+
+            // Calculate exact target Y position accounting for collapsing panels above
+            const navbarHeight = document.getElementById('navbar')?.offsetHeight || 80;
+            const tabCurrentY = tab.getBoundingClientRect().top + window.scrollY;
+            const targetY = tabCurrentY - heightAdjustment - navbarHeight - 15; // 15px breathing space
+
+            window.scrollTo({
+              top: targetY,
+              behavior: 'smooth'
+            });
           }
         } else {
           // Desktop behavior (standard tabs)
