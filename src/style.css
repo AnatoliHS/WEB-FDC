@@ -290,7 +290,7 @@ h4 {
   inset-inline: 0;
   z-index: 900;
   padding-block: 1.25rem;
-  transition: background var(--transition-base), padding var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  transition: background var(--transition-base), padding var(--transition-base), box-shadow var(--transition-base), transform 450ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .navbar--scrolled {
@@ -299,6 +299,10 @@ h4 {
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 20px hsl(193 60% 5% / 0.25);
   padding-block: 0.8rem;
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
 }
 
 .navbar-container {
@@ -608,7 +612,8 @@ h4 {
 
 .hero-bg {
   position: absolute;
-  inset: 0;
+  inset-inline: 0;
+  inset-block: -20vh; /* Extend to prevent gaps during translation */
   z-index: 0;
 }
 
@@ -641,6 +646,14 @@ h4 {
   padding-block-start: clamp(6.5rem, 12vw, 9rem);
   padding-block-end: clamp(4rem, 8vw, 5rem);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg,
+  .hero-content {
+    transform: none !important;
+  }
+}
+
 
 .hero-eyebrow {
   display: inline-flex;
@@ -981,12 +994,13 @@ h4 {
     transform: translateY(15px);
     transition: opacity var(--transition-base), transform var(--transition-base);
     transition-delay: 0s;
+    width: 320px; /* Lock text width to prevent rewrapping/shuffling when card stretches */
   }
 
   .benefit-card:hover .benefit-card-text {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.5s;
+    transition-delay: 0s; /* Start fading in immediately as card begins expanding */
   }
 }
 
@@ -1487,6 +1501,243 @@ h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Team Subsection */
+.team-subsection {
+  margin-block-start: var(--space-20);
+  border-block-start: 1px solid hsl(200 15% 10% / 0.08);
+  padding-block-start: var(--space-16);
+}
+
+.team-header {
+  margin-block-end: var(--space-10);
+  text-align: center;
+}
+
+.team-eyebrow {
+  margin-block-end: var(--space-4);
+  display: inline-block;
+}
+
+.team-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--clr-text);
+  margin: 0;
+}
+
+.team-title span {
+  color: var(--clr-primary-light);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.team-card {
+  background: var(--clr-white);
+  border: 1px solid hsl(200 15% 10% / 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--clr-accent-faded);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-card-img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--clr-surface-2);
+}
+
+.team-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.team-card:hover .team-card-img img {
+  transform: scale(1.04);
+}
+
+.team-card-info {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  background: linear-gradient(135deg, var(--clr-dark) 0%, var(--clr-primary) 100%);
+  flex-grow: 1;
+}
+
+.team-card-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--clr-white);
+  margin: 0;
+}
+
+.team-card-role {
+  font-size: 0.85rem;
+  color: var(--clr-primary-light);
+  font-weight: 500;
+}
+
+/* Double-width CTA Card */
+.team-card-cta {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--clr-dark) 0%, var(--clr-primary) 100%);
+  border: 1px solid var(--clr-primary-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px hsl(193 60% 5% / 0.2);
+}
+
+.team-card-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, hsl(42 85% 50% / 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.team-cta-logo {
+  position: relative;
+  z-index: 2;
+}
+
+.team-cta-logo img {
+  height: 48px;
+  width: auto;
+}
+
+.team-cta-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Background Teeth Particles Animation */
+.team-cta-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  --travel-y: -480px;
+}
+
+.team-cta-particle {
+  position: absolute;
+  top: 100%;
+  left: var(--left, 50%);
+  width: var(--size, 24px);
+  height: var(--size, 24px);
+  opacity: 0;
+  animation: floatTooth var(--duration, 15s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+.team-cta-particle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  opacity: 0.15; /* Clearly visible but subtle background watermark matching the booking section rings */
+}
+
+@keyframes floatTooth {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(var(--travel-y, -480px)) translateX(var(--drift-x, 30px)) rotate(var(--rot, 360deg));
+    opacity: 0;
+  }
+}
+
+.team-cta-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  color: var(--clr-white);
+  line-height: 1.25;
+  max-width: 22ch;
+  margin: 0;
+}
+
+.team-cta-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--space-6);
+    padding-bottom: var(--space-5);
+    margin-inline: calc(var(--space-6) * -1);
+    padding-inline: var(--space-6);
+    gap: var(--space-5);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+
+  .team-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari */
+  }
+
+  .team-card,
+  .team-card-cta {
+    flex: 0 0 285px; /* Perfect card width on mobile screens */
+    scroll-snap-align: start;
+  }
+
+  .team-card-cta {
+    grid-column: auto;
+    min-height: auto;
+  }
 }
 
 /* ── 13. LOCATIONS ────────────────────────────────────────────── */

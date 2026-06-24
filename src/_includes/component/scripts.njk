@@ -14,12 +14,30 @@
     let lastScroll = 0;
 
     const updateNavbar = () => {
-      const currentScroll = window.scrollY;
+      const currentScroll = Math.max(window.scrollY, 0); // Clamp to 0 to avoid iOS bounce issues
+
       if (currentScroll > SCROLL_THRESHOLD) {
         navbar.classList.add('navbar--scrolled');
       } else {
         navbar.classList.remove('navbar--scrolled');
       }
+
+      // Auto-hide behavior on desktop
+      const isDesktop = window.innerWidth > 768;
+      if (isDesktop) {
+        if (currentScroll > lastScroll && currentScroll > 0) {
+          // Scrolling down immediately from top -> hide
+          navbar.classList.add('navbar--hidden');
+        } else if (currentScroll < lastScroll) {
+          // Scrolling up -> show
+          navbar.classList.remove('navbar--hidden');
+        }
+      } else {
+        // Always display on mobile screens
+        navbar.classList.remove('navbar--hidden');
+      }
+
+      lastScroll = currentScroll;
     };
 
     window.addEventListener('scroll', updateNavbar, { passive: true });
@@ -257,4 +275,58 @@
       }
     });
   });
+
+  // ── Hero Parallax Animation (Universal Cross-Browser Support) ──
+  const hero = document.getElementById('hero');
+  const heroBg = hero?.querySelector('.hero-bg');
+  const heroContent = hero?.querySelector('.hero-content');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (hero && (heroBg || heroContent) && !prefersReducedMotion) {
+    let isHeroVisible = false;
+
+    const parallaxObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isHeroVisible = entry.isIntersecting;
+      });
+    }, { threshold: 0 });
+
+    parallaxObserver.observe(hero);
+
+    let ticking = false;
+
+    const updateParallax = () => {
+      if (!isHeroVisible) {
+        ticking = false;
+        return;
+      }
+
+      const scrollY = window.scrollY;
+      const heroHeight = hero.offsetHeight;
+
+      if (scrollY <= heroHeight) {
+        // Translate background downward (slower scroll)
+        if (heroBg) {
+          const bgTranslate = scrollY * 0.2; // 20% speed offset (20vh equivalent at 100vh)
+          heroBg.style.transform = `translateY(${bgTranslate}px)`;
+        }
+        // Translate content upward (faster scroll)
+        if (heroContent) {
+          const contentTranslate = scrollY * -0.12; // 12% speed offset (-12vh equivalent at 100vh)
+          heroContent.style.transform = `translateY(${contentTranslate}px)`;
+        }
+      }
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Run once on init
+    updateParallax();
+  }
 </script>
