@@ -1,1153 +1,762 @@
 ---
-layout: default
-title: "Family Dental Centre — Belleville, Cobourg & Frankford, ON"
-description: "Family Dental Centre provides comprehensive dental care in Belleville, Cobourg, and Frankford, Ontario.
-Convenient hours, direct insurance billing, and emergency appointments within 48 hours."
+layout: false
+permalink: /index.html
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Dental Centre — Belleville, Cobourg & Frankford, ON</title>
+  <meta name="description" content="Family Dental Centre provides comprehensive dental care in Belleville, Cobourg, and Frankford, Ontario. Convenient hours, direct insurance billing, and emergency appointments within 48 hours." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://familydentalcentre.com/" />
 
-<!-- ═══════════════════════════════════════════
-     1. HERO
-═══════════════════════════════════════════ -->
-<section id="hero" class="hero" aria-labelledby="hero-heading">
-  <!-- Background Image -->
-  <div class="hero-bg" aria-hidden="true">
-    <img src="/assets/fdc-office-2.png" alt="Family Dental Centre modern office reception" fetchpriority="high"
-      decoding="async" onload="this.classList.add('loaded')" />
-  </div>
-  <div class="hero-overlay" aria-hidden="true"></div>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Family Dental Centre — Belleville, Cobourg & Frankford, ON" />
+  <meta property="og:description" content="We bring smiles to life. Comprehensive dental care across three Ontario locations." />
+  <meta property="og:image" content="https://familydentalcentre.com/assets/fdc-office-2.png" />
+  <meta property="og:url" content="https://familydentalcentre.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Family Dental Centre" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Family Dental Centre" />
+  <meta name="twitter:description" content="We bring smiles to life." />
+  <meta name="twitter:image" content="https://familydentalcentre.com/assets/fdc-office-2.png" />
+  <meta name="theme-color" content="#121A1C" />
 
-  <!-- Content -->
-  <div class="container hero-content">
-    <div class="hero-eyebrow" aria-hidden="true">
-      <svg width="14" height="14" viewBox="0 0 40 40" fill="none">
-        <path
-          d="M20 4C14 4 9 8.5 9 14c0 3.5 1.5 6.5 3 9l2.5 10.5c.3 1.2 1.3 2 2.5 2s2.2-.8 2.5-2L20 28l.5 5.5c.3 1.2 1.3 2 2.5 2s2.2-.8 2.5-2L28 23c1.5-2.5 3-5.5 3-9 0-5.5-5-10-11-10z"
-          fill="currentColor" />
-      </svg>
-      Serving Ontario Since 2007
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/redesign/redesign.css?v=3" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+</head>
+
+<body>
+  <!-- ambient glow that drifts behind the dark areas -->
+  <div class="ambient" aria-hidden="true"><i class="orb orb--teal"></i><i class="orb orb--brass"></i></div>
+
+  <!-- ───────── Navigation: floating pills ───────── -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <a href="#top" class="nav__logo" aria-label="Family Dental Centre — Home">
+      <img src="/assets/fdc-logo-light.png" alt="Family Dental Centre">
+    </a>
+    <ul class="nav__links pill-glass" role="list">
+      <li><a href="#treatments">Treatments</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__burger pill-glass" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+      <a href="#book" class="nav__cta">Book Appointment <i class="nav__cta-dot" aria-hidden="true"></i></a>
     </div>
+  </nav>
 
-    <h1 id="hero-heading" class="hero-headline reveal-up" style="--d:0ms">
-      We bring <em>smiles</em><br>to life.
-    </h1>
-
-    <p class="hero-sub reveal-up" style="--d:160ms">
-      Comprehensive dental care for your whole family across three convenient Ontario locations. With modern technology
-      and a compassionate team, your healthy smile is our priority.
-    </p>
-
-    <div class="hero-actions reveal-up" style="--d:280ms">
-      <a href="#contact" class="btn btn-primary btn-lg" id="hero-cta-primary">Book Appointment</a>
-      <a href="#treatments" class="btn btn-ghost btn-lg" id="hero-cta-secondary">Our Treatments</a>
-    </div>
-
-    <div class="hero-trust reveal-up" style="--d:400ms">
-      <div class="hero-trust-item">
-        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          aria-hidden="true">
-          <circle cx="12" cy="12" r="10" />
-          <polyline points="12 6 12 12 16 14" />
-        </svg>
-        Convenient Extended Hours
-      </div>
-      <div class="hero-trust-item">
-        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          aria-hidden="true">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-          <polyline points="22 4 12 14.01 9 11.01" />
-        </svg>
-        Direct Insurance Billing
-      </div>
-      <div class="hero-trust-item">
-        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          aria-hidden="true">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
-        </svg>
-        3 Ontario Locations
-      </div>
-      <div class="hero-trust-item">
-        <svg class="hero-trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          aria-hidden="true">
-          <path
-            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
-        </svg>
-        Emergency within 48h
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- ═══════════════════════════════════════════
-     1.5 INTRO
-═══════════════════════════════════════════ -->
-<section id="intro" class="intro-section" aria-labelledby="intro-heading">
-  <div class="container">
-    <div class="intro-grid">
-      <!-- Left: Copy -->
-      <div class="intro-copy">
-        <span class="eyebrow intro-eyebrow reveal-left">About Our Practice</span>
-        <h3 class="intro-subheading reveal-left" style="--d:100ms">
-          Your Journey to a Healthy, Beautiful Smile
-        </h3>
-        <p class="intro-body reveal-left" style="--d:180ms">
-          Welcome to Family Dental Centre, where we combine modern, state-of-the-art care with a warm, patient-first
-          philosophy. We understand that every smile is unique, which is why our friendly team takes the time to
-          personalize your treatments in a relaxing, anxiety-free atmosphere designed for patients of all ages.
-        </p>
-      </div>
-
-      <!-- Right: Title + Video -->
-      <div class="intro-media reveal-right">
-        <h2 id="intro-heading" class="intro-title">
-          Welcome to <span class="em">Family Dental Centre</span>
-        </h2>
-        <div class="intro-video-wrapper">
-          <video class="intro-video" autoplay loop muted playsinline preload="metadata">
-            <source src="/assets/fdc-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__inner">
+      <ul class="menu__links" role="list">
+        <li><a href="#top"><small>01</small>Home</a></li>
+        <li><a href="#treatments"><small>02</small>Treatments</a></li>
+        <li><a href="#about"><small>03</small>About Us</a></li>
+        <li><a href="#locations"><small>04</small>Locations</a></li>
+        <li><a href="#contact"><small>05</small>Contact</a></li>
+      </ul>
+      <div class="menu__foot">
+        <a href="tel:6139617050">(613) 961-7050</a>
+        <a href="#book" class="btn btn--light">Book Appointment</a>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ═══════════════════════════════════════════
-     2. ABOUT / TEAM
-═══════════════════════════════════════════ -->
-<section id="about" class="about-section" aria-labelledby="about-heading">
-  <div class="container">
-    <div class="about-grid">
+  <main id="top">
 
-      <!-- Left: Copy -->
-      <div class="about-copy">
-        <span class="eyebrow about-eyebrow">Our Story</span>
-        <h2 id="about-heading" class="about-heading reveal-left">
-          Highly qualified care with a <span>personal touch</span>
-        </h2>
-        <p class="about-body reveal-left" style="--d:100ms">
-          With highly qualified dental professionals and modern technology and materials, we strive to make a difference
-          in every patient's life and assist them in living with a healthy, happy smile.
-        </p>
-        <p class="about-body reveal-left" style="--d:180ms">
-          Our friendly team at Family Dental Centre offers high quality dental services including routine dental
-          hygiene, restorative care, oral surgery, Invisalign, implants, dentures, and more — all under one roof.
-        </p>
+    <!-- ═══════════ 1. HERO: a framed sheet with the concierge set into a notch ═══════════ -->
+    <header class="hero" aria-labelledby="hero-heading">
+      <div class="hero__sheet sheet">
+        <div class="hero__glow" aria-hidden="true"><i></i><i></i><i></i></div>
 
-        <div class="about-features reveal-left" style="--d:260ms">
-          <div class="about-feature">
-            <div class="about-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-              </svg>
-            </div>
-            <div class="about-feature-text">
-              <strong>Modern Technology</strong>
-              <span>Digital X-rays, 3D imaging, and the latest dental equipment for precision care</span>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <div class="about-feature-text">
-              <strong>Family-Centred Team</strong>
-              <span>Caring, compassionate professionals dedicated to your comfort and health</span>
-            </div>
-          </div>
-          <div class="about-feature">
-            <div class="about-feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-            </div>
-            <div class="about-feature-text">
-              <strong>Community Roots</strong>
-              <span>Proudly serving Belleville, Cobourg, and Frankford since 2007</span>
-            </div>
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__title">
+            <span class="line hz-1"><span data-load="2">We bring<span class="hpill" aria-hidden="true"><img src="/assets/team-fdc.png" alt=""></span></span></span>
+            <span class="line hz-2"><span data-load="3"><em>smiles</em> <span class="hz-tail">to life.<span class="hpill hpill--m" aria-hidden="true"><img src="/assets/team-fdc.png" alt=""></span></span></span></span>
+          </h1>
+
+          <div class="hz-strip" data-load="4">
+            <p class="hz-kicker">Serving Ontario Since 2007</p>
+            <p class="hz-deck">Comprehensive dental care for your whole family across three convenient Ontario locations. With modern
+              technology and a compassionate team, your healthy smile is our priority.</p>
+            <ol class="hz-list" role="list">
+              <li><span>01</span>Convenient Extended Hours</li>
+              <li><span>02</span>Direct Insurance Billing</li>
+              <li><span>03</span>3 Ontario Locations</li>
+              <li><span>04</span>Emergency within 48h</li>
+            </ol>
           </div>
         </div>
 
-      </div>
-
-      <!-- Right: Visuals -->
-      <div class="about-visuals reveal-right">
-        <div class="about-img-main">
-          <img src="/assets/team-fdc.png" alt="The Family Dental Centre team" loading="lazy">
-        </div>
-        <div class="about-img-float">
-          <img src="/assets/treatment-fdc.png" alt="Modern dental treatment room" loading="lazy">
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Team Subsection -->
-    <div class="team-subsection">
-      <div class="team-header reveal-up">
-        <span class="eyebrow team-eyebrow">Our Professionals</span>
-        <h2 class="team-title">Meet the <span>Team</span></h2>
-      </div>
-
-      <div class="team-grid">
-        <!-- Card 1 -->
-        <article class="team-card reveal-up" style="--d:0ms">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. John Bennett" loading="lazy">
-          </div>
-          <div class="team-card-info">
-            <h3 class="team-card-name">Dr. John Bennett</h3>
-            <span class="team-card-role">Lead Dentist & Founder</span>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="team-card reveal-up" style="--d:80ms">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=600&q=80" alt="Dr. Sarah Jenkins" loading="lazy">
-          </div>
-          <div class="team-card-info">
-            <h3 class="team-card-name">Dr. Sarah Jenkins</h3>
-            <span class="team-card-role">Cosmetic Dentist</span>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="team-card reveal-up" style="--d:160ms">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Emily Watson, RDH" loading="lazy">
-          </div>
-          <div class="team-card-info">
-            <h3 class="team-card-name">Emily Watson, RDH</h3>
-            <span class="team-card-role">Lead Dental Hygienist</span>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="team-card reveal-up" style="--d:240ms">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80" alt="Marcus Vance" loading="lazy">
-          </div>
-          <div class="team-card-info">
-            <h3 class="team-card-name">Marcus Vance</h3>
-            <span class="team-card-role">Office Administrator</span>
-          </div>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="team-card reveal-up" style="--d:0ms">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=600&q=80" alt="Dr. Alex Patel" loading="lazy">
-          </div>
-          <div class="team-card-info">
-            <h3 class="team-card-name">Dr. Alex Patel</h3>
-            <span class="team-card-role">Orthodontist</span>
-          </div>
-        </article>
-
-        <!-- Card 6 -->
-        <article class="team-card reveal-up" style="--d:80ms">
-          <div class="team-card-img">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Chloe Moreau" loading="lazy">
-          </div>
-          <div class="team-card-info">
-            <h3 class="team-card-name">Chloe Moreau</h3>
-            <span class="team-card-role">Clinical Assistant</span>
-          </div>
-        </article>
-
-        <!-- Double-width CTA Card -->
-        <article class="team-card-cta reveal-up" style="--d:160ms">
-          <div class="team-cta-logo">
-            <img src="/assets/fdc-logo-light.png" alt="Family Dental Centre Logo">
-          </div>
-          <!-- Background Moving Teeth Particles -->
-          <div class="team-cta-particles" aria-hidden="true">
-            <div class="team-cta-particle" style="--left: 10%; --size: 20px; --duration: 14s; --delay: -2s; --drift-x: 20px; --rot: 360deg;">
-              <img src="/assets/tooth.png" alt="">
+        <!-- the notch: cut into the sheet's lower edge -->
+        <div class="notch hero__notch" data-load="6">
+          <div class="concierge" id="concierge">
+            <div class="concierge__cell concierge__cell--loc">
+              <span class="concierge__label" id="clinic-label">Your clinic</span>
+              <div class="seg" role="radiogroup" aria-labelledby="clinic-label">
+                <button role="radio" aria-checked="true" data-loc="belleville">Belleville</button>
+                <button role="radio" aria-checked="false" data-loc="cobourg">Cobourg</button>
+                <button role="radio" aria-checked="false" data-loc="frankford">Frankford</button>
+                <span class="seg__pill" aria-hidden="true"></span>
+              </div>
             </div>
-            <div class="team-cta-particle" style="--left: 25%; --size: 32px; --duration: 18s; --delay: -8s; --drift-x: -30px; --rot: -270deg;">
-              <img src="/assets/tooth.png" alt="">
+            <div class="concierge__cell">
+              <span class="concierge__label">Today</span>
+              <span class="concierge__value"><i class="status-dot" data-c-dot></i><span data-c-status>—</span></span>
             </div>
-            <div class="team-cta-particle" style="--left: 40%; --size: 16px; --duration: 11s; --delay: -4s; --drift-x: 15px; --rot: 180deg;">
-              <img src="/assets/tooth.png" alt="">
+            <div class="concierge__cell">
+              <span class="concierge__label">Call directly</span>
+              <a class="concierge__value concierge__phone" data-c-phone href="tel:6139617050">(613) 961-7050</a>
             </div>
-            <div class="team-cta-particle" style="--left: 55%; --size: 26px; --duration: 20s; --delay: -14s; --drift-x: -25px; --rot: -360deg;">
-              <img src="/assets/tooth.png" alt="">
-            </div>
-            <div class="team-cta-particle" style="--left: 70%; --size: 22px; --duration: 15s; --delay: -6s; --drift-x: 35px; --rot: 450deg;">
-              <img src="/assets/tooth.png" alt="">
-            </div>
-            <div class="team-cta-particle" style="--left: 85%; --size: 18px; --duration: 13s; --delay: -10s; --drift-x: -15px; --rot: 90deg;">
-              <img src="/assets/tooth.png" alt="">
-            </div>
-            <div class="team-cta-particle" style="--left: 15%; --size: 28px; --duration: 16s; --delay: -12s; --drift-x: 25px; --rot: -180deg;">
-              <img src="/assets/tooth.png" alt="">
-            </div>
-            <div class="team-cta-particle" style="--left: 95%; --size: 24px; --duration: 17s; --delay: -1s; --drift-x: -20px; --rot: 360deg;">
-              <img src="/assets/tooth.png" alt="">
-            </div>
-          </div>
-          <div class="team-cta-bottom">
-            <h3 class="team-cta-text">Learn more about the people at the FDC</h3>
-            <a href="#contact" class="btn btn-primary team-cta-btn">Meet the full team</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     3. STATS BAR
-═══════════════════════════════════════════ -->
-<div class="stats-section" aria-label="Practice statistics">
-  <div class="container">
-    <div class="stats-layout">
-      <div class="stats-intro reveal-up">
-        <p class="stats-description">
-          Founded in 2009, Family Dental Centre combines modern, state-of-the-art care with a warm, patient-first approach, serving thousands of families across our state-of-the-art clinics.
-        </p>
-        <a href="#about" class="stats-link">Discover our history</a>
-      </div>
-      <div class="stats-showcase">
-        <div class="stats-col">
-          <div class="stat-card reveal-up" style="--d:0ms">
-            <div class="stat-number"><span class="counter-number" data-target="2009">2009</span></div>
-            <div class="stat-label">Foundation year</div>
-          </div>
-          <div class="stat-card reveal-up" style="--d:200ms">
-            <div class="stat-number"><span class="counter-number" data-target="15000">15,000</span><span class="stat-suffix">+</span></div>
-            <div class="stat-label">Happy Patients</div>
-          </div>
-        </div>
-        <div class="stats-col stats-col-offset">
-          <div class="stat-card reveal-up" style="--d:100ms">
-            <div class="stat-number"><span class="counter-number" data-target="3">3</span></div>
-            <div class="stat-label">
-              <span class="stat-dot" aria-hidden="true"></span>
-              Locations
-            </div>
-          </div>
-          <div class="stat-card reveal-up" style="--d:300ms">
-            <div class="stat-number"><span class="counter-number" data-target="48">48</span><span class="stat-suffix">h</span></div>
-            <div class="stat-label">Emergency Response</div>
+            <a href="https://familydentalcentre.com/request-appointment/" target="_blank" rel="noopener noreferrer" class="btn btn--brass concierge__cta">Book Appointment</a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </header>
 
-
-
-<!-- ═══════════════════════════════════════════
-     4. TREATMENTS
-═══════════════════════════════════════════ -->
-<section id="treatments" class="treatments-section" aria-labelledby="treatments-heading">
-  <div class="container">
-
-    <div class="treatments-header reveal">
-      <span class="eyebrow">What We Offer</span>
-      <h2 id="treatments-heading" class="treatments-title">
-        Comprehensive <span>dental treatments</span>
-      </h2>
-      <p class="treatments-lead">
-        From routine cleanings to full smile transformations, our skilled team has the expertise and technology to
-        deliver exceptional results.
-      </p>
-    </div>
-
-    <div class="treatments-layout">
-      <!-- Tab List -->
-      <div class="treatment-tabs" role="tablist" aria-label="Dental treatments">
-
-        <button class="treatment-tab active" data-treatment="classic" role="tab" aria-selected="true"
-          aria-controls="panel-classic" id="tab-classic">
-          <div class="treatment-tab-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
+    <!-- ═══════════ 2. WELCOME: a sentence that brightens as you read ═══════════ -->
+    <section class="welcome" id="intro" aria-labelledby="intro-heading">
+      <div class="wrap">
+        <div class="rule-label"><span>About Our Practice</span></div>
+        <div class="welcome__grid">
+          <div class="welcome__aside">
+            <p class="welcome__mini">(01)</p>
           </div>
-          <div class="treatment-tab-text">
-            <span class="treatment-tab-name">Classic Treatments</span>
-            <span class="treatment-tab-desc">Cleanings, exams & X-rays</span>
-          </div>
-        </button>
-
-        <button class="treatment-tab" data-treatment="cosmetic" role="tab" aria-selected="false"
-          aria-controls="panel-cosmetic" id="tab-cosmetic">
-          <div class="treatment-tab-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-              <line x1="9" y1="9" x2="9.01" y2="9" />
-              <line x1="15" y1="9" x2="15.01" y2="9" />
-            </svg>
-          </div>
-          <div class="treatment-tab-text">
-            <span class="treatment-tab-name">Cosmetic Dentistry</span>
-            <span class="treatment-tab-desc">Whitening, veneers & more</span>
-          </div>
-        </button>
-
-        <button class="treatment-tab" data-treatment="invisalign" role="tab" aria-selected="false"
-          aria-controls="panel-invisalign" id="tab-invisalign">
-          <div class="treatment-tab-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 7h18M3 12h18M3 17h18" />
-            </svg>
-          </div>
-          <div class="treatment-tab-text">
-            <span class="treatment-tab-name">Invisalign</span>
-            <span class="treatment-tab-desc">Clear aligner therapy</span>
-          </div>
-        </button>
-
-        <button class="treatment-tab" data-treatment="implants" role="tab" aria-selected="false"
-          aria-controls="panel-implants" id="tab-implants">
-          <div class="treatment-tab-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M12 12v10M9 15h6" />
-            </svg>
-          </div>
-          <div class="treatment-tab-text">
-            <span class="treatment-tab-name">Dental Implants</span>
-            <span class="treatment-tab-desc">Permanent tooth replacement</span>
-          </div>
-        </button>
-
-        <button class="treatment-tab" data-treatment="dentures" role="tab" aria-selected="false"
-          aria-controls="panel-dentures" id="tab-dentures">
-          <div class="treatment-tab-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M20 4C14 4 9 8.5 9 14c0 3.5 1.5 6.5 3 9l2.5 10.5c.3 1.2 1.3 2 2.5 2s2.2-.8 2.5-2L20 28l.5 5.5c.3 1.2 1.3 2 2.5 2s2.2-.8 2.5-2L28 23c1.5-2.5 3-5.5 3-9 0-5.5-5-10-11-10z" />
-            </svg>
-          </div>
-          <div class="treatment-tab-text">
-            <span class="treatment-tab-name">Dentures</span>
-            <span class="treatment-tab-desc">On-site denture lab</span>
-          </div>
-        </button>
-
-        <button class="treatment-tab" data-treatment="sedation" role="tab" aria-selected="false"
-          aria-controls="panel-sedation" id="tab-sedation">
-          <div class="treatment-tab-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-          </div>
-          <div class="treatment-tab-text">
-            <span class="treatment-tab-name">Sedation Dentistry</span>
-            <span class="treatment-tab-desc">Anxiety-free dental care</span>
-          </div>
-        </button>
-
-        <button class="treatment-tab" data-treatment="restorative" role="tab" aria-selected="false"
-          aria-controls="panel-restorative" id="tab-restorative">
-          <div class="treatment-tab-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="14 2 14 8 20 8" />
-              <path d="M20 20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12z" />
-            </svg>
-          </div>
-          <div class="treatment-tab-text">
-            <span class="treatment-tab-name">Restorative Care</span>
-            <span class="treatment-tab-desc">Crowns, bridges & fillings</span>
-          </div>
-        </button>
-
-      </div>
-
-      <!-- Treatment Panels -->
-      <div class="treatment-panel-wrap">
-
-        <!-- Classic -->
-        <div class="treatment-panel active" data-treatment="classic" role="tabpanel" id="panel-classic"
-          aria-labelledby="tab-classic" aria-hidden="false">
-          <div class="treatment-panel-accordion-inner">
-            <div class="treatment-panel-images">
-              <div class="treatment-panel-img">
-                <img src="/assets/smile-fdc.png" alt="Classic dental treatments — cleanings and exams" loading="lazy">
-                <div class="treatment-panel-badge">Preventive Care</div>
-              </div>
-              <div class="treatment-panel-img">
-                <img src="/assets/fdc-office-2.png" alt="Modern Family Dental Centre office" loading="lazy">
-              </div>
-            </div>
-            <div class="treatment-panel-content">
-              <h3 class="treatment-panel-title">Classic Treatments</h3>
-              <p class="treatment-panel-body">The foundation of a healthy smile. Our preventive services are designed to
-                keep your teeth and gums in top condition through regular care and early detection.</p>
-              <ul class="treatment-panel-list">
-                <li>Comprehensive dental exams</li>
-                <li>Professional teeth cleanings & scaling</li>
-                <li>Digital X-rays & imaging</li>
-                <li>Oral cancer screenings</li>
-                <li>Children's dentistry & fluoride treatments</li>
-              </ul>
-              <a href="#contact" class="btn btn-primary">Book a Cleaning</a>
-            </div>
-          </div>
+          <h2 id="intro-heading" class="welcome__statement" data-scrub>
+            Welcome to
+            <span class="cap" aria-hidden="true"><img src="/assets/fdc-office-2.png" alt="" loading="lazy" style="object-position:50% 45%"></span>
+            Family Dental Centre, where we combine modern, state-of-the-art care with a warm,
+            <span class="cap cap--circle" aria-hidden="true"><img src="/assets/smile-fdc.png" alt="" loading="lazy" style="object-position:55% 48%"></span>
+            patient-first philosophy.
+          </h2>
         </div>
 
-        <!-- Cosmetic -->
-        <div class="treatment-panel" data-treatment="cosmetic" role="tabpanel" id="panel-cosmetic"
-          aria-labelledby="tab-cosmetic" aria-hidden="true">
-          <div class="treatment-panel-accordion-inner">
-            <div class="treatment-panel-images">
-              <div class="treatment-panel-img">
-                <img src="/assets/smile-fdc.png" alt="Cosmetic dentistry — whitening and veneers" loading="lazy">
-                <div class="treatment-panel-badge">Smile Transformation</div>
-              </div>
-              <div class="treatment-panel-img">
-                <img src="/assets/treatment-fdc.png" alt="Cosmetic dental treatment room" loading="lazy">
-              </div>
-            </div>
-            <div class="treatment-panel-content">
-              <h3 class="treatment-panel-title">Cosmetic Dentistry</h3>
-              <p class="treatment-panel-body">Transform your smile with our cosmetic services. Whether you want a
-                brighter
-                smile or a complete smile makeover, we have the expertise to make it happen.</p>
-              <ul class="treatment-panel-list">
-                <li>Professional teeth whitening</li>
-                <li>Porcelain veneers</li>
-                <li>Tooth bonding & contouring</li>
-                <li>Smile design consultations</li>
-              </ul>
-              <a href="#contact" class="btn btn-primary">Book Consultation</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Invisalign -->
-        <div class="treatment-panel" data-treatment="invisalign" role="tabpanel" id="panel-invisalign"
-          aria-labelledby="tab-invisalign" aria-hidden="true">
-          <div class="treatment-panel-accordion-inner">
-            <div class="treatment-panel-images">
-              <div class="treatment-panel-img">
-                <img src="/assets/smile-fdc.png" alt="Invisalign clear aligners" loading="lazy">
-                <div class="treatment-panel-badge">Certified Provider</div>
-              </div>
-              <div class="treatment-panel-img">
-                <img src="/assets/hero-fdc.png" alt="Happy patient smiling" loading="lazy">
-              </div>
-            </div>
-            <div class="treatment-panel-content">
-              <h3 class="treatment-panel-title">Invisalign</h3>
-              <p class="treatment-panel-body">Straighten your teeth discreetly with clear aligner technology. Invisalign
-                is comfortable, removable, and virtually invisible — perfect for adults and teens.</p>
-              <ul class="treatment-panel-list">
-                <li>Free Invisalign consultations</li>
-                <li>Custom aligner trays</li>
-                <li>Digital treatment planning</li>
-                <li>Flexible payment options</li>
-              </ul>
-              <a href="#contact" class="btn btn-primary">Free Consultation</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Implants -->
-        <div class="treatment-panel" data-treatment="implants" role="tabpanel" id="panel-implants"
-          aria-labelledby="tab-implants" aria-hidden="true">
-          <div class="treatment-panel-accordion-inner">
-            <div class="treatment-panel-images">
-              <div class="treatment-panel-img">
-                <img src="/assets/treatment-fdc.png" alt="Dental implants procedure room" loading="lazy">
-                <div class="treatment-panel-badge">Permanent Solution</div>
-              </div>
-              <div class="treatment-panel-img">
-                <img src="/assets/smile-fdc.png" alt="Dental implant natural smile result" loading="lazy">
-              </div>
-            </div>
-            <div class="treatment-panel-content">
-              <h3 class="treatment-panel-title">Dental Implants</h3>
-              <p class="treatment-panel-body">Replace missing teeth with natural-looking implants that feel and function
-                just like your own teeth — a permanent investment in your confidence.</p>
-              <ul class="treatment-panel-list">
-                <li>Single & multiple tooth implants</li>
-                <li>Implant-supported dentures</li>
-                <li>All-on-4 solutions</li>
-                <li>Bone grafting if required</li>
-              </ul>
-              <a href="#contact" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dentures -->
-        <div class="treatment-panel" data-treatment="dentures" role="tabpanel" id="panel-dentures"
-          aria-labelledby="tab-dentures" aria-hidden="true">
-          <div class="treatment-panel-accordion-inner">
-            <div class="treatment-panel-images">
-              <div class="treatment-panel-img">
-                <img src="/assets/treatment-fdc.png" alt="On-site denture lab" loading="lazy">
-                <div class="treatment-panel-badge">On-Site Lab</div>
-              </div>
-              <div class="treatment-panel-img">
-                <img src="/assets/fdc-office-2.png" alt="Family Dental Centre welcoming clinic interior" loading="lazy">
-              </div>
-            </div>
-            <div class="treatment-panel-content">
-              <h3 class="treatment-panel-title">Dentures</h3>
-              <p class="treatment-panel-body">We have an on-site denturist and denture lab — no need to visit another
-                office. Get custom-fitted dentures with the convenience of one-stop care.</p>
-              <ul class="treatment-panel-list">
-                <li>Complete & partial dentures</li>
-                <li>Immediate dentures</li>
-                <li>Implant-supported dentures</li>
-                <li>Denture relining & repairs</li>
-              </ul>
-              <a href="#contact" class="btn btn-primary">Book Fitting</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sedation -->
-        <div class="treatment-panel" data-treatment="sedation" role="tabpanel" id="panel-sedation"
-          aria-labelledby="tab-sedation" aria-hidden="true">
-          <div class="treatment-panel-accordion-inner">
-            <div class="treatment-panel-images">
-              <div class="treatment-panel-img">
-                <img src="/assets/treatment-fdc.png" alt="Calm and comfortable dental treatment room" loading="lazy">
-                <div class="treatment-panel-badge">Anxiety-Free Care</div>
-              </div>
-              <div class="treatment-panel-img">
-                <img src="/assets/team-fdc.png" alt="Our friendly dental team" loading="lazy">
-              </div>
-            </div>
-            <div class="treatment-panel-content">
-              <h3 class="treatment-panel-title">Sedation Dentistry</h3>
-              <p class="treatment-panel-body">Dental anxiety is real — and we're here to help. Our sedation options
-                ensure
-                a calm, comfortable experience so you get the care you need without fear.</p>
-              <ul class="treatment-panel-list">
-                <li>Nitrous oxide (laughing gas)</li>
-                <li>Oral conscious sedation</li>
-                <li>Safe for children & adults</li>
-                <li>Pre-treatment consultations</li>
-              </ul>
-              <a href="#contact" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Restorative -->
-        <div class="treatment-panel" data-treatment="restorative" role="tabpanel" id="panel-restorative"
-          aria-labelledby="tab-restorative" aria-hidden="true">
-          <div class="treatment-panel-accordion-inner">
-            <div class="treatment-panel-images">
-              <div class="treatment-panel-img">
-                <img src="/assets/smile-fdc.png" alt="Restorative dental treatments" loading="lazy">
-                <div class="treatment-panel-badge">Restore & Repair</div>
-              </div>
-              <div class="treatment-panel-img">
-                <img src="/assets/treatment-fdc.png" alt="Modern dental equipment" loading="lazy">
-              </div>
-            </div>
-            <div class="treatment-panel-content">
-              <h3 class="treatment-panel-title">Restorative Care</h3>
-              <p class="treatment-panel-body">Rebuild damaged or missing teeth with durable, natural-looking
-                restorations.
-                Our restorative treatments bring back full function and aesthetics to your smile.</p>
-              <ul class="treatment-panel-list">
-                <li>Porcelain crowns & bridges</li>
-                <li>Tooth-coloured composite fillings</li>
-                <li>Root canal therapy</li>
-                <li>Oral surgery & wisdom teeth removal</li>
-              </ul>
-              <a href="#contact" class="btn btn-primary">Book Assessment</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     5. WHY CHOOSE FDC — BENEFITS
-═══════════════════════════════════════════ -->
-<section id="benefits" class="benefits-section" aria-labelledby="benefits-heading">
-  <div class="container">
-
-    <div class="benefits-header-grid reveal">
-      <div>
-        <span class="eyebrow benefits-eyebrow">Why Choose Us</span>
-        <h2 id="benefits-heading" class="benefits-title-new">
-          <div>Dental Care<br> That Puts <span class="em">Your Family</span><br> <span class="em">First</span></div>
-        </h2>
-      </div>
-      <div>
-        <div class="benefits-lead-new">
-          <p>From your very first visit, you'll feel the Family Dental Centre difference — compassionate care, modern
-            technology, and a team that genuinely cares about your smile.</p>
-        </div>
-        <div class="benefits-actions-new">
-          <a href="#contact" class="btn btn-primary">Book Appointment</a>
+        <div class="welcome__foot">
+          <h3 class="welcome__h">Your Journey to a <em>Healthy, Beautiful Smile</em></h3>
+          <p data-reveal>We understand that every smile is unique, which is why our friendly team takes the time to
+            personalize your treatments in a relaxing, anxiety-free atmosphere designed for patients of all ages.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="benefits-grid">
-
-      <!-- Benefit 1: Convenient Hours -->
-      <div class="benefit-card reveal-up" style="--d:0ms">
-        <div class="benefit-card-bg">
-          <img src="/assets/fdc-office-2.png" alt="Modern Family Dental Centre office" loading="lazy">
-        </div>
-        <div class="benefit-card-title">
-          <h3>Convenient Hours</h3>
-        </div>
-        <div class="benefit-card-text">
-          <p>We're open early and late so dental care fits your schedule — not the other way around. No need to take a
-            full day off work.</p>
-        </div>
-        <div class="benefit-card-more">
-          <span class="circled-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </span>
+    <!-- ═══════════ 3. FILM ═══════════ -->
+    <section class="film sheet" id="about" aria-labelledby="about-heading">
+      <div class="film__media" aria-hidden="true">
+        <video id="film" autoplay loop muted playsinline preload="metadata" poster="/assets/redesign/fdc-film-poster.jpg">
+          <source src="/assets/redesign/fdc-film.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="film__shade" aria-hidden="true"></div>
+      <div class="notch notch--top-left film__tab"><span>Our Story</span></div>
+      <div class="film__content">
+        <h2 id="about-heading" class="film__title" data-reveal>Highly qualified care with a <em>personal touch</em></h2>
+        <div class="film__foot">
+          <p data-reveal>With highly qualified dental professionals and modern technology and materials, we strive to make a
+            difference in every patient's life and assist them in living with a healthy, happy smile.</p>
+          <button class="film__toggle" id="filmToggle" aria-pressed="false">
+            <span class="film__icon" aria-hidden="true"></span><span class="film__toggle-text">Pause film</span>
+          </button>
         </div>
       </div>
+    </section>
 
-      <!-- Benefit 2: Direct Billing -->
-      <div class="benefit-card reveal-up" style="--d:100ms">
-        <div class="benefit-card-bg">
-          <img src="/assets/team-fdc.png" alt="Friendly Family Dental Centre team" loading="lazy">
+    <!-- ═══════════ 4. PILLARS ═══════════ -->
+    <section class="pillars" aria-label="What sets us apart">
+      <div class="wrap">
+        <div class="pillars__head">
+          <p class="pillars__lead" data-reveal>Our friendly team at Family Dental Centre offers high quality dental services
+            including routine dental hygiene, restorative care, oral surgery, Invisalign, implants, dentures, and more —
+            <em>all under one roof.</em></p>
         </div>
-        <div class="benefit-card-title">
-          <h3>Direct<br> Billing</h3>
-        </div>
-        <div class="benefit-card-text">
-          <p>We handle the insurance paperwork directly with your provider, making it easy and stress-free for you and
-            your family.</p>
-        </div>
-        <div class="benefit-card-more">
-          <span class="circled-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </span>
+        <div class="pillars__row" id="pillars">
+          <article class="pillar is-active" tabindex="0">
+            <img src="/assets/redesign/fdc-film-poster.jpg" alt="A treatment in progress at Family Dental Centre" loading="lazy" style="object-position:62% 50%">
+            <div class="pillar__body">
+              <span class="pillar__n">01</span>
+              <h3>Modern Technology</h3>
+              <p>Digital X-rays, 3D imaging, and the latest dental equipment for precision care</p>
+            </div>
+            <span class="pillar__arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="pillar" tabindex="0">
+            <img src="/assets/team-fdc.png" alt="The Family Dental Centre team" loading="lazy">
+            <div class="pillar__body">
+              <span class="pillar__n">02</span>
+              <h3>Family-Centred Team</h3>
+              <p>Caring, compassionate professionals dedicated to your comfort and health</p>
+            </div>
+            <span class="pillar__arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="pillar" tabindex="0">
+            <img src="/assets/fdc-office-2.png" alt="The Belleville reception" loading="lazy" style="object-position:50% 50%">
+            <div class="pillar__body">
+              <span class="pillar__n">03</span>
+              <h3>Community Roots</h3>
+              <p>Proudly serving Belleville, Cobourg, and Frankford since 2007</p>
+            </div>
+            <span class="pillar__arrow" aria-hidden="true">↗</span>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Benefit 3: Senior & Military -->
-      <div class="benefit-card reveal-up" style="--d:200ms">
-        <div class="benefit-card-bg">
-          <img src="/assets/smile-fdc.png" alt="Happy family dental patient smiling" loading="lazy">
+    <!-- ═══════════ 5. STATS: a bento evolved from the original staggered grid ═══════════ -->
+    <section class="stats sheet sheet--mist" aria-label="Practice statistics">
+      <div class="notch notch--top-left stats__tab"><span>By the Numbers</span></div>
+      <div class="stats__bento">
+        <div class="bcol bcol--intro">
+          <div class="bcard bcard--text" data-reveal>
+            <p class="stats__lead">Founded in 2009, Family Dental Centre combines modern, state-of-the-art care with a warm,
+              patient-first approach, serving thousands of families across our state-of-the-art clinics.</p>
+            <a href="#about" class="link-arrow">Discover our history <i aria-hidden="true">→</i></a>
+          </div>
         </div>
-        <div class="benefit-card-title">
-          <h3>Senior & Military</h3>
+        <div class="bcol bcol--a">
+          <div class="bcard bcard--white" data-reveal>
+            <svg class="bcard__glyph" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M24 12v12l8 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div class="bcard__num"><span data-count="2009" data-plain>2009</span></div>
+            <div class="bcard__label">Foundation year</div>
+          </div>
         </div>
-        <div class="benefit-card-text">
-          <p>As a thank-you to our community's seniors and military members, we proudly offer a 10% hygiene discount on
-            qualifying services.</p>
+        <div class="bcol bcol--b">
+          <div class="bcard bcard--ink" data-reveal style="--d:.1s">
+            <svg class="bcard__glyph" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l4.5 15.5L44 24l-15.5 4.5L24 44l-4.5-15.5L4 24l15.5-4.5z" fill="currentColor"/></svg>
+            <div class="bcard__num"><span data-count="15000">15,000</span><sup>+</sup></div>
+            <div class="bcard__label">Happy Patients</div>
+          </div>
+          <div class="bcard bcard--brass" data-reveal style="--d:.2s">
+            <div class="bcard__num"><span data-count="48">48</span><sup>h</sup></div>
+            <div class="bcard__label">Emergency Response</div>
+          </div>
         </div>
-        <div class="benefit-card-more">
-          <span class="circled-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </span>
+        <div class="bcol bcol--c">
+          <div class="bcard bcard--white bcard--tall" data-reveal style="--d:.15s">
+            <svg class="bcard__glyph" viewBox="0 0 48 48" aria-hidden="true"><circle cx="16" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div class="bcard__num"><span data-count="3">3</span></div>
+            <div class="bcard__label"><span class="dot"></span>Locations</div>
+            <ul class="bcard__towns" role="list"><li>Belleville</li><li>Cobourg</li><li>Frankford</li></ul>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Benefit 4: Emergency Care -->
-      <div class="benefit-card reveal-up" style="--d:300ms">
-        <div class="benefit-card-bg">
-          <img src="/assets/treatment-fdc.png" alt="Modern dental equipment and treatment room" loading="lazy">
-        </div>
-        <div class="benefit-card-title">
-          <h3>Emergency Care</h3>
-        </div>
-        <div class="benefit-card-text">
-          <p>Dental emergencies don't wait. We offer emergency appointments within 48 hours to give you fast relief and
-            peace of mind.</p>
-        </div>
-        <div class="benefit-card-more">
-          <span class="circled-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ═══════════════════════════════════════════
-     6. LOCATIONS
-═══════════════════════════════════════════ -->
-<section id="locations" class="locations-section" aria-labelledby="locations-heading">
-  <div class="container">
-
-    <div class="locations-header reveal">
-      <span class="eyebrow">Find Us</span>
-      <h2 id="locations-heading" class="locations-title">
-        Three convenient <span>Ontario locations</span>
-      </h2>
-      <p class="locations-lead">
-        Whether you're in Belleville, Cobourg, or Frankford, a Family Dental Centre is close to home.
-      </p>
-    </div>
-
-    <div class="locations-grid">
-
-      <!-- Belleville -->
-      <article class="location-card reveal-up" style="--d:0ms">
-        <div class="location-name">Belleville</div>
-        <div class="location-details">
-          <div class="location-detail">
-            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span>110 North Front Street, Belleville, ON</span>
-          </div>
-          <div class="location-detail">
-            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            <a href="mailto:belleville@familydentalcentre.com">belleville@familydentalcentre.com</a>
-          </div>
-        </div>
-        <a href="tel:6139617050" class="location-phone">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"
-            aria-hidden="true">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
-          </svg>
-          (613) 961-7050
-        </a>
-        <button class="location-cta"
-          onclick="this.nextElementSibling.classList.toggle('is-open'); this.textContent = this.nextElementSibling.classList.contains('is-open') ? '▲ Hide Hours' : '▼ View Hours';">
-          ▼ View Hours
-        </button>
-        <div class="hours-list" aria-label="Belleville office hours">
-          <div class="hours-row"><span>Monday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Tuesday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Wednesday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Thursday</span><span>8:00am – 7:00pm</span></div>
-          <div class="hours-row"><span>Friday</span><span>8:00am – 4:00pm</span></div>
-          <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
-          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
-        </div>
-      </article>
-
-      <!-- Cobourg -->
-      <article class="location-card reveal-up" style="--d:120ms">
-        <div class="location-name">Cobourg</div>
-        <div class="location-details">
-          <div class="location-detail">
-            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span>1060 Burnham Street, Cobourg, ON</span>
-          </div>
-          <div class="location-detail">
-            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            <a href="mailto:cobourg@familydentalcentre.com">cobourg@familydentalcentre.com</a>
-          </div>
-        </div>
-        <a href="tel:9053727400" class="location-phone">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"
-            aria-hidden="true">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
-          </svg>
-          (905) 372-7400
-        </a>
-        <button class="location-cta"
-          onclick="this.nextElementSibling.classList.toggle('is-open'); this.textContent = this.nextElementSibling.classList.contains('is-open') ? '▲ Hide Hours' : '▼ View Hours';">
-          ▼ View Hours
-        </button>
-        <div class="hours-list" aria-label="Cobourg office hours">
-          <div class="hours-row"><span>Monday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Tuesday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Wednesday</span><span>8:00am – 7:00pm</span></div>
-          <div class="hours-row"><span>Thursday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Friday</span><span>8:00am – 4:00pm</span></div>
-          <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
-          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
-        </div>
-      </article>
-
-      <!-- Frankford -->
-      <article class="location-card reveal-up" style="--d:240ms">
-        <div class="location-name">Frankford</div>
-        <div class="location-details">
-          <div class="location-detail">
-            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span>44 Trent Street South, Frankford, ON</span>
-          </div>
-          <div class="location-detail">
-            <svg class="location-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            <a href="mailto:frankford@familydentalcentre.com">frankford@familydentalcentre.com</a>
-          </div>
-        </div>
-        <a href="tel:6133988888" class="location-phone">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"
-            aria-hidden="true">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
-          </svg>
-          (613) 398-8888
-        </a>
-        <button class="location-cta"
-          onclick="this.nextElementSibling.classList.toggle('is-open'); this.textContent = this.nextElementSibling.classList.contains('is-open') ? '▲ Hide Hours' : '▼ View Hours';">
-          ▼ View Hours
-        </button>
-        <div class="hours-list" aria-label="Frankford office hours">
-          <div class="hours-row"><span>Monday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Tuesday</span><span>8:00am – 7:00pm</span></div>
-          <div class="hours-row"><span>Wednesday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Thursday</span><span>8:00am – 5:00pm</span></div>
-          <div class="hours-row"><span>Friday</span><span>8:00am – 4:00pm</span></div>
-          <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
-          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     7. TESTIMONIALS
-═══════════════════════════════════════════ -->
-<section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
-  <div class="container">
-
-    <div class="testimonials-header reveal">
-      <span class="eyebrow">Patient Reviews</span>
-      <h2 id="testimonials-heading" class="testimonials-title">
-        What our patients <span>are saying</span>
-      </h2>
-    </div>
-
-    <div class="testimonials-track" role="list">
-
-      <article class="testimonial-card" role="listitem">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-        </div>
-        <blockquote class="testimonial-quote">"The team at FDC Belleville made my whole family feel so comfortable. My
-          kids actually look forward to their dental appointments now — that says everything!"</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" aria-hidden="true">S</div>
+    <!-- ═══════════ 6. TREATMENTS: everything readable, nothing hidden ═══════════ -->
+    <section class="treat sheet" id="treatments" aria-labelledby="treatments-heading">
+      <div class="notch notch--top-left"><span>What We Offer</span></div>
+      <div class="wrap">
+        <div class="split-head">
           <div>
-            <div class="testimonial-name">Sarah M.</div>
-            <div class="testimonial-meta">Belleville · Family Patient</div>
+            <h2 id="treatments-heading" class="h-display" data-reveal>Comprehensive <em>dental treatments</em></h2>
+          </div>
+          <p class="lead" data-reveal>From routine cleanings to full smile transformations, our skilled team has the expertise
+            and technology to deliver exceptional results.</p>
+        </div>
+      </div>
+
+      <!-- mobile: sticky chip index -->
+      <nav class="treat__chips" aria-label="Jump to treatment">
+        <a href="#tx-classic" class="is-active">Classic</a>
+        <a href="#tx-cosmetic">Cosmetic</a>
+        <a href="#tx-invisalign">Invisalign</a>
+        <a href="#tx-implants">Implants</a>
+        <a href="#tx-dentures">Dentures</a>
+        <a href="#tx-sedation">Sedation</a>
+        <a href="#tx-restorative">Restorative</a>
+      </nav>
+
+      <div class="wrap treat__layout">
+        <!-- desktop: sticky index -->
+        <nav class="treat__index" aria-label="Treatments index">
+          <ol role="list">
+            <li><a href="#tx-classic" class="is-active"><span>01</span>Classic Treatments</a></li>
+            <li><a href="#tx-cosmetic"><span>02</span>Cosmetic Dentistry</a></li>
+            <li><a href="#tx-invisalign"><span>03</span>Invisalign</a></li>
+            <li><a href="#tx-implants"><span>04</span>Dental Implants</a></li>
+            <li><a href="#tx-dentures"><span>05</span>Dentures</a></li>
+            <li><a href="#tx-sedation"><span>06</span>Sedation Dentistry</a></li>
+            <li><a href="#tx-restorative"><span>07</span>Restorative Care</a></li>
+          </ol>
+          <div class="treat__progress" aria-hidden="true"><i id="treatBar"></i></div>
+        </nav>
+
+        <div class="treat__entries">
+          <article class="entry" id="tx-classic">
+            <figure class="entry__img"><img src="/assets/smile-fdc.png" alt="Classic dental treatments — cleanings and exams" loading="lazy"><figcaption>Preventive Care</figcaption></figure>
+            <span class="entry__n">01 — Cleanings, exams & X-rays</span>
+            <h3>Classic Treatments</h3>
+            <p>The foundation of a healthy smile. Our preventive services are designed to keep your teeth and gums in top
+              condition through regular care and early detection.</p>
+            <ul role="list">
+              <li>Comprehensive dental exams</li>
+              <li>Professional teeth cleanings & scaling</li>
+              <li>Digital X-rays & imaging</li>
+              <li>Oral cancer screenings</li>
+              <li>Children's dentistry & fluoride treatments</li>
+            </ul>
+            <a href="#book" class="btn btn--ink">Book a Cleaning</a>
+          </article>
+
+          <article class="entry" id="tx-cosmetic">
+            <figure class="entry__img"><img src="/assets/smile-fdc.png" alt="Cosmetic dentistry — whitening and veneers" loading="lazy" style="object-position:70% 50%"><figcaption>Smile Transformation</figcaption></figure>
+            <span class="entry__n">02 — Whitening, veneers & more</span>
+            <h3>Cosmetic Dentistry</h3>
+            <p>Transform your smile with our cosmetic services. Whether you want a brighter smile or a complete smile
+              makeover, we have the expertise to make it happen.</p>
+            <ul role="list">
+              <li>Professional teeth whitening</li>
+              <li>Porcelain veneers</li>
+              <li>Tooth bonding & contouring</li>
+              <li>Smile design consultations</li>
+            </ul>
+            <a href="#book" class="btn btn--ink">Book Consultation</a>
+          </article>
+
+          <article class="entry" id="tx-invisalign">
+            <figure class="entry__img"><img src="/assets/team-fdc.png" alt="Invisalign clear aligners" loading="lazy"><figcaption>Certified Provider</figcaption></figure>
+            <span class="entry__n">03 — Clear aligner therapy</span>
+            <h3>Invisalign</h3>
+            <p>Straighten your teeth discreetly with clear aligner technology. Invisalign is comfortable, removable, and
+              virtually invisible — perfect for adults and teens.</p>
+            <ul role="list">
+              <li>Free Invisalign consultations</li>
+              <li>Custom aligner trays</li>
+              <li>Digital treatment planning</li>
+              <li>Flexible payment options</li>
+            </ul>
+            <a href="#book" class="btn btn--ink">Free Consultation</a>
+          </article>
+
+          <article class="entry" id="tx-implants">
+            <figure class="entry__img"><img src="/assets/treatment-fdc.png" alt="Dental implants procedure room" loading="lazy"><figcaption>Permanent Solution</figcaption></figure>
+            <span class="entry__n">04 — Permanent tooth replacement</span>
+            <h3>Dental Implants</h3>
+            <p>Replace missing teeth with natural-looking implants that feel and function just like your own teeth — a
+              permanent investment in your confidence.</p>
+            <ul role="list">
+              <li>Single & multiple tooth implants</li>
+              <li>Implant-supported dentures</li>
+              <li>All-on-4 solutions</li>
+              <li>Bone grafting if required</li>
+            </ul>
+            <a href="#book" class="btn btn--ink">Learn More</a>
+          </article>
+
+          <article class="entry" id="tx-dentures">
+            <figure class="entry__img"><img src="/assets/fdc-office-2.png" alt="Family Dental Centre clinic interior" loading="lazy"><figcaption>On-Site Lab</figcaption></figure>
+            <span class="entry__n">05 — On-site denture lab</span>
+            <h3>Dentures</h3>
+            <p>We have an on-site denturist and denture lab — no need to visit another office. Get custom-fitted dentures
+              with the convenience of one-stop care.</p>
+            <ul role="list">
+              <li>Complete & partial dentures</li>
+              <li>Immediate dentures</li>
+              <li>Implant-supported dentures</li>
+              <li>Denture relining & repairs</li>
+            </ul>
+            <a href="#book" class="btn btn--ink">Book Fitting</a>
+          </article>
+
+          <article class="entry" id="tx-sedation">
+            <figure class="entry__img"><img src="/assets/redesign/fdc-film-poster.jpg" alt="A calm, gentle treatment in progress" loading="lazy"><figcaption>Anxiety-Free Care</figcaption></figure>
+            <span class="entry__n">06 — Anxiety-free dental care</span>
+            <h3>Sedation Dentistry</h3>
+            <p>Dental anxiety is real — and we're here to help. Our sedation options ensure a calm, comfortable experience
+              so you get the care you need without fear.</p>
+            <ul role="list">
+              <li>Nitrous oxide (laughing gas)</li>
+              <li>Oral conscious sedation</li>
+              <li>Safe for children & adults</li>
+              <li>Pre-treatment consultations</li>
+            </ul>
+            <a href="#book" class="btn btn--ink">Learn More</a>
+          </article>
+
+          <article class="entry" id="tx-restorative">
+            <figure class="entry__img"><img src="/assets/treatment-fdc.png" alt="Modern dental equipment" loading="lazy" style="object-position:30% 60%"><figcaption>Restore & Repair</figcaption></figure>
+            <span class="entry__n">07 — Crowns, bridges & fillings</span>
+            <h3>Restorative Care</h3>
+            <p>Rebuild damaged or missing teeth with durable, natural-looking restorations. Our restorative treatments bring
+              back full function and aesthetics to your smile.</p>
+            <ul role="list">
+              <li>Porcelain crowns & bridges</li>
+              <li>Tooth-coloured composite fillings</li>
+              <li>Root canal therapy</li>
+              <li>Oral surgery & wisdom teeth removal</li>
+            </ul>
+            <a href="#book" class="btn btn--ink">Book Assessment</a>
+          </article>
+        </div>
+
+        <!-- desktop: sticky image stage, synced to the entry in view -->
+        <div class="treat__stage" id="treatStage" aria-hidden="true"></div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ 6. BENEFITS ═══════════ -->
+    <section class="benefits sheet sheet--paper" id="benefits" aria-labelledby="benefits-heading">
+      <div class="notch notch--top-left"><span>Why Choose Us</span></div>
+      <div class="wrap benefits__grid">
+        <div class="benefits__head">
+          <h2 id="benefits-heading" class="h-display" data-reveal>Dental Care That Puts <em>Your Family First</em></h2>
+          <p class="lead" data-reveal>From your very first visit, you'll feel the Family Dental Centre difference —
+            compassionate care, modern technology, and a team that genuinely cares about your smile.</p>
+          <a href="#book" class="btn btn--ink" data-reveal>Book Appointment</a>
+        </div>
+
+        <div class="benefits__list">
+          <article class="benefit" data-reveal>
+            <figure><img src="/assets/fdc-office-2.png" alt="Modern Family Dental Centre office" loading="lazy"></figure>
+            <div class="benefit__text">
+              <span class="benefit__n">01</span>
+              <h3>Convenient Hours</h3>
+              <p>We're open early and late so dental care fits your schedule — not the other way around. No need to take a
+                full day off work.</p>
+            </div>
+          </article>
+          <article class="benefit" data-reveal>
+            <figure><img src="/assets/team-fdc.png" alt="Friendly Family Dental Centre team" loading="lazy"></figure>
+            <div class="benefit__text">
+              <span class="benefit__n">02</span>
+              <h3>Direct Billing</h3>
+              <p>We handle the insurance paperwork directly with your provider, making it easy and stress-free for you and
+                your family.</p>
+            </div>
+          </article>
+          <article class="benefit" data-reveal>
+            <figure><img src="/assets/smile-fdc.png" alt="Happy family dental patient smiling" loading="lazy"></figure>
+            <div class="benefit__text">
+              <span class="benefit__n">03</span>
+              <h3>Senior & Military</h3>
+              <p>As a thank-you to our community's seniors and military members, we proudly offer a 10% hygiene discount on
+                qualifying services.</p>
+            </div>
+          </article>
+          <article class="benefit" data-reveal>
+            <figure><img src="/assets/treatment-fdc.png" alt="Modern dental equipment and treatment room" loading="lazy"></figure>
+            <div class="benefit__text">
+              <span class="benefit__n">04</span>
+              <h3>Emergency Care</h3>
+              <p>Dental emergencies don't wait. We offer emergency appointments within 48 hours to give you fast relief and
+                peace of mind.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════ 7. TEAM: a gallery you walk through ═══════════ -->
+    <section class="team" id="team" aria-labelledby="team-heading">
+      <div class="team__pin" id="teamPin">
+        <div class="team__sticky">
+          <div class="wrap team__head">
+            <div>
+              <div class="rule-label rule-label--light"><span>Our Professionals</span></div>
+              <h2 id="team-heading" class="h-display">Meet the <em>Team</em></h2>
+            </div>
+            <div class="team__meta">
+              <span class="team__count"><b id="teamNow">01</b> / 06</span>
+              <span class="team__rail" aria-hidden="true"><i id="teamBar"></i></span>
+            </div>
+          </div>
+
+          <div class="team__track" id="teamTrack">
+            <article class="member">
+              <figure><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Dr. John Bennett" loading="lazy"></figure>
+              <div class="member__cap"><span>01</span><h3>Dr. John Bennett</h3><p>Lead Dentist & Founder</p></div>
+            </article>
+            <article class="member">
+              <figure><img src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=800&q=80" alt="Dr. Sarah Jenkins" loading="lazy"></figure>
+              <div class="member__cap"><span>02</span><h3>Dr. Sarah Jenkins</h3><p>Cosmetic Dentist</p></div>
+            </article>
+            <article class="member">
+              <figure><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="Emily Watson, RDH" loading="lazy"></figure>
+              <div class="member__cap"><span>03</span><h3>Emily Watson, RDH</h3><p>Lead Dental Hygienist</p></div>
+            </article>
+            <article class="member">
+              <figure><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80" alt="Marcus Vance" loading="lazy"></figure>
+              <div class="member__cap"><span>04</span><h3>Marcus Vance</h3><p>Office Administrator</p></div>
+            </article>
+            <article class="member">
+              <figure><img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=800&q=80" alt="Dr. Alex Patel" loading="lazy"></figure>
+              <div class="member__cap"><span>05</span><h3>Dr. Alex Patel</h3><p>Orthodontist</p></div>
+            </article>
+            <article class="member">
+              <figure><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Chloe Moreau" loading="lazy"></figure>
+              <div class="member__cap"><span>06</span><h3>Chloe Moreau</h3><p>Clinical Assistant</p></div>
+            </article>
+            <article class="member member--end">
+              <a href="#contact">
+                <span class="member__end-text">Learn more about the people at the FDC</span>
+                <span class="btn btn--light">Meet the full team</span>
+              </a>
+            </article>
           </div>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="testimonial-card" role="listitem">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-        </div>
-        <blockquote class="testimonial-quote">"I was terrified of the dentist for years. The sedation option at FDC
-          changed everything. Professional, gentle, and the results were incredible. Highly recommend!"</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" aria-hidden="true">J</div>
+
+    <!-- ═══════════ 8. LOCATIONS ═══════════ -->
+    <section class="locs sheet" id="locations" aria-labelledby="locations-heading">
+      <div class="notch notch--top-left"><span>Find Us</span></div>
+      <div class="wrap">
+        <div class="split-head">
           <div>
-            <div class="testimonial-name">James T.</div>
-            <div class="testimonial-meta">Cobourg · Sedation Patient</div>
+            <h2 id="locations-heading" class="h-display" data-reveal>Three convenient <em>Ontario locations</em></h2>
+          </div>
+          <p class="lead" data-reveal>Whether you're in Belleville, Cobourg, or Frankford, a Family Dental Centre is close to home.</p>
+        </div>
+
+        <div class="locs__grid">
+          <!-- Hours encoded as data-h="open-close" in 24h; empty = closed / by appointment -->
+          <article class="loc" data-reveal data-loc="belleville">
+            <div class="loc__top">
+              <span class="loc__n">01</span>
+              <span class="loc__status" data-status></span>
+            </div>
+            <h3 class="loc__city">Belleville</h3>
+            <address>110 North Front Street,<br>Belleville, ON</address>
+            <div class="loc__contact">
+              <a href="tel:6139617050" class="loc__phone">(613) 961-7050</a>
+              <a href="mailto:belleville@familydentalcentre.com">belleville<wbr>@familydentalcentre.com</a>
+            </div>
+            <details class="loc__hours" open>
+              <summary>Hours of operation</summary>
+              <table>
+                <tr data-day="1" data-h="8-17"><th>Monday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="2" data-h="8-17"><th>Tuesday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="3" data-h="8-17"><th>Wednesday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="4" data-h="8-19"><th>Thursday</th><td>8:00am – 7:00pm</td></tr>
+                <tr data-day="5" data-h="8-16"><th>Friday</th><td>8:00am – 4:00pm</td></tr>
+                <tr data-day="6" data-h=""><th>Saturday</th><td>By appointment</td></tr>
+                <tr data-day="0" data-h=""><th>Sunday</th><td>Closed</td></tr>
+              </table>
+            </details>
+            <a class="link-arrow" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=110+North+Front+Street+Belleville+ON">Get directions <i aria-hidden="true">↗</i></a>
+          </article>
+
+          <article class="loc" data-reveal data-loc="cobourg">
+            <div class="loc__top">
+              <span class="loc__n">02</span>
+              <span class="loc__status" data-status></span>
+            </div>
+            <h3 class="loc__city">Cobourg</h3>
+            <address>1060 Burnham Street,<br>Cobourg, ON</address>
+            <div class="loc__contact">
+              <a href="tel:9053727400" class="loc__phone">(905) 372-7400</a>
+              <a href="mailto:cobourg@familydentalcentre.com">cobourg<wbr>@familydentalcentre.com</a>
+            </div>
+            <details class="loc__hours" open>
+              <summary>Hours of operation</summary>
+              <table>
+                <tr data-day="1" data-h="8-17"><th>Monday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="2" data-h="8-17"><th>Tuesday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="3" data-h="8-19"><th>Wednesday</th><td>8:00am – 7:00pm</td></tr>
+                <tr data-day="4" data-h="8-17"><th>Thursday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="5" data-h="8-16"><th>Friday</th><td>8:00am – 4:00pm</td></tr>
+                <tr data-day="6" data-h=""><th>Saturday</th><td>By appointment</td></tr>
+                <tr data-day="0" data-h=""><th>Sunday</th><td>Closed</td></tr>
+              </table>
+            </details>
+            <a class="link-arrow" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=1060+Burnham+Street+Cobourg+ON">Get directions <i aria-hidden="true">↗</i></a>
+          </article>
+
+          <article class="loc" data-reveal data-loc="frankford">
+            <div class="loc__top">
+              <span class="loc__n">03</span>
+              <span class="loc__status" data-status></span>
+            </div>
+            <h3 class="loc__city">Frankford</h3>
+            <address>44 Trent Street South,<br>Frankford, ON</address>
+            <div class="loc__contact">
+              <a href="tel:6133988888" class="loc__phone">(613) 398-8888</a>
+              <a href="mailto:frankford@familydentalcentre.com">frankford<wbr>@familydentalcentre.com</a>
+            </div>
+            <details class="loc__hours" open>
+              <summary>Hours of operation</summary>
+              <table>
+                <tr data-day="1" data-h="8-17"><th>Monday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="2" data-h="8-19"><th>Tuesday</th><td>8:00am – 7:00pm</td></tr>
+                <tr data-day="3" data-h="8-17"><th>Wednesday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="4" data-h="8-17"><th>Thursday</th><td>8:00am – 5:00pm</td></tr>
+                <tr data-day="5" data-h="8-16"><th>Friday</th><td>8:00am – 4:00pm</td></tr>
+                <tr data-day="6" data-h=""><th>Saturday</th><td>By appointment</td></tr>
+                <tr data-day="0" data-h=""><th>Sunday</th><td>Closed</td></tr>
+              </table>
+            </details>
+            <a class="link-arrow" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=44+Trent+Street+South+Frankford+ON">Get directions <i aria-hidden="true">↗</i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ 9. TESTIMONIALS ═══════════ -->
+    <section class="quotes sheet sheet--mist" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="notch notch--top-left"><span>Patient Reviews</span></div>
+      <div class="wrap">
+        <h2 id="testimonials-heading" class="visually-hidden">What our patients are saying</h2>
+
+        <div class="quotes__stage" id="quotes" aria-roledescription="carousel" aria-label="What our patients are saying">
+          <figure class="quote is-active" aria-roledescription="slide">
+            <div class="quote__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>“The team at FDC Belleville made my whole family feel so comfortable. My kids actually look forward
+              to their dental appointments now — that says everything!”</blockquote>
+            <figcaption><strong>Sarah M.</strong> Belleville · Family Patient</figcaption>
+          </figure>
+          <figure class="quote" aria-roledescription="slide">
+            <div class="quote__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>“I was terrified of the dentist for years. The sedation option at FDC changed everything.
+              Professional, gentle, and the results were incredible. Highly recommend!”</blockquote>
+            <figcaption><strong>James T.</strong> Cobourg · Sedation Patient</figcaption>
+          </figure>
+          <figure class="quote" aria-roledescription="slide">
+            <div class="quote__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>“Got my Invisalign done at Frankford and couldn't be happier. The team was so supportive throughout
+              the entire process, and my smile transformation is beyond what I expected.”</blockquote>
+            <figcaption><strong>Lisa R.</strong> Frankford · Invisalign Patient</figcaption>
+          </figure>
+          <figure class="quote" aria-roledescription="slide">
+            <div class="quote__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>“As a senior, the 10% discount is wonderful, but honestly it's the care and respect I receive at
+              every appointment that keeps me coming back. Wonderful practice.”</blockquote>
+            <figcaption><strong>Robert D.</strong> Belleville · Long-term Patient</figcaption>
+          </figure>
+        </div>
+
+        <div class="quotes__controls">
+          <button class="quotes__btn" data-dir="-1" aria-label="Previous review">←</button>
+          <div class="quotes__count"><span id="qIdx">01</span><span class="quotes__track"><i id="qBar"></i></span><span>04</span></div>
+          <button class="quotes__btn" data-dir="1" aria-label="Next review">→</button>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ═══════════ 10. BOOKING: a bento of ways to reach us ═══════════ -->
+    <section class="book" id="book" aria-labelledby="booking-heading">
+      <div class="wrap">
+        <div class="rule-label rule-label--light"><span>Ready to Start?</span></div>
+        <div class="book__grid">
+          <div class="book__copy">
+            <h2 id="booking-heading" class="book__title" data-reveal>Book your appointment <em>today</em></h2>
+            <p class="book__sub" data-reveal>New patients are always welcome. Contact your nearest location or fill out our
+              online request form — we'll be in touch within one business day.</p>
+          </div>
+
+          <div class="book__bento">
+            <a class="btile btile--clinic" href="tel:6139617050" data-desk="belleville" data-reveal>
+              <span class="btile__top"><span class="desk__status"><i class="status-dot"></i><span></span></span><span class="btile__arrow" aria-hidden="true">↗</span></span>
+              <span class="btile__city">Belleville</span>
+              <span class="btile__phone">(613) 961-7050</span>
+            </a>
+            <a class="btile btile--clinic" href="tel:9053727400" data-desk="cobourg" data-reveal style="--d:.08s">
+              <span class="btile__top"><span class="desk__status"><i class="status-dot"></i><span></span></span><span class="btile__arrow" aria-hidden="true">↗</span></span>
+              <span class="btile__city">Cobourg</span>
+              <span class="btile__phone">(905) 372-7400</span>
+            </a>
+            <a class="btile btile--clinic" href="tel:6133988888" data-desk="frankford" data-reveal style="--d:.16s">
+              <span class="btile__top"><span class="desk__status"><i class="status-dot"></i><span></span></span><span class="btile__arrow" aria-hidden="true">↗</span></span>
+              <span class="btile__city">Frankford</span>
+              <span class="btile__phone">(613) 398-8888</span>
+            </a>
+            <a class="btile btile--request" href="https://familydentalcentre.com/request-appointment/" target="_blank" rel="noopener noreferrer" data-reveal style="--d:.24s">
+              <span class="btile__top"><span>New patients welcome</span><span class="btile__arrow" aria-hidden="true">↗</span></span>
+              <span class="btile__big">Request Appointment Online</span>
+            </a>
+            <div class="btile btile--emergency" data-reveal style="--d:.32s">
+              <span class="btile__top"><span><i class="status-dot is-alert"></i> Emergency</span></span>
+              <span class="btile__mid">Emergency Appointments within 48 hours</span>
+            </div>
           </div>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="testimonial-card" role="listitem">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-        </div>
-        <blockquote class="testimonial-quote">"Got my Invisalign done at Frankford and couldn't be happier. The team was
-          so supportive throughout the entire process, and my smile transformation is beyond what I expected."
-        </blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" aria-hidden="true">L</div>
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="foot sheet sheet--ink" id="contact">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <img src="/assets/fdc-logo-light.png" alt="Family Dental Centre" class="foot__logo">
+        <p class="foot__tag">We bring <em>smiles</em> to life.</p>
+        <p>With highly qualified dental professionals and modern technology, we strive to make a difference in every
+          patient's life.</p>
+      </div>
+      <div class="foot__col">
+        <h3>Quick Links</h3>
+        <ul role="list">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#locations">Our Locations</a></li>
+          <li><a href="#book">Book Appointment</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="foot__col foot__col--locs">
+        <h3>Our Locations</h3>
+        <div class="foot__locs">
           <div>
-            <div class="testimonial-name">Lisa R.</div>
-            <div class="testimonial-meta">Frankford · Invisalign Patient</div>
+            <h4>Belleville</h4>
+            <address>110 North Front Street, Belleville, ON</address>
+            <a href="tel:6139617050">(613) 961-7050</a>
+            <a href="mailto:belleville@familydentalcentre.com">belleville<wbr>@familydentalcentre.com</a>
           </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card" role="listitem">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-          <svg class="star-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-          </svg>
-        </div>
-        <blockquote class="testimonial-quote">"As a senior, the 10% discount is wonderful, but honestly it's the care
-          and respect I receive at every appointment that keeps me coming back. Wonderful practice."</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" aria-hidden="true">R</div>
           <div>
-            <div class="testimonial-name">Robert D.</div>
-            <div class="testimonial-meta">Belleville · Long-term Patient</div>
+            <h4>Cobourg</h4>
+            <address>1060 Burnham Street, Cobourg, ON</address>
+            <a href="tel:9053727400">(905) 372-7400</a>
+            <a href="mailto:cobourg@familydentalcentre.com">cobourg<wbr>@familydentalcentre.com</a>
+          </div>
+          <div>
+            <h4>Frankford</h4>
+            <address>44 Trent Street South, Frankford, ON</address>
+            <a href="tel:6133988888">(613) 398-8888</a>
+            <a href="mailto:frankford@familydentalcentre.com">frankford<wbr>@familydentalcentre.com</a>
           </div>
         </div>
-      </article>
+      </div>
+    </div>
 
+    <div class="foot__bottom">
+      <nav class="foot__nav" aria-label="Footer">
+        <a href="#treatments">Treatments</a><span>/</span><a href="#about">About</a><span>/</span><a href="#locations">Locations</a><span>/</span><a href="#book">Book</a>
+      </nav>
+      <nav class="foot__nav" aria-label="Social">
+        <a href="https://www.facebook.com/familydentalcentre" target="_blank" rel="noopener noreferrer">Facebook</a><span>/</span>
+        <a href="https://www.instagram.com/familydentalcentre" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </nav>
     </div>
-  </div>
-</section>
+    <div class="foot__legal">
+      <p>&copy; 2026 Family Dental Centre. All rights reserved.</p>
+      <div><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a></div>
+      <a href="#top" class="foot__up" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
 
-<!-- ═══════════════════════════════════════════
-     8. BOOKING / CONTACT CTA
-═══════════════════════════════════════════ -->
-<section id="book" class="booking-section" aria-labelledby="booking-heading">
-  <!-- Animated Background Rings -->
-  <div class="cta-rings-wrap" aria-hidden="true">
-    <div class="cta-ring cta-ring--outer">
-      <div class="ring-tooth" style="--angle: 0deg;"><img src="/assets/tooth.png" alt=""></div>
-      <div class="ring-tooth" style="--angle: 90deg;"><img src="/assets/tooth.png" alt=""></div>
-      <div class="ring-tooth" style="--angle: 180deg;"><img src="/assets/tooth.png" alt=""></div>
-      <div class="ring-tooth" style="--angle: 270deg;"><img src="/assets/tooth.png" alt=""></div>
-    </div>
-    <div class="cta-ring cta-ring--inner">
-      <div class="ring-tooth" style="--angle: 45deg;"><img src="/assets/tooth.png" alt=""></div>
-      <div class="ring-tooth" style="--angle: 135deg;"><img src="/assets/tooth.png" alt=""></div>
-      <div class="ring-tooth" style="--angle: 225deg;"><img src="/assets/tooth.png" alt=""></div>
-      <div class="ring-tooth" style="--angle: 315deg;"><img src="/assets/tooth.png" alt=""></div>
-    </div>
-  </div>
-  <div class="container" style="position: relative; z-index: 2;">
-    <span class="eyebrow booking-eyebrow">Ready to Start?</span>
-    <h2 id="booking-heading" class="booking-title reveal-up">
-      Book your appointment <em>today</em>
-    </h2>
-    <p class="booking-sub reveal-up" style="--d:120ms">
-      New patients are always welcome. Contact your nearest location or fill out our online request form — we'll be in
-      touch within one business day.
-    </p>
-    <div class="booking-actions reveal-up" style="--d:240ms">
-      <a href="https://familydentalcentre.com/request-appointment/" target="_blank" rel="noopener noreferrer"
-        class="btn btn-primary btn-lg" id="booking-cta">Request Appointment Online</a>
-      <a href="tel:6139617050" class="booking-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"
-          aria-hidden="true">
-          <path
-            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.1 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
-        </svg>
-        (613) 961-7050
-      </a>
-    </div>
-  </div>
-</section>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="/assets/redesign/redesign.js?v=3"></script>
+</body>
+</html>

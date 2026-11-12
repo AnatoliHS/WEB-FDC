@@ -1,0 +1,99 @@
+---
+layout: false
+permalink: /hero-mobile-options/frame/index.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile hero frame</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/redesign/redesign.css?v=4" />
+  <link rel="stylesheet" href="/assets/redesign/hero-mobile.css?v=1" />
+  <script>document.documentElement.className = 'mv-' + (new URLSearchParams(location.search).get('v') || '1');</script>
+</head>
+<body class="is-loaded">
+  <header class="hero">
+    <div class="hero__sheet sheet mh">
+      <div class="hero__glow" aria-hidden="true"><i></i><i></i><i></i></div>
+
+      <nav class="nav mh-nav" aria-label="Main navigation (preview)">
+        <span class="nav__logo"><img src="/assets/fdc-logo-light.png" alt="Family Dental Centre"></span>
+        <div class="nav__actions">
+          <span class="nav__burger pill-glass"><span></span><span></span></span>
+        </div>
+      </nav>
+
+      <div class="mh-ticker" aria-hidden="true"><div class="mh-ticker__track">
+        <span>Convenient Extended Hours</span><i>✦</i><span>Direct Insurance Billing</span><i>✦</i><span>3 Ontario Locations</span><i>✦</i><span>Emergency within 48h</span><i>✦</i>
+        <span>Convenient Extended Hours</span><i>✦</i><span>Direct Insurance Billing</span><i>✦</i><span>3 Ontario Locations</span><i>✦</i><span>Emergency within 48h</span><i>✦</i>
+      </div></div>
+
+      <div class="mh__body">
+        <p class="mh-kicker">Serving Ontario Since 2007</p>
+        <h1 class="mh-title">
+          <span class="l1">We bring<span class="hpill p1" aria-hidden="true"><img src="/assets/team-fdc.png" alt=""></span></span>
+          <span class="l2"><em>smiles</em><span class="hpill p2" aria-hidden="true"><img src="/assets/team-fdc.png" alt=""></span></span>
+          <span class="l3">to life.<span class="hpill p3" aria-hidden="true"><img src="/assets/team-fdc.png" alt=""></span></span>
+        </h1>
+        <p class="mh-deck">Comprehensive dental care for your whole family across three convenient Ontario locations. With modern
+          technology and a compassionate team, your healthy smile is our priority.</p>
+        <ol class="mh-list" role="list">
+          <li><span>01</span>Convenient Extended Hours</li>
+          <li><span>02</span>Direct Insurance Billing</li>
+          <li><span>03</span>3 Ontario Locations</li>
+          <li><span>04</span>Emergency within 48h</li>
+        </ol>
+        <ul class="mh-chips" role="list">
+          <li>Convenient Extended Hours</li><li>Direct Insurance Billing</li><li>3 Ontario Locations</li><li>Emergency within 48h</li>
+        </ul>
+        <p class="mh-line">Convenient Extended Hours · Direct Insurance Billing · 3 Ontario Locations · Emergency within 48h</p>
+      </div>
+
+      <!-- full booking bar (as on the live site) -->
+      <div class="notch hero__notch mh-full">
+        <div class="concierge">
+          <div class="concierge__cell concierge__cell--loc">
+            <span class="concierge__label">Your clinic</span>
+            <div class="seg mh-seg"><button aria-checked="true">Belleville</button><button aria-checked="false">Cobourg</button><button aria-checked="false">Frankford</button></div>
+          </div>
+          <div class="concierge__cell"><span class="concierge__label">Today</span><span class="concierge__value"><i class="status-dot is-open"></i>Open now · until 7pm</span></div>
+          <div class="concierge__cell"><span class="concierge__label">Call directly</span><span class="concierge__value concierge__phone">(613) 961-7050</span></div>
+          <span class="btn btn--brass concierge__cta">Book Appointment</span>
+        </div>
+      </div>
+
+      <!-- compact booking bar: same information, two rows -->
+      <div class="notch hero__notch mh-compact">
+        <div class="mc">
+          <div class="seg mh-seg"><button aria-checked="true">Belleville</button><button aria-checked="false">Cobourg</button><button aria-checked="false">Frankford</button></div>
+          <div class="mc__row">
+            <span class="mc__call"><span class="mc__status"><i class="status-dot is-open"></i>Open · until 7pm</span><span class="mc__phone">(613) 961-7050</span></span>
+            <span class="btn btn--brass mc__book">Book</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- option 5: details move just below the hero -->
+  <section class="mh-fold sheet sheet--mist">
+    <div class="notch notch--top-left"><span>At a glance</span></div>
+    <p class="mh-fold__deck">Comprehensive dental care for your whole family across three convenient Ontario locations. With modern
+      technology and a compassionate team, your healthy smile is our priority.</p>
+    <ol class="mh-fold__list" role="list">
+      <li><span>01</span>Convenient Extended Hours</li>
+      <li><span>02</span>Direct Insurance Billing</li>
+      <li><span>03</span>3 Ontario Locations</li>
+      <li><span>04</span>Emergency within 48h</li>
+    </ol>
+  </section>
+
+  <div class="mh-next">↓ rest of the site continues</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* Mobile hero study — rendered inside 390px frames */
+
+.mh { height: auto; min-height: calc(100svh - var(--inset) * 2); display: block; position: relative; }
+.mh-nav { position: absolute; top: 8px; left: 8px; right: 8px; }
+.mh-seg { display: flex; }
+.mh-seg button { flex: 1; }
+.mh-seg button[aria-checked="true"] { background: var(--bone); color: var(--ink); }
+.mh__body { position: relative; z-index: 1; display: flex; flex-direction: column; padding: 92px 18px 300px; min-height: calc(100svh - var(--inset) * 2); }
+
+/* shared pieces */
+.mh-kicker { display: inline-flex; align-items: center; gap: 12px; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--dim); }
+.mh-kicker::before { content: ""; width: 28px; height: 1px; background: rgba(243, 241, 236, 0.3); }
+.mh-title { font-weight: 400; letter-spacing: -0.06em; line-height: 0.92; display: grid; }
+.mh-title > span { display: flex; align-items: center; white-space: nowrap; }
+.mh-title em { font-size: 1.12em; letter-spacing: -0.025em; line-height: 0.85; padding-right: 0.06em; color: var(--brass-soft); }
+.mh-title .hpill { width: 1.2em; height: 0.56em; margin-left: 0.16em; }
+.mh-deck { font-family: var(--serif); font-size: 1.02rem; line-height: 1.42; color: rgba(243, 241, 236, 0.8); }
+.mh-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; }
+.mh-list li { display: flex; align-items: baseline; gap: 10px; padding: 7px 0; font-size: 12px; border-bottom: 1px solid var(--line-light); }
+.mh-list span { font-family: var(--serif); font-style: italic; color: var(--brass-soft); font-size: 13px; }
+.mh-line { font-size: 12px; line-height: 1.7; color: var(--dim); }
+.mh-chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin-inline: -18px; padding-inline: 18px; }
+.mh-chips::-webkit-scrollbar { display: none; }
+.mh-chips li { flex: none; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line-light); font-size: 12px; background: rgba(243, 241, 236, 0.04); }
+.mh-chips li::before { content: "✦"; color: var(--brass-soft); margin-right: 8px; font-size: 10px; }
+
+.mh-ticker { position: absolute; left: 0; right: 0; top: 66px; z-index: 2; overflow: hidden; border-block: 1px solid var(--line-light); padding: 10px 0; }
+.mh-ticker__track { display: flex; gap: 20px; width: max-content; animation: mtick 30s linear infinite; }
+.mh-ticker span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); white-space: nowrap; }
+.mh-ticker i { font-style: normal; color: var(--brass-soft); font-size: 10px; }
+@keyframes mtick { to { transform: translateX(-50%); } }
+
+/* compact booking bar */
+.mc { display: grid; gap: 6px; }
+.mc__row { display: grid; grid-template-columns: 1fr auto; gap: 6px; }
+.mc__call { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 10px 14px; border-radius: 14px; background: var(--ink-2); }
+.mc__status { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; color: var(--dim); }
+.mc__phone { font-size: 1.15rem; letter-spacing: -0.02em; }
+.mc__book { height: auto; min-height: 58px; padding: 0 30px; border-radius: 14px; }
+
+.mh-fold { padding: 84px 22px 28px; }
+.mh-fold__deck { font-family: var(--serif); font-size: 1.15rem; line-height: 1.42; color: var(--ink); }
+.mh-fold__list { margin-top: 20px; }
+.mh-fold__list li { display: flex; gap: 12px; align-items: baseline; padding: 11px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.mh-fold__list span { font-family: var(--serif); font-style: italic; color: var(--brass); }
+.mh-next { padding: 40px 0 60px; text-align: center; color: var(--stone); font-size: 13px; }
+
+/* defaults: optional pieces hidden */
+.mh-ticker, .mh-chips, .mh-line, .mh-compact, .mh-fold, .p2, .p3 { display: none !important; }
+
+/* ── 1. Centered Essential ── */
+.mv-1 .mh__body { align-items: center; justify-content: center; text-align: center; gap: 22px; }
+.mv-1 .mh-kicker::after { content: ""; width: 28px; height: 1px; background: rgba(243, 241, 236, 0.3); }
+.mv-1 .mh-title { font-size: 17.5vw; justify-items: center; }
+.mv-1 .mh-deck { max-width: 32ch; font-size: 0.98rem; }
+.mv-1 .mh-list { display: none; }
+.mv-1 .mh-line { display: block !important; max-width: 32ch; }
+
+/* ── 2. Left Editorial (compact bar) ── */
+.mv-2 .mh__body { justify-content: center; gap: 20px; padding-bottom: 160px; }
+.mv-2 .mh-title { font-size: 21vw; }
+.mv-2 .p1 { display: none; }
+.mv-2 .p2 { display: inline-block !important; }
+.mv-2 .mh-deck { padding-top: 18px; border-top: 1px solid var(--line-light); }
+.mv-2 .mh-full { display: none; }
+.mv-2 .mh-compact { display: block !important; }
+
+/* ── 3. Swipe Chips (compact bar) ── */
+.mv-3 .mh__body { align-items: center; justify-content: center; text-align: center; gap: 24px; padding-bottom: 160px; }
+.mv-3 .mh-kicker::after { content: ""; width: 28px; height: 1px; background: rgba(243, 241, 236, 0.3); }
+.mv-3 .mh-title { font-size: 18.5vw; justify-items: center; }
+.mv-3 .mh-deck { max-width: 32ch; }
+.mv-3 .mh-list { display: none; }
+.mv-3 .mh-chips { display: flex !important; align-self: stretch; }
+.mv-3 .mh-full { display: none; }
+.mv-3 .mh-compact { display: block !important; }
+
+/* ── 4. Ticker (compact bar) ── */
+.mv-4 .mh-ticker { display: block !important; }
+.mv-4 .mh__body { justify-content: center; gap: 22px; padding-top: 130px; padding-bottom: 160px; }
+.mv-4 .mh-kicker { display: none; }
+.mv-4 .mh-title { font-size: 23vw; line-height: 0.88; }
+.mv-4 .mh-title em { font-size: 1.18em; }
+.mv-4 .p1 { display: none; }
+.mv-4 .p3 { display: inline-block !important; width: 1.25em; }
+.mv-4 .mh-list { display: none; }
+.mv-4 .mh-deck { font-size: 1.05rem; }
+.mv-4 .mh-full { display: none; }
+.mv-4 .mh-compact { display: block !important; }
+
+/* ── 5. Hero + Fold ── */
+.mv-5 .mh__body { align-items: center; justify-content: center; text-align: center; gap: 26px; }
+.mv-5 .mh-kicker::after { content: ""; width: 28px; height: 1px; background: rgba(243, 241, 236, 0.3); }
+.mv-5 .mh-title { font-size: 22vw; justify-items: center; line-height: 0.88; }
+.mv-5 .mh-title em { font-size: 1.16em; }
+.mv-5 .p1 { display: none; }
+.mv-5 .p2 { display: inline-block !important; }
+.mv-5 .mh-deck, .mv-5 .mh-list { display: none; }
+.mv-5 .mh-fold { display: block !important; }

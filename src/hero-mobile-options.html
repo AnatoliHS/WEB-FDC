@@ -1,0 +1,77 @@
+---
+layout: false
+permalink: /hero-mobile-options/index.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Hero Options — Family Dental Centre</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/redesign/redesign.css?v=4" />
+  <style>
+    .page { padding: clamp(32px, 5vw, 72px) var(--gutter) 80px; }
+    .page h1 { font-weight: 400; font-size: clamp(2.4rem, 4.4vw, 4rem); letter-spacing: -0.045em; line-height: 1; margin: 14px 0 16px; }
+    .page > header p { color: var(--dim); max-width: 64ch; font-weight: 300; }
+    .eyebrow { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dim); }
+    .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 48px 36px; margin-top: 48px; }
+    .phone { width: 390px; }
+    .phone__label { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+    .phone__label b { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.8rem; color: var(--brass-soft); line-height: 1; }
+    .phone__label h2 { font-weight: 400; font-size: 1.3rem; letter-spacing: -0.03em; }
+    .phone__note { color: var(--dim); font-size: 13px; min-height: 4.5em; margin-bottom: 14px; }
+    .phone__frame { width: 390px; height: 844px; border-radius: 44px; overflow: hidden; border: 1px solid var(--line-light); box-shadow: 0 0 0 8px #0B1112, 0 40px 80px -30px rgba(0,0,0,.7); background: var(--page); }
+    .phone__frame iframe { width: 390px; height: 844px; border: 0; display: block; }
+    .phone__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+    .phone__tags span { font-size: 11px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line-light); color: var(--dim); }
+    @media (max-width: 460px) { .phone, .phone__frame, .phone__frame iframe { width: 100%; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Family Dental Centre · Mobile hero study</p>
+      <h1>Five mobile hero layouts</h1>
+      <p>Each frame is a real 390 × 844 phone viewport (iPhone 12–15 size). Scroll inside a frame to see what follows the hero. Desktop keeps the Horizon layout; only the phone version changes.</p>
+    </header>
+
+    <div class="grid">
+      <article class="phone">
+        <div class="phone__label"><b>01</b><h2>Centered Essential</h2></div>
+        <p class="phone__note">Centered title, short deck, trust points as one quiet line of text. Full booking bar unchanged.</p>
+        <div class="phone__frame"><iframe src="/hero-mobile-options/frame/?v=1" title="Option 1" loading="lazy"></iframe></div>
+        <div class="phone__tags"><span>Full booking bar</span><span>Calmest</span></div>
+      </article>
+      <article class="phone">
+        <div class="phone__label"><b>02</b><h2>Left Editorial</h2></div>
+        <p class="phone__note">Big left-aligned stack with the team pill beside “smiles”, ruled deck and numbered list. Booking bar condensed to two rows.</p>
+        <div class="phone__frame"><iframe src="/hero-mobile-options/frame/?v=2" title="Option 2" loading="lazy"></iframe></div>
+        <div class="phone__tags"><span>Compact booking bar</span><span>Most content</span></div>
+      </article>
+      <article class="phone">
+        <div class="phone__label"><b>03</b><h2>Swipe Chips</h2></div>
+        <p class="phone__note">Centered title and deck; trust points become a sideways-swipe row of chips. Compact booking bar.</p>
+        <div class="phone__frame"><iframe src="/hero-mobile-options/frame/?v=3" title="Option 3" loading="lazy"></iframe></div>
+        <div class="phone__tags"><span>Compact booking bar</span><span>Interactive</span></div>
+      </article>
+      <article class="phone">
+        <div class="phone__label"><b>04</b><h2>Ticker</h2></div>
+        <p class="phone__note">Trust points scroll in a ticker under the nav, freeing room for the largest left-aligned title. Compact booking bar.</p>
+        <div class="phone__frame"><iframe src="/hero-mobile-options/frame/?v=4" title="Option 4" loading="lazy"></iframe></div>
+        <div class="phone__tags"><span>Compact booking bar</span><span>Biggest title</span><span>Motion</span></div>
+      </article>
+      <article class="phone">
+        <div class="phone__label"><b>05</b><h2>Hero + Fold</h2></div>
+        <p class="phone__note">The hero is only title + booking bar. Description and trust list move to a light “At a glance” panel right below.</p>
+        <div class="phone__frame"><iframe src="/hero-mobile-options/frame/?v=5" title="Option 5" loading="lazy"></iframe></div>
+        <div class="phone__tags"><span>Full booking bar</span><span>Most minimal hero</span></div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
