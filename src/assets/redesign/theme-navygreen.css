@@ -1,0 +1,31 @@
+/* ════════════════════════════════════════════════════════════════
+   THEME: NAVY-GREEN — dark navy-green background, light content
+   sheets on top (the original dark layout), warm sand buttons.
+   Loaded after redesign.css and overrides it. Swap the <link> in
+   index.html for theme-navy.css / theme-sky.css, or remove it for
+   the original slate/forest palette.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --page: #0E1F24;          /* dark navy-green: the page itself */
+  --ink: #142A30;           /* text on light sheets, dark cards */
+  --ink-2: #17313A;         /* hero / footer / menu / dark sheets */
+  --ink-3: #224450;
+  --teal: #2F6E73;          /* navy-green glow */
+  --line: rgba(20, 42, 48, 0.13);
+}
+
+/* ── Glow & glass tinted to navy-green ── */
+.orb--teal { background: radial-gradient(circle, rgba(47, 110, 115, 0.5), rgba(47, 110, 115, 0) 68%); }
+.hero__glow i:nth-child(1) { background: radial-gradient(circle, rgba(47, 110, 115, 0.6), rgba(47, 110, 115, 0) 66%); }
+.hero__glow i:nth-child(3) { background: radial-gradient(circle, rgba(47, 110, 115, 0.35), rgba(47, 110, 115, 0) 66%); }
+.pill-glass, .nav__logo { background: rgba(14, 31, 36, 0.55); }
+.film__toggle { background: rgba(14, 31, 36, 0.5); }
+.film__shade { background: linear-gradient(180deg, rgba(14, 31, 36, 0.35) 0%, rgba(14, 31, 36, 0.2) 40%, rgba(14, 31, 36, 0.9) 100%); }
+.pillar::after { background: linear-gradient(180deg, rgba(14, 31, 36, 0) 40%, rgba(14, 31, 36, 0.85) 100%); }
+.pillar__arrow { background: rgba(14, 31, 36, 0.4); }
+
+/* Buttons, the team end card and booking tiles use the base warm sand
+   (--brass-soft #CDB38A) with dark navy-green text. */
+.btile--request .btile__top { color: rgba(20, 42, 48, 0.65); }
+

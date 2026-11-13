@@ -23,15 +23,15 @@ permalink: /index.html
   <meta name="twitter:title" content="Family Dental Centre" />
   <meta name="twitter:description" content="We bring smiles to life." />
   <meta name="twitter:image" content="https://familydentalcentre.com/assets/fdc-office-2.png" />
-  <meta name="theme-color" content="#DCEBF6" />
+  <meta name="theme-color" content="#0E1F24" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/assets/redesign/redesign.css?v=4" />
+  <link rel="stylesheet" href="/assets/redesign/redesign.css?v=9" />
   <!-- colour theme: remove this line to return to the original forest/slate palette -->
-  <link rel="stylesheet" href="/assets/redesign/theme-sky.css?v=2" />
+  <link rel="stylesheet" href="/assets/redesign/theme-navygreen.css?v=2" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
@@ -49,7 +49,8 @@ permalink: /index.html
     <a href="#top" class="nav__logo" aria-label="Family Dental Centre — Home">
       <img src="/assets/fdc-logo-light.png" alt="Family Dental Centre">
     </a>
-    <ul class="nav__links pill-glass" role="list">
+    <ul class="nav__links" role="list">
+      <li><a href="#top" class="nav__home">Home</a></li>
       <li><a href="#treatments">Treatments</a></li>
       <li><a href="#about">About Us</a></li>
       <li><a href="#team">Team</a></li>
@@ -85,26 +86,39 @@ permalink: /index.html
     <!-- ═══════════ 1. HERO: a framed sheet with the concierge set into a notch ═══════════ -->
     <header class="hero" aria-labelledby="hero-heading">
       <div class="hero__sheet sheet">
-        <div class="hero__glow" aria-hidden="true"><i></i><i></i><i></i></div>
-
-        <div class="hero__content">
-          <h1 id="hero-heading" class="hero__title">
-            <span class="line hz-1"><span data-load="2">We bring<span class="hpill" aria-hidden="true"><img src="/assets/team-fdc.png" alt=""></span></span></span>
-            <span class="line hz-2"><span data-load="3"><em>smiles</em> <span class="hz-tail">to life.<span class="hpill hpill--m" aria-hidden="true"><img src="/assets/team-fdc.png" alt=""></span></span></span></span>
-          </h1>
-
-          <div class="hz-strip" data-load="4">
-            <p class="hz-kicker">Serving Ontario Since 2007</p>
-            <p class="hz-deck">Comprehensive dental care for your whole family across three convenient Ontario locations. With modern
-              technology and a compassionate team, your healthy smile is our priority.</p>
-            <ol class="hz-list" role="list">
-              <li><span>01</span>Convenient Extended Hours</li>
-              <li><span>02</span>Direct Insurance Billing</li>
-              <li><span>03</span>3 Ontario Locations</li>
-              <li><span>04</span>Emergency within 48h</li>
-            </ol>
-          </div>
+        <!-- full-bleed photo (kept as .hero__glow so the scroll parallax in redesign.js still drives it) -->
+        <div class="hero__glow hero__photo" aria-hidden="true">
+          <img src="/assets/redesign/hero-smile-2000.jpg" srcset="/assets/redesign/hero-smile-1000.jpg 1000w, /assets/redesign/hero-smile-2000.jpg 2000w" sizes="100vw" alt="" fetchpriority="high" decoding="async">
         </div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <!-- headline (left) and treatments (right), both centred vertically -->
+        <div class="hero__mid">
+          <div class="hero__copy" data-load="2">
+            <h1 id="hero-heading" class="hero__title">We bring<br><em>smiles</em> to life.</h1>
+            <p class="hero__deck">Comprehensive dental care for your whole family across three Ontario clinics, with modern technology and a compassionate team.</p>
+          </div>
+          <nav class="hero__info" data-load="4" aria-label="What we do">
+            <span class="hero__info-label">What we do</span>
+            <ul role="list">
+              <li><a href="#tx-classic">Check-ups</a></li>
+              <li><a href="#tx-classic">Cleanings</a></li>
+              <li><a href="#tx-restorative">Fillings</a></li>
+              <li><a href="#tx-implants">Implants</a></li>
+              <li><a href="#tx-invisalign">Invisalign</a></li>
+              <li><a href="#book">Emergency care</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <a class="hero__card" href="#team" data-load="5">
+          <span class="hero__thumb"><img src="/assets/team-fdc.png" alt="" loading="lazy"></span>
+          <span class="hero__card-body">
+            <b>Meet the people who look after your smile.</b>
+            <small>Meet the team</small>
+          </span>
+          <span class="hero__card-arrow" aria-hidden="true">↗</span>
+        </a>
 
         <!-- the notch: cut into the sheet's lower edge -->
         <div class="notch hero__notch" data-load="6">
@@ -516,6 +530,17 @@ permalink: /index.html
             </article>
             <article class="member member--end">
               <a href="#contact">
+                <!-- floating teeth behind the card text (restored from the original team CTA) -->
+                <span class="member__teeth" aria-hidden="true">
+                  <i style="--left: 10%; --size: 20px; --duration: 14s; --delay: -2s; --drift-x: 20px; --rot: 360deg;"></i>
+                  <i style="--left: 25%; --size: 32px; --duration: 18s; --delay: -8s; --drift-x: -30px; --rot: -270deg;"></i>
+                  <i style="--left: 40%; --size: 16px; --duration: 11s; --delay: -4s; --drift-x: 15px; --rot: 180deg;"></i>
+                  <i style="--left: 55%; --size: 26px; --duration: 20s; --delay: -14s; --drift-x: -25px; --rot: -360deg;"></i>
+                  <i style="--left: 70%; --size: 22px; --duration: 15s; --delay: -6s; --drift-x: 35px; --rot: 450deg;"></i>
+                  <i style="--left: 85%; --size: 18px; --duration: 13s; --delay: -10s; --drift-x: -15px; --rot: 90deg;"></i>
+                  <i style="--left: 15%; --size: 28px; --duration: 16s; --delay: -12s; --drift-x: 25px; --rot: -180deg;"></i>
+                  <i style="--left: 95%; --size: 24px; --duration: 17s; --delay: -1s; --drift-x: -20px; --rot: 360deg;"></i>
+                </span>
                 <span class="member__end-text">Learn more about the people at the FDC</span>
                 <span class="btn btn--light">Meet the full team</span>
               </a>
