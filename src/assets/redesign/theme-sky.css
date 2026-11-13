@@ -1,0 +1,126 @@
+/* ════════════════════════════════════════════════════════════════
+   THEME: SKY — light blue + white surfaces, soft butter-yellow glow.
+   Loaded after redesign.css and overrides it. Remove the <link> in
+   index.html to go back to the original slate/forest palette.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --page: #DCEBF6;          /* light sky: the page itself */
+  --ink: #14324D;           /* deep navy: text, dark cards, buttons */
+  --ink-2: #C9E2F3;         /* hero / footer / menu surface */
+  --ink-3: #B3D3EA;
+  --bone: #FFFFFF;          /* light sheets */
+  --paper: #F5F9FC;
+  --mist: #EAF3FA;
+  --marble: #E3EDF5;
+  --stone: #657E92;
+  --ink-soft: #46627A;
+  --accent: #1E6FB8;        /* ocean blue: the secondary colour (emphasis, CTAs, accents) */
+  --brass: var(--accent);   /* old gold text accents -> ocean blue */
+  --brass-soft: #8EC3EC;    /* light sky: accents on navy/photos, light hover fills */
+  --glow: 255, 222, 130;    /* butter yellow, used only as light */
+  --line: rgba(20, 50, 77, 0.12);
+  --line-light: rgba(20, 50, 77, 0.14);
+  --dim: rgba(20, 50, 77, 0.66);
+  color-scheme: light;
+}
+
+body { color: var(--ink); }
+::selection { background: var(--brass-soft); color: var(--ink); }
+:focus-visible { outline-color: var(--accent); }
+
+/* emphasis: blue everywhere it sits on light; yellow stays on photos/video */
+em, .sheet:not(.sheet--ink):not(.film):not(.hero__sheet) em { color: var(--accent); }
+.film em, .pillar em { color: var(--brass-soft); }
+
+/* ── Ambient glow: white + butter yellow + sky ── */
+.orb--teal { background: radial-gradient(circle, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 68%); }
+.orb--brass { background: radial-gradient(circle, rgba(var(--glow), 0.5), rgba(var(--glow), 0) 68%); }
+
+/* ── Sheets & notches ── */
+.sheet--ink { color: var(--ink); }
+.notch { color: var(--ink); }
+.notch--top-left span::before, .dot { background: var(--brass); }
+
+/* ── Nav: white glass ── */
+.pill-glass, .nav__logo {
+  background: rgba(255, 255, 255, 0.62);
+  border-color: rgba(20, 50, 77, 0.08);
+  color: var(--ink);
+  box-shadow: 0 6px 24px rgba(20, 50, 77, 0.06);
+}
+.nav__logo img, .foot__logo { content: url(/assets/fdc-logo.png); }
+.nav__links a:hover { background: rgba(20, 50, 77, 0.07); }
+.nav__cta:hover { background: var(--ink); color: var(--bone); }
+.menu__links small { color: var(--brass); }
+
+/* ── Hero: airy blue sheet with white + yellow light ── */
+.hero__sheet { background: linear-gradient(165deg, #EEF6FC 0%, #CFE5F5 55%, #BBD9EF 100%); color: var(--ink); }
+.hero__glow i { filter: blur(80px); }
+.hero__glow i:nth-child(1) { background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 66%); }
+.hero__glow i:nth-child(2) { background: radial-gradient(circle, rgba(var(--glow), 0.6), rgba(var(--glow), 0) 66%); }
+.hero__glow i:nth-child(3) { background: radial-gradient(circle, rgba(120, 184, 232, 0.5), rgba(120, 184, 232, 0) 66%); }
+.hpill { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 0 5px rgba(255, 255, 255, 0.35); }
+.hz-kicker::before { background: rgba(20, 50, 77, 0.3); }
+.hz-deck { color: rgba(20, 50, 77, 0.8); }
+.hz-list span { color: var(--accent); }
+
+/* concierge bar */
+.concierge__cell { background: rgba(255, 255, 255, 0.75); }
+.concierge__phone:hover { color: var(--accent); }
+.seg { background: rgba(20, 50, 77, 0.06); }
+.seg__pill { background: var(--ink); }
+.seg button[aria-checked="true"] { color: var(--bone); }
+
+/* ── Sections on the page ── */
+.welcome__mini { color: var(--accent); }
+.film__shade { background: linear-gradient(180deg, rgba(14, 38, 60, 0.3) 0%, rgba(14, 38, 60, 0.15) 40%, rgba(14, 38, 60, 0.85) 100%); }
+.pillar::after { background: linear-gradient(180deg, rgba(14, 38, 60, 0) 40%, rgba(14, 38, 60, 0.85) 100%); }
+.pillar__arrow { background: rgba(14, 38, 60, 0.35); }
+
+.team__count b { color: var(--ink); }
+.team__rail i { background: var(--accent); }
+.member { background: rgba(255, 255, 255, 0.55); }
+.member__cap span { color: var(--brass); }
+
+/* booking tiles: frosted white */
+.btile { background: rgba(255, 255, 255, 0.5); }
+.btile:hover { background: rgba(255, 255, 255, 0.85); }
+.btile__arrow { background: rgba(20, 50, 77, 0.08); color: var(--ink); }
+
+/* ── Footer: light blue with a yellow glow ── */
+.foot {
+  background:
+    radial-gradient(60% 80% at 100% 0%, rgba(var(--glow), 0.45), rgba(var(--glow), 0) 70%),
+    radial-gradient(50% 70% at 0% 100%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+    var(--ink-2);
+}
+.foot__tag, .foot__locs h4, .foot__nav,
+.foot__col a:hover, .foot__nav a:hover, .foot__legal a:hover { color: var(--ink); }
+.foot__up { background: rgba(20, 50, 77, 0.08); color: var(--ink); }
+
+@media (max-width: 1080px) {
+  .treat__chips { background: rgba(255, 255, 255, 0.94); }
+}
+
+@media (max-width: 760px) {
+  .concierge__cell--loc { background: none; }
+}
+
+/* ── Secondary colour: ocean blue fills with white text ── */
+.nav__cta { background: var(--accent); color: #fff; }
+.nav__cta:hover { background: var(--ink); color: #fff; }
+.nav__cta-dot { background: #fff; }
+.nav__cta-dot::after { background: var(--accent); }
+.btn--brass { --bg: var(--accent); --fg: #fff; --hover: var(--ink); }
+.btn--ink { --hover: var(--accent); }
+.btn--ink:hover { color: #fff; }
+.bcard--brass { background: var(--accent); color: #fff; }
+.bcard--brass .bcard__num sup { color: #fff; }
+.bcard--brass .bcard__glyph { color: #fff; opacity: 0.7; }
+.btile--request { background: var(--accent); color: #fff; }
+.btile--request:hover { background: var(--ink); }
+.btile--request .btile__top { color: rgba(255, 255, 255, 0.75); }
+.btile--request .btile__arrow, .btile--request:hover .btile__arrow { background: #fff; color: var(--accent); }
+.member--end a { background: var(--accent); color: #fff; }
+.status-dot.is-alert { background: #E3A23B; box-shadow: 0 0 0 4px rgba(227, 162, 59, 0.2); }

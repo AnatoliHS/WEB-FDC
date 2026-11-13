@@ -23,13 +23,15 @@ permalink: /index.html
   <meta name="twitter:title" content="Family Dental Centre" />
   <meta name="twitter:description" content="We bring smiles to life." />
   <meta name="twitter:image" content="https://familydentalcentre.com/assets/fdc-office-2.png" />
-  <meta name="theme-color" content="#121A1C" />
+  <meta name="theme-color" content="#DCEBF6" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/assets/redesign/redesign.css?v=3" />
+  <link rel="stylesheet" href="/assets/redesign/redesign.css?v=4" />
+  <!-- colour theme: remove this line to return to the original forest/slate palette -->
+  <link rel="stylesheet" href="/assets/redesign/theme-sky.css?v=2" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
@@ -129,6 +131,15 @@ permalink: /index.html
         </div>
       </div>
     </header>
+    <!-- start the hero load-in as soon as the hero is parsed and its fonts are in (capped), without waiting on the deferred scripts -->
+    <script>
+      (function () {
+        var r = document.documentElement, done = 0, f = document.fonts;
+        function go() { if (done) return; done = 1; requestAnimationFrame(function () { requestAnimationFrame(function () { r.classList.add('is-loaded'); }); }); }
+        if (f && f.load) Promise.all([f.load('400 1em "Inter Tight"'), f.load('italic 400 1em "Instrument Serif"')]).then(go, go); else go();
+        setTimeout(go, 600);
+      })();
+    </script>
 
     <!-- ═══════════ 2. WELCOME: a sentence that brightens as you read ═══════════ -->
     <section class="welcome" id="intro" aria-labelledby="intro-heading">
@@ -756,7 +767,7 @@ permalink: /index.html
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="/assets/redesign/redesign.js?v=3"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="/assets/redesign/redesign.js?v=4" defer></script>
 </body>
 </html>

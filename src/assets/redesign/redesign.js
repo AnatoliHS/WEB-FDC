@@ -15,8 +15,8 @@
 
   /* ── Load-in ───────────────────────────────────────────── */
   const ready = () => requestAnimationFrame(() => root.classList.add('is-loaded'));
-  (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(ready, 120));
-  setTimeout(ready, 1800);
+  // primary trigger is the inline script after the hero; this is a fallback
+  ready();
 
   /* ── Smooth scroll ─────────────────────────────────────── */
   let lenis = null;
