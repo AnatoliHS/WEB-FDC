@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   FAMILY DENTAL CENTRE: redesign concept v3
+   AURA DENTAL: redesign concept v3
    Architecture: a dark slate-teal page with rounded "sheets" laid on it.
    Sheets are notched where labels and controls sit. One hue family + brass.
    ════════════════════════════════════════════════════════════════ */
@@ -632,7 +632,7 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spa
   .hero__info li { border-top: 1px solid rgba(255, 255, 255, 0.16); }
   .hero__info a { padding: 8px 0; font-size: 14px; }
   .hero__info-label { margin-bottom: 8px; }
-  .hero__title { font-size: clamp(2.8rem, 13vw, 4rem); }
+  .hero__title { font-size: clamp(2.2rem, 11vw, 4rem); }
   .hero__title em { font-size: 1.18em; }
   .hero__deck { font-size: 14px; margin-top: 14px; }
   .line--2 { padding-left: 0.5em; }

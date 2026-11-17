@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   FAMILY DENTAL CENTRE — Design System
+   AURA DENTAL — Design System
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── 1. TOKENS ───────────────────────────────────────────────── */
@@ -814,7 +814,7 @@ h4 {
   }
 }
 
-/* ── 9. WHY CHOOSE FDC (Benefits) ────────────────────────────── */
+/* ── 9. WHY CHOOSE US (Benefits) ────────────────────────────── */
 .benefits-section {
   padding-block: var(--section-pad);
   background: var(--clr-surface-2);

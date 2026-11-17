@@ -1,4 +1,4 @@
-/* Family Dental Centre: redesign concept interactions */
+/* Aura Dental: redesign concept interactions */
 (() => {
   const root = document.documentElement;
   const body = document.body;
@@ -107,7 +107,7 @@
     cPhone.textContent = clinics[key].phone;
     cPhone.href = clinics[key].tel;
     placePill();
-    if (save) store.set('fdc-clinic', key);
+    if (save) store.set('clinic', key);
   };
   segBtns.forEach((b, i) => {
     b.addEventListener('click', () => choose(b.dataset.loc, true));
@@ -118,7 +118,7 @@
       n.focus(); choose(n.dataset.loc, true);
     });
   });
-  choose(store.get('fdc-clinic') || 'belleville');
+  choose(store.get('clinic') || 'riverside');
   document.fonts?.ready.then(placePill);
   addEventListener('resize', placePill);
 

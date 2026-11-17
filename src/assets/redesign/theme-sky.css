@@ -49,7 +49,7 @@ em, .sheet:not(.sheet--ink):not(.film):not(.hero__sheet) em { color: var(--accen
   color: var(--ink);
   box-shadow: 0 6px 24px rgba(20, 50, 77, 0.06);
 }
-.nav__logo img, .foot__logo { content: url(/assets/fdc-logo.png); }
+.nav__logo img, .foot__logo { content: url(/assets/logo.svg); }
 .nav__links a:hover { background: rgba(20, 50, 77, 0.07); }
 .nav__cta:hover { background: var(--ink); color: var(--bone); }
 .menu__links small { color: var(--brass); }
